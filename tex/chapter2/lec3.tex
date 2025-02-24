@@ -1,0 +1,175 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{3}{24.02}{}
+\section{Основные определения}
+\noindent Пусть A = $(a_{ij})_{m}^{n},\; a_{ij}\in\mathbb{R}(\mathbb{C})\quad \underset{\downarrow}{b}=\begin{pmatrix} \vec{b}_{1}\\ \vdots\\ \vec{b}_{m} \end{pmatrix}- \text{ заданы },\quad \underset{\downarrow}{x}=\begin{pmatrix} \vec{x}_{1}\\ \vdots\\ \vec{x}_{n} \end{pmatrix} -\text{ столбец неизвестных.}$\\ 
+Рассмотрим $A \underset{\downarrow}{x}=\underset{\downarrow}{b}\;\;(1).$ Или в координатной форме $\begin{cases}
+    a_{11}x_{1}+a_{12}x_{2}+\dots+a_{1n}x_{n}=b_{1}\\
+    \phantom{a_{11}x_{1}+a_{12}x_{2}+} \dots\\
+    a_{m1}x_{1}+a_{m2}x_{2}+\dots+a_{mn}x_{n}=b_{m}
+\end{cases}(\tilde{1})\\ (1),(\tilde{1}) - $ СЛАУ. (1) - векторная форма записи. ($\tilde{1}$) - координатная форма записи. 
+\begin{definition}
+    Частным решением СЛАУ (1) называют $\underset{\downarrow}{\alpha}=\begin{pmatrix} \vec{\alpha}_{1}\\ \vdots\\ \vec{\alpha}_{n} \end{pmatrix}\; A  \underset{\downarrow}{\alpha}=\underset{\downarrow}{b}$ - верное векторное равенство (или это упорядоченный набор чисел ($\alpha_{1},\dots,\alpha_{n}$): при подстановке в $(\tilde{1})$ вместо набора ($x_{1},\dots,x_{n}$) получается верное равенство)
+\end{definition}
+\begin{definition}
+    Совокупность всех частных решений называется общим решением СЛАУ.
+\end{definition}
+\begin{definition}
+    СЛАУ называется \underline{совместной}, если она имеет хотя бы одно решение. В противном случае СЛАУ \underline{несовместена} (решений нет).
+\end{definition}
+
+$A' = (a_{ij})_{m'}^{n'}, \; \underset{\downarrow}{b'}=\begin{pmatrix} \vec{b'}_{1}\\ \vdots\\ \vec{b'}_{m} \end{pmatrix}$
+\begin{definition}
+    СЛАУ $A \underset{\downarrow}{x}=\underset{\downarrow}{b}$ и $A'\underset{\downarrow}{x}=\underset{\downarrow}{b'}$ называются равносильными (эквивалентыми), если $\fbox{n'=n}$ и общие решения совпадают. При этом ($n'=n$) несовместные СЛАУ также эквиваленты.
+\end{definition} 
+\noindent Замечание. $m'$ не обязательно совпадает с $m$
+\section{Квадратные СЛАУ. Правило Крамера.}
+Пусть $\fbox{m=n}$, т.е $A=(a_{ij})_{n}^{n}$ - квадратная матрица. $\underset{\downarrow}{b}=\begin{pmatrix} \vec{b}_{1}\\ \vdots\\ \vec{b}_{n} \end{pmatrix}\quad \underset{\downarrow}{x}=\begin{pmatrix} \vec{x}_{1}\\ \vdots\\ \vec{x}_{n} \end{pmatrix}$
+
+\begin{theorem}[Теорема Крамера]
+    Если $\Delta = detA \neq  0 $, то СЛАУ $A \underset{\downarrow}{x} = \underset{\downarrow}{ b}\;(1)$ имеет единственное решение, причем его можно найти по правилу Крамера: $\fbox{$x_{k}=\frac{\Delta_{k}}{\Delta}$}$, $k=\overline{1,n}$, где $\Delta_{k}=detA_{k}, A_{k}$ получена из $A=\begin{pmatrix}
+        \underset{\downarrow}{a_{1}}\dots \underset{\downarrow}{a_{n}}
+    \end{pmatrix}$ заменой $\underset{\downarrow}{a_{k}}$ и $\underset{\downarrow}{b}$
+\end{theorem}
+\begin{proof}
+    $\Delta = detA \neq 0 \implies \exists A^{-1}.$ Тогда $A^{_{-1}}(A \underset{\downarrow}{x})=A^{-1} \underset{\downarrow}{b}\implies  (\underbrace{A^{_{1}}A}_{E})\underset{\downarrow}{x}=A^{-1}\underset{\downarrow}{b}\implies \underset{\downarrow}{x}=A^{-1} \underset{\downarrow}{b}.$ Проверим, что $\underset{\downarrow}{x}=A^{-1}\underset{\downarrow}{b}$ является решением (1). $A(A^{-{1}}\underset{\downarrow}{b})=(AA^{-1})\underset{\downarrow}{b}=E\underset{\downarrow}{b}=\underset{\downarrow}{b}$ - верно. 
+    Проверим единственность. Пусть $A \underset{\downarrow}{\alpha'} = \underset{\downarrow}{b}$ и $A \underset{\downarrow}{\alpha''}=\underset{\downarrow}{b}$. Тогда $A(\underset{\downarrow}{\alpha'}-\underset{\downarrow}{\alpha''})=A \underset{\downarrow}{\alpha'}-A \underset{\downarrow}{\alpha''}=\underset{\downarrow}{b}-\underset{\downarrow}{b}=\underset{\downarrow}{0}.$ Тогда $\underset{\downarrow}{\alpha'}-\underset{\downarrow}{\alpha''}=A^{-1}\underset{\downarrow}{0}=\underset{\downarrow}{0}$, т.е $\underset{\downarrow}{\alpha'}=\underset{\downarrow}{\alpha''},$ т.е решение одно.
+    \\ Имеем $\underset{\downarrow}{x}=A^{-1}\underset{\downarrow}{b}= \frac{1}{\Delta}\begin{pmatrix} 
+        A_{11} &\dots& A_{n_{1}} \\
+        \vdots & \ddots & \vdots \\
+        A_{1n} &\dots& A_{nn}
+    \end{pmatrix} \begin{pmatrix} \vec{b}_{1}\\ \vdots\\ \vec{b}_{n} \end{pmatrix}=\frac{1}{\Delta}\begin{pmatrix}
+        \sum_{k=1}^{n}A_{k1}b_{k}\\ 
+        \vdots \\ 
+        \sum_{k=1}^{n} A_{kn}b_{k}  
+    \end{pmatrix}=\frac{1}{\Delta} \begin{pmatrix} {\Delta}_{1}\\ \vdots\\ {\Delta}_{n} \end{pmatrix}=\begin{pmatrix} {\frac{\Delta_1}{\Delta}}\\ \vdots\\ {\frac{\Delta_n}{\Delta}} \end{pmatrix}$ \\ 
+    Для $k=1 \qquad \Delta_{k}=\begin{vmatrix}
+        b_{1}& a_{12} &\dots& a_{1n} \\ 
+        b_{2}& a_{22} & \dots & a_{2n}\\ 
+        \vdots & \vdots &\ddots & \vdots\\ 
+        b_{n}&a_{n2}& \dots& a_{nn}
+    \end{vmatrix}\underset{\text{по 1-му столбцу}}{=} b_{1}A_{11}+\dots+b_{n}A_{n1}$\\ Остальные $\Delta_{k}$ аналогично (самостоятельно)
+\end{proof}
+\begin{corollary}
+    Если $\Delta = 0,$ а хотя бы один из $\Delta _{k }\neq 0$, то квадратная СЛАУ $A \underset{\downarrow}{x}=\underset{\downarrow}{b}$ несовместна.
+\end{corollary}
+\begin{proof}
+    Рассмотрим $A^{T}(A \underset{\downarrow}{x})= (A^{T}A)\underset{\downarrow}{x}=\begin{pmatrix} 
+        A_{11}   & \dots & A_{n1} \\
+        \vdots &\ddots  &\vdots  \\
+        A_{1n} &\dots  & A_{nn}
+    \end{pmatrix}\begin{pmatrix} 
+        a_{11} &\dots  & a_{1n} \\
+         \vdots& \ddots &\vdots  \\
+        a_{n1} & \dots & a_{nn}
+    \end{pmatrix} \underset{\downarrow}{x} \underset{\text{1 сем}}{=} \begin{pmatrix} 
+        \Delta & 0 &\dots &0  \\
+         0& \Delta & \dots & 0  \\
+         \vdots & \vdots & \ddots & \vdots \\ 
+         0& \dots&0& \Delta & 
+    \end{pmatrix} \underset{\downarrow}{x}\\= \Delta\cdot E \underset{\downarrow}{x}= \begin{pmatrix} {\Delta\cdot x_{1}}\\ \vdots\\ {\Delta\cdot x_{n}} \end{pmatrix}$. С другой стороны $A^{T} \underset{\downarrow}{b}= \begin{pmatrix} {\Delta}_{1}\\ \vdots\\ {\Delta}_{n} \end{pmatrix}$, т.е $\begin{cases}
+         \Delta x_{1}= \Delta 1, \\ 
+         \phantom{\Delta x_{1}}\dots \\ 
+         \Delta x_{n}=\Delta n
+    \end{cases}, \text{ но } \Delta =0 $. Если хотя бы один из  $\Delta _{k}\neq 0,$ то $x_{k}\cdot  0=\Delta _{k}\neq 0$, что невозможно.
+\end{proof}
+\section{Метод Гаусса (Гаусса-Жордана) исследования СЛАУ}
+Рассмотрим  прямоугольную СЛАУ $A \underset{\downarrow}{x}=\underset{\downarrow}{b}, A = (a_{ij})_{m}^{n}$ - основная матрица системы. $\underset{\downarrow}{b}$ - столбец правых частей. $(A|\underset{\downarrow}{b})=\begin{pmatrix}[ccc|c]
+    \underset{\downarrow}{a_{1}}& \dots & \underset{\downarrow}{a_{n}}& \underset{\downarrow}{b}
+\end{pmatrix}=\begin{pmatrix}[ccc|c]
+    a_{11}&\dots & a_{1n} & b_{1}\\ 
+    \vdots & \ddots & \vdots & \vdots \\ 
+    a_{m1} & \dots & a_{mn} & b_{m}
+\end{pmatrix}$ - \underline{расширенная матрица СЛАУ}
+\begin{definition}
+    Элементарными операциями с СЛАУ называются следующие операции:
+    \\ 1. перестановка местами уравнений системы. 
+    \\2. умножение обеих частей на число, отличное от нуля. 
+    \\3. прибавление к одному уравнению СЛАУ другого ее уравнения
+\end{definition}
+
+
+\begin{theorem}
+    Элементарные операция СЛАУ приводят к эквивалентой ей СЛАУ.
+\end{theorem}
+\begin{proof}
+    Самостоятельно.
+\end{proof}
+
+Обозначение. Пусть $A \underset{\downarrow}{x}=\underset{\downarrow}{b}$ приводятся элементарными операциями к $A' \underset{\downarrow}{x}=\underset{\downarrow}{b}$, то что эти СЛАУ эквиваленты (равносильны) обозначается $A \underset{\downarrow}{x} \Leftrightarrow A' \underset{\downarrow}{x}=\underset{\downarrow}{b'}$ либо $A \underset{\downarrow}{x}=\underset{\downarrow}{b}\sim A' \underset{\downarrow}{x}=\underset{\downarrow}{b}$. 
+\\ Легко заметить, что элементарные операции с СЛАУ взаимно однозначно можно сопоставить элементарные операции со строками расширенной матрицы СЛАУ.
+\\ Идея метода Гаусса-Жордана. $(A|\underset{\downarrow}{b})\sim (\underbrace{A'}_{\text{ТФ}}|\underset{\downarrow}{b'})$. Прямой ход $\begin{pmatrix}[ccc|c]
+    a_{11}&\dots & a_{1n} & b_{1}\\ 
+    \vdots & \ddots & \vdots & \vdots \\ 
+    a_{m1} & \dots & a_{mn} & b_{m}
+\end{pmatrix}\sim \text{эл. преобр. только строк }\sim\\\sim \begin{pmatrix}[ccccc|c]
+    a'_{11} & \dots & a'_{1r}&\dots  & a'_{1n}& b_{1} \\
+    0 & \ddots & \dots &\dots  & a'_{1n}& \vdots \\
+    0 & \dots & a'_{rr} & \dots& a'_{rn} &b_{r}  \\ \hline
+    \multicolumn{4}{c}{\text{НУЛИ}}& &b_{r+1}\\\hline
+    \multicolumn{4}{c}{\text{НУЛИ}}& &0
+\end{pmatrix}(2)$
+\\Замечание. Мы считаем, что переменные СЛАУ занумерованы таким образом, что не требуется при приведение к ТФ переставлять столбцы. Столбцы $A$ можно переставлять, $\underset{\downarrow}{b}$ закреплен.
+\\ Рассмотрим расширеннную матрицу (2) $\begin{pmatrix}[ccccc|c]
+    a'_{11} & \dots & a'_{1r}&\dots  & a'_{1n}& b_{1} \\
+    0 & \ddots & \dots &\dots  & a'_{1n}& \vdots \\
+    0 & \dots & a'_{rr} & \dots& a'_{rn} &b_{r}  \\ \hline
+    \multicolumn{4}{c}{\text{НУЛИ}}& &b_{r+1}\\\hline
+    \multicolumn{4}{c}{\text{НУЛИ}}& &0
+\end{pmatrix}$ Тогда в эквивалентной СЛАУ будет уравнение $0 \cdot  x_{1}+\dots+0\cdot x_{n}=b_{r+1}$. Если $b_{r+1}\neq 0$ , то эквивалентная СЛАУ несовместна $\implies$ исходная СЛАУ несовместна. Если же $b_{r+1}=0$, то $(A'|\underset{\downarrow}{b'})$ имеет ТФ и ее $Rg(A'|\underset{\downarrow}{b'})=Rg(A')=r$. 
+Тогда обратным ходом приводим расширенную матрицу к виду: $\begin{pmatrix}[ccc|ccc|c]
+    1 & \dots & 0&a''_{1r+1} &\dots & a''_{1n}& b''_{1} \\
+    \vdots & \ddots &\vdots  &\vdots  & \ddots& \vdots&\vdots \\
+    0 & \dots & 1 & a''_{rr+1}& \dots&a''_{rr} &b_{r}  \\ \hline
+    \multicolumn{5}{c}{\text{НУЛИ}}& &0\\\hline
+    \multicolumn{5}{c}{\text{НУЛИ}}& &0
+\end{pmatrix}$ \\ Т.е фактически: $A \underset{\downarrow}{x}= \underset{\downarrow}{b}\sim A' \underset{\downarrow}{x}=\underset{\downarrow}{b'} \sim A'' \underset{\downarrow}{x}=\underset{\downarrow}{b''} \text{ в коорд. форме:} \begin{cases}
+    x_{1}+a''_{1r+1}x_{r+1}+\dots+a''_{1n}x_{n}=b''_{1}\\ 
+    \phantom{x_{1}+a''_{1r+1}x_{r+1}} \dots \\ 
+    x_{r}+a''_{rr+1}x_{r+1}+\dots+a''_{rn}x_{n}=b''_{r}
+\end{cases}$ \\Тогда переменные $x_{1},\dots,x_{r}$ назовем \underline{главными}, а $x_{r+1},\dots,x_{n}$ - \underline{свободными}. Перенесем свободные в правую часть:
+ $\begin{cases}
+    x_{1}=b''_{1}-a''_{1r+1}x_{r+1}-\dots-a''_{1n}x_{n} \\ 
+    \phantom{x_{1}=b''_{1}-a''_{1r+1}x}   \dots \\ 
+    x_{r}=b''_{r}-a''_{rr+1}x_{r+1}-\dots-a''_{rn}x_{n}
+\end{cases}$ Видим, что при особых значениях свободных переменных $x_{r+1},\dots,x_{n}$ можно отыскать значения главных $x_{1},\dots,x_{r}$ и таким образом получить различные решения СЛАУ $A'' \underset{\downarrow}{x}=\underset{\downarrow}{b''}$, т.е решения $A \underset{\downarrow}{x}=\underset{\downarrow}{b}$ (т.к они эквиваленты)
+\\Покажем, что $\begin{cases}
+    x_{1}=b''_{1}-a''_{1r+1}x_{r+1}-\dots-a''_{1n}x_{n} \\ 
+    \phantom{x_{1}=b''_{1}-a''_{1r+1}x} \dots \\ 
+    x_{r}=b''_{r}-a''_{rr+1}x_{r+1}-\dots-a''_{rn}x_{n} \\ 
+    x_{r+1},x_{r+2},\dots,x_{n} \in\mathbb{R}
+\end{cases}(3)$ исчерпывает всевозможные решения $A'' \underset{\downarrow}{x}=\underset{\downarrow}{b}$ \\(а значит и исходной СЛАУ $A \underset{\downarrow}{x}=\underset{\downarrow}{b}$)
+
+\noindent Пусть $\exists \underset{\downarrow}{\alpha}=\begin{pmatrix} \vec{\alpha}_{1}\\ \vdots\\ \vec{\alpha}_{n} \end{pmatrix} -$ решение $A \underset{\downarrow}{x}=\underset{\downarrow}{b}$. Поскольку $A \underset{\downarrow}{x}=\underset{\downarrow}{b} \sim A'' \underset{\downarrow}{x}=\underset{\downarrow}{b''},$ то $A'' \underset{\downarrow}{\alpha}=\underset{\downarrow}{b''}.$ Тогда в (3) положим $x_{r+1}=\alpha_{r+1},\dots, x_{n}=\alpha_{n}$ и найдем из (3) $x_{1}=\beta_{1},\dots x_{r}=\beta_{r}$.
+Тогда $\underset{\downarrow}{x}=\begin{pmatrix}
+    \beta_{1}\\
+    \vdots \\ 
+    \beta_{r}\\
+    \alpha_{r+1}\\
+    \vdots \\ 
+    \alpha_{n}
+\end{pmatrix}$- решение $A'' \underset{\downarrow}{x}=\underset{\downarrow}{b''}$
+Тогда $A''(\underset{\downarrow}{x}-\underset{\downarrow}{\alpha})=A'' \underset{\downarrow}{x}- A'' \underset{\downarrow}{\alpha}=\underset{\downarrow}{b''}-\underset{\downarrow}{b''}=\underset{\downarrow}{0}$. Тогда: $\begin{cases}\beta_{1}=\alpha_{1}-0-a''_{1r+1}\cdot 0-\dots-a''_{1n}\cdot 0=0\\ \beta_{r}-\alpha_{r }=0-a''_{rr+1}\cdot 0-\dots-a''_{rn}\cdot 0=0\end{cases}\implies \begin{cases}
+    \beta_{1}=\alpha_{1}\\ 
+    \phantom{\beta_{1}}\dots \\ 
+    \beta_{r}=\alpha_{r}
+\end{cases}$,\\ т. к $\underset{\downarrow}{x}-\underset{\downarrow}{\alpha}=\begin{pmatrix}
+    \beta_{1}-\alpha_{1}\\
+    \vdots\\
+    \beta_{r}-\alpha_{r}\\
+    0\\
+    \vdots \\
+    0
+\end{pmatrix}$
+то  чтобы получить решение $\underset{\downarrow}{\alpha}$ исходной СЛАУ $A \underset{\downarrow}{x}=\underset{\downarrow}{b},$ нужно свободные переменным придать значения $x_{11}=\alpha_{11},\dots,x_{n}=\alpha_{n}$. Таким образом (3) исчерпывает все решения СЛАУ $A \underset{\downarrow}{x}= \underset{\downarrow}{b}$ и такой вид решения называется общим решением по методу Гаусса (Г-Ж) 
+\\Замечание. Иногда свободным переменным придают значения $C_{1},\dots,C_{n-r}$, т.е $x_{r+1}=C_{1},\dots,x_{n}=C_{n-r}$ и в (3) вместо $x_{r+1},\dots,x_{n}$ пишут $C_{1},\dots,C_{n-r}$
+
+Таким образом, в случаях совместности СЛАУ ее общее решение является $n-r$ параметрическим множеством.
+
+
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}
+\end{document}

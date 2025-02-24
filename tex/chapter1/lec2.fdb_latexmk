@@ -1,0 +1,17 @@
+# Fdb version 4
+["pdflatex"] 1739888362.22652 "c:/Users/moksimqa/Documents/Projects/latexlinal/tex/chapter1/lec2.tex" "lec2.pdf" "lec2" 1739888363.11866 2
+  "../../main.tex" 1739888361 417 2e39aa0738a17397fa6b8031820a8b03 ""
+  "C:/Program Files/MiKTeX/tex/latex/base/report.cls" 1705273579 23203 f5d913095ece2233436f0e628619cd37 ""
+  "C:/Program Files/MiKTeX/tex/latex/base/size10.clo" 1705273578 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
+  "C:/Program Files/MiKTeX/tex/latex/import/import.sty" 1585736816 6201 0ad8b5da8e12f60a88d546b2198a56f2 ""
+  "C:/Program Files/MiKTeX/tex/latex/subfiles/subfiles.cls" 1606222980 1507 57de335d88fde4e5c924dfed577fdb74 ""
+  "C:/Users/moksimqa/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1725800942 24215239 d745990f62584c7ec7462d613203a172 ""
+  "c:/Users/moksimqa/Documents/Projects/latexlinal/tex/chapter1/lec2.tex" 1739888359 10234 44f3e271cd061b8e6acb90f930c8a9fd ""
+  "lec2.aux" 1739888362 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "lec2.tex" 1739888359 10234 44f3e271cd061b8e6acb90f930c8a9fd ""
+  "preamble.tex" 0 -1 0 ""
+  (generated)
+  "lec2.aux"
+  "lec2.log"
+  "lec2.pdf"
+  (rewritten before read)

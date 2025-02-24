@@ -1,0 +1,186 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\newpage
+\lecture{2}{17.02}{}
+Пусть $A=(a_{ij})_{m}^{n} \neq \Theta$
+\begin{definition}
+    $A$ имеет трацпецевидную форму (ТФ), если $\exists r\in\mathbb{N} : 1\leqslant r\leqslant min(m,n),\text{ причем } \begin{cases}a_{ii} \neq 0, i=\overline{1,r}\\ a_{ij}=0,i>r\\a_{ij}=0,i>j\end{cases}$
+\end{definition}
+\noindent Примеры: $\begin{pmatrix}
+    1&2&3&&5\\ 
+    0&1&2&3&4\\ 
+    0&0&0&0&0
+\end{pmatrix}\quad \begin{pmatrix}
+     1&0&0&0&0\\ 
+     0&1&0&0&0\\ 
+     0&0&0&0&0
+\end{pmatrix}\quad \begin{pmatrix}
+     1&0\\
+     0&1
+\end{pmatrix}$
+Очевидно, что если $A$ имеет ТФ, то $RgA=r$.
+\begin{definition}
+    Если $A=\Theta,$ считаем, что она имеет ТФ.
+\end{definition}
+\begin{theorem}
+    Любую $A=(a_{ij})_{m}^{n}$ можно элементарными преобразованиями привести к ТФ.
+\end{theorem}
+\begin{proof}
+    Если $A=\Theta,$ то она уже имеет ТФ. Пусть $A\neq\Theta.$ $\exists a_{ij}\neq 0.$ Переставим строки $i \text{ и } 1$ и столбцы $j \text{ и } 1$, добиваемся, что $A\sim\tilde{A}=\begin{pmatrix}
+        \tilde{a}_{11} &\dots&\tilde{a}_{1n}\\
+        \vdots&\ddots&\vdots\\ 
+        \tilde{a}_{m1} &\dots&\tilde{a}_{mn}
+    \end{pmatrix}$, где $\tilde{a}_{11} =a_{ij}\neq 0.$ \\ Далее для $i=\overline{2,m} \quad \tilde{\vec{a_{i}}}\sim\tilde{\tilde{\vec{a_{i}}}}=\vec{a_{i}}- \frac{\tilde{\vec{a}}_{i1}}{\tilde{\vec{a}}_{11}} \tilde{\vec{a}}_{1}$. В результате этого получим: 
+    $\tilde{A} \sim \tilde{\tilde{A}}= \begin{pmatrix}
+        \tilde{a}_{11}&\dots&\tilde{a}_{1n}\\
+        0&\multicolumn{2}{c}{\multirow{3}{*}{$\begin{pmatrix}
+            A_{1}
+        \end{pmatrix}$}}\\ 
+        \vdots & & \\ 
+        0& 
+    \end{pmatrix}$\\ Если $A_{1}=\Theta, \text{ то } \tilde{\tilde{A}} \text{ имеет ТФ }$. Если $A_{1}\neq \Theta,$ то аналогичные действия  производим со строками и столбцами с номерами $\geqslant 2 \dots \text{ За конечно число шагов получим ТФ.}$
+\end{proof}
+
+Отсюда получаем метод элементарных преобразований вычисления ранга матрицы. $A\sim B$ - имеет ТФ. $RgA=RgB=r$
+
+\section{Вычисление обратной матрицы методом элементарных преобразований.} 
+\noindent Пусть $A=(a_{ij})_{n}^{n}.$
+\begin{theorem}
+    $A$ приводится к $E$ элементарными преобразованиями \underline{только лишь строк} $\Leftrightarrow$ $detA \neq  0$
+\end{theorem}
+\begin{proof}
+    $\Rightarrow$ Пусть $A\sim E.$ Тогда $det E=1 \neq 0,\text{ то } detA\neq 0\;(\text{если предположить, что } detA = 0, \text{ то из свойств определителя будет следовать, что } detE = 0 -\text{ противориче})$\\
+    $\Leftarrow$ Пусть $detA\neq 0,\text{ тогда } \underset{\downarrow}{a_{1}}\neq 0$. Тогда $\exists a_{i1}\neq 0$. Путем перестановки 1-ой и $i$-ой строки получаеем $A\sim B=\begin{pmatrix}
+        b_{11}& \dots & b_{1n}\\ 
+        \vdots&\ddots&\vdots\\
+        b_{n1}&\dots&b_{nn} 
+    \end{pmatrix}$ $b_{11}=a_{i1}\neq 0.$ Далее делим $\vec{b_{1}}$ на $b_{11}\neq 0$. Тогда $B\sim C=\begin{pmatrix}
+        1&c_{12}&\dots&c_{1n}\\
+        \vdots&\ddots&\ddots&\vdots\\
+        c_{n1}&c_{n2}&\dots&c_{nn}
+    \end{pmatrix}$. Далее для $i=\overline{2,n}$ делаем $\vec{c_{i}}\sim\vec{d_{i}}=\vec{c_{i}}-c_{i1}\vec{c_{1}}$. Тогда $C\sim D =\begin{pmatrix}
+        1&c_{12}&\dots&c_{1n}\\
+        0&\multicolumn{3}{c}{\multirow{3}{*}{$\begin{pmatrix}
+            A_{1}
+        \end{pmatrix}$}}\\  
+        \vdots & & \\ 
+        0
+    \end{pmatrix}$ \\$|detA|=|b_{11}||detC|=|b_{11}||detD|=|b_{11}|* 1 |detA_{1}|\implies detA_{1} \neq 0$. Далее аналогичным образом $A_{1}\sim B_{1}\sim C_{1}\sim D_{1}=\begin{pmatrix}
+        1& &\dots&\\
+        0&1&\dots&\\ 
+        \vdots&0&\multicolumn{2}{c}{\multirow{3}{*}{$\begin{pmatrix}
+            A_{2}
+        \end{pmatrix}$}}\\ 
+        \vdots&\vdots\\
+        0&0&
+    \end{pmatrix}$$detA_{2} \neq  0$. За конечное число шагов (n) придем к $A\sim D_{n}=\begin{pmatrix}
+        1&\dots&\dots&\dots&\dots\\ 
+        0&1 &\dots&\dots&\dots\\ 
+        0&0&1&\dots&\dots\\
+        \vdots&\vdots&\vdots&\ddots&\dots\\
+        0&0&\dots&0&1
+    \end{pmatrix}$ Мы осуществили прямой ход алгоритма Гауссова исключения (обнулили элементы ниже главной диагонали.) Сделаем обратный ход симметричным образом (обнуляем элементы выше главной диагонали). \\ 
+    $D_{n}=\begin{pmatrix}
+        1&d_{12}&\dots&d_{1n}\\
+        0&1&\dots&\dots\\ 
+        0&0&\ddots&d_{n-1n}\\ 
+        0&0&\dots&1 
+    \end{pmatrix}$ Для строк $i=\overline{n-1},\overline{1}\quad \vec{d_{i}}\sim\vec{f_{i}}=\vec{{d_{i}}}-\vec{d_{n}}d_{in}.$ Тогда $D_{n}-F_{N}=\begin{pmatrix}
+        1&\dots&0\\ 
+        0&\ddots&0\\ 
+        0&\dots&1
+    \end{pmatrix}$\\ За конечное (n-1) число шагов придем к $F_{n}\sim F_{n-1}\dots\sim F_{1}=\begin{pmatrix}
+        1&0&\dots&0\\ 
+        0&1&\dots&0\\
+        0&0&\ddots&0\\ 
+        0&0&\dots&1
+    \end{pmatrix}$
+\end{proof}
+\vspace{0.5cm}
+Рассмотрим $B_{pq}=(b_{ij})_{m}^{n}: b_{ij}=\delta_{ip}\delta_{jq}\; \forall i,j=\overline{1,n}$
+$\begin{pmatrix}
+    0&\dots&0&\dots&0\\ 
+    0&\dots&0&\dots&0 \\ 
+    0&\dots&1&\dots& 0\\
+    0&\dots&0&\dots&0
+\end{pmatrix}$ (единственный отличный от нуля элемент находится в $p$-ой строке и $q$-том столбце) \\Пусть $A=(a_{ij})_{n}^{n},\; C=B_{pq}A=(c_{ij})_{m}^{n}$. Тогда $c_{ij}=\sum_{k=1}^{n}b_{ik}a_{kj}=\sum_{k=1}^{n}\delta_{ip}\delta_{kq}a_{kj}=\delta_{ip}a_{qj}$.
+\\Отсюда: $\quad $$\begin{aligned}&\vec{c_{i}}=\vec{0},\text{ если }i\neq p. \\&А при i=p \implies c_{pj} = a_{qj} \; \forall j=\overline{1,n},\text{ т.е } \vec{c_{p}}=\vec{a_{q}}\end{aligned}$ \\ 
+\vspace{0.5cm}
+Т.е $ B_{pq} A=\begin{pmatrix}
+    \vec{0}\\ 
+    \vec{0}\\ 
+    \vdots \\ 
+    \vec{a_{q}}\\
+    \vdots\\
+    \vec{0}
+\end{pmatrix}$($\vec{a_{q}}$ находится на p-ой строке)$\qquad $Как поменять местами строки $k$ и $l$?\\ 
+$(E-B_{kk}-B_{ll}+B_{ik}+B_{kl})A=\underbrace{EA}_{A}-\underbrace{B_{kk}A}_{\substack{\text{вычитает k-ую } \\ \text{строку} \\ \text{из k-ой строки}}}-B_{ll}A+B_{lk}A+\underbrace{B_{kl}A}_{\substack{\text{прибавляет k-ую} \\ \text{строку }\\ \text{к l-ой строке}}}$ Т.е перестановка двух строк $k $ и $l$ матрицы $A$ осуществляется умножением ее слева на \fbox{$P=E-B_{kk}-B_{ll}+B_{lk}+B_{kl}$}.
+\\ Умножение $k$-ой строки на число $\lambda$ реализуется матрицей \fbox{$P=E-B_{kk}+\lambda B_{kk}=E+(\lambda-1)B_{kk}$}
+\\ Добавление $k$-ой строки $l$-ой строки, умноженной на $\lambda$, осуществляется матрицей \fbox{$P=E+\lambda B_{kl}$}
+\begin{theorem}
+    Пусть матрица $A$ некоторыми преобразованиями только лишь строк приводится к $E$. Тогда $E$ \underline{этими же} преобразованиями приводится к $A^{-1}$
+\end{theorem}
+\begin{proof}
+    Пусть $P_{1}\dots P_{k}$ - матрицы элементарных преобразований строк, которыми $A$ приводится к $E$, т.е  $P_{k}(\dots P_{2}(P_{1}A))=E$. 
+    
+    \noindent По свойству ассоциативности матричного умножения, получим $(P_{k}\dots P_{2}P_{1})A=E\quad(*)$. 
+    \\ $A\sim E\implies detA \neq 0 \Leftrightarrow \exists A^{-1}$. Домножим обе части (*) справа на $A^{-1}$. \\ 
+    $((P_{k}\dots P_{2}P_{1})A)A^{-1}=EA^{-1}=A^{-1}\implies (P_{k}\dots P_{2}P_{1})(AA^{-1})=A^{-1}\implies\\ \implies (P_{k} \dots P_{2}P_{1})E=A^{-1}\implies P_{k}(\dots P_{2}(P_{1}E))=A^{-1}$. 
+
+\end{proof}
+\noindent Примеры реализации: $A=\begin{pmatrix}
+    1&2&3 \\ 
+    3&2&1 \\ 
+    1&1&-1 
+\end{pmatrix}$. Запишем $(A|E)=\begin{pmatrix}[ccc|ccc]
+    1&2&3&1&0&0\\ 
+    3&2&1&0&1&0\\  
+    1&1&-1&0&0&1\end{pmatrix}\underset{\text{строк}}{\sim}\begin{pmatrix}[ccc|ccc]
+        1&2&3&1&0&0\\ 
+        0&-4&-8&-3&1&0\\ 
+        0&-1&-4&-1&0&1
+    \end{pmatrix}\sim\\\sim\begin{pmatrix}[ccc|ccc]
+        1&2&3&1&0&0\\ 
+        0&1&4&1&0&-1\\ 
+        0&-4&-8&-3&1&0
+    \end{pmatrix}\sim\begin{pmatrix}[ccc|ccc]
+        1&2&3&1&0&0\\ 
+        0&1&4&1&0&-1\\ 
+        0&0&8&1&1&-4
+    \end{pmatrix}\sim\begin{pmatrix}[ccc|ccc]
+        1&2&3&1&0&0\\ 
+        0&1&4&1&0&-1\\ 
+        0&0&1&\frac{1}{8}&\frac{1}{8}&-\frac{1}{2}
+    \end{pmatrix}\sim\begin{pmatrix}[ccc|ccc]
+        1&2&0&-\frac{5}{8}&-\frac{3}{8}&\frac{3}{2}\\[6pt]
+        0&1&0&\frac{1}{2}&-\frac{1}{2}&1\\[6pt]
+        0&0&1&\frac{1}{8}&\frac{1}{8}&-\frac{1}{2}
+    \end{pmatrix}\sim\\\sim\begin{pmatrix}[ccc|ccc]
+        1&0&0&-\frac{3}{8}&\frac{5}{8}&-\frac{1}{2}\\[6pt] 
+        0&1&0&\frac{1}{2}&-\frac{1}{2}&1\\[6pt] 
+        0&0&1&\frac{1}{8}&\frac{1}{8}&-\frac{1}{2}
+    \end{pmatrix}$ $\quad A^{-1}=\begin{pmatrix}
+        -\frac{3}{8}&\frac{5}{8}&-\frac{1}{2}\\[6pt] 
+        \frac{1}{2}&-\frac{1}{2}&1\\[6pt] 
+        \frac{1}{8}&\frac{1}{8}&-\frac{1}{2}
+    \end{pmatrix}$$\quad$ Краткая запись $(A|E)\underset{\text{строк}}{\sim}(E|A^{-1})$
+\vspace{0.5cm}
+    \begin{corollary}
+    $A=(a_{ij})_{n}^{n},\; detA \neq 0 , B=(b_{ij})_{n}^{n}. \underset{\downarrow}{x}=\begin{pmatrix}
+        x_{1}\\ 
+        \vdots\\
+        x_{n}
+    \end{pmatrix}$, тогда: $\; \begin{aligned}&(A|B)\underset{\text{строк}}{\sim}(E|A^{-1}B)\\&(A|\underset{\downarrow}{x})\underset{\text{строк}}{\sim}(E|A^{-1}\underset{\downarrow}{x})\end{aligned}$
+\end{corollary}
+\begin{proof}
+    Самостоятельно доказать с помощью матриц $P$.
+\end{proof}
+
+
+
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}
+\end{document}

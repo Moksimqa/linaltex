@@ -1,0 +1,232 @@
+\documentclass[../main.tex]{subfiles}
+\author{Автор верстки: @moksimqa}
+\begin{document}
+\lecture{1}{10.02}{}
+\section{ЛЗ и ЛНЗ строк(столбцов) матриц}
+$A=\begin{pmatrix}
+    a_{11}&\dots&a_{1n}\\ 
+    \vdots&\ddots&\vdots\\
+    a_{m1}&\dots&a_{mn}
+\end{pmatrix}$=$\begin{pmatrix}
+    \vec{a_{1}}\\ 
+    \vdots\\ 
+    \vec{a_{m}}
+\end{pmatrix}$=$\begin{pmatrix}
+    \underset{\downarrow}{a_{1}}&\dots&\underset{\downarrow}{a_{n}}
+\end{pmatrix}$
+$\qquad \vec{a_{i}}=\begin{pmatrix}
+    a_{i1}&\dots&a_{in}
+\end{pmatrix}\qquad \underset{\downarrow}{a_{j}}=\begin{pmatrix}
+    a_{ij}\\ 
+    \vdots\\ 
+    a_{mj}
+\end{pmatrix}$
+\begin{definition}
+    Система столбцов $\underset{\downarrow}{a_{j1}}\dots \underset{\downarrow}{a_{jn}} \text{ называется ЛЗ, если } \exists \text{ нетривиальная ЛК этих столбцов, дающая }\\ \text{нулевой столбец. }$ $\exists \alpha_{1},\dots,\alpha_{n} \in \mathbb{R}(\mathbb{C}): |\alpha_{1}|+\dots+|\alpha_{n}| \neq  0, \text{ причем } \alpha_{1} \underset{\downarrow}{a_{j1}}+\dots+\alpha_{k}\underset{\downarrow}{a_{jk}}=\underset{\downarrow}{0}=\begin{pmatrix}
+        0\\ 
+        \vdots\\ 
+        0
+    \end{pmatrix}.$ Если это равенство возможно только при $\alpha_{1}=\dots=\alpha_{n}=0,$ то система столбцов называется ЛНЗ.
+\end{definition}
+\begin{definition}
+    Аналогично определяется ЛЗ и ЛНЗ строк матрицы.
+\end{definition}
+\begin{lemma}
+    Если система столбцов содержит нулевой столбец, то она ЛЗ.
+\end{lemma}
+\begin{lemma}
+    Если система столбцов содержит ЛЗ подсистему, то она тоже ЛЗ.
+\end{lemma}
+\begin{lemma}
+    Любая подсистема ЛНЗ системы столбцов является ЛНЗ.
+\end{lemma}
+\begin{theorem}[Критерий ЛЗ]
+    Система столбцов ЛЗ $\Leftrightarrow$ один из них является ЛК комбинацией остальных.
+\end{theorem}
+
+Для строк аналогично
+\section{Ранг матрицы.}
+$A=(a_{ij})_{m}^{n}.\quad 1\leqslant k\leqslant min(m,n).$
+Выберем в матрице $A$ произвольно $k$ строк: $i_{1},\dots,i_{k}$ и $k$ столбцов и рассмотрим матрицу $B,$ распологающуюся на этих строк и  и в этих столбцах. 
+\begin{definition}
+    Число $M\begin{matrix}
+        j_{1}\cdots j_{k}\\
+        i_{1}\cdots i_{k}
+    \end{matrix} = detB$ называется минором k-ого порядка матрицы $A.$ Краткое обозначение $\tcircle{$M_{k}$}$
+\end{definition} 
+
+\begin{lemma}
+    Если в матрице $A$ все $\tcircle{$M_{k}$}=0,$ то все $\tcircle{$M_{k+1}$}=0$ (если они имеются).
+\end{lemma}
+\begin{proof}
+    поскольку любой $\tcircle{$M_{k+1}$}$ является ЛК $(k+1)$ минора $\tcircle{$M_{k}$},$ а все $\tcircle{$M_{k}$}=0, \implies \tcircle{$M_{k+1}$}=0.$
+\end{proof}
+
+\begin{definition}
+    Рангом ненулевой матрицы $A=(a_{ij})_{m}^{n}$ называется такое число $r\in\mathbb{N}: \\
+        1) \exists M_{r} \neq 0 \qquad \qquad
+        2) \forall \tcircle{$M_{r+1}$}=0(\text{если они имеются})$
+\end{definition}
+\begin{definition}
+    Ранг нулевой матрицы по определению полагают равным нулю.
+\end{definition}
+Обозначение. $RgA,rgA,rangA,rankA$
+
+Пример. $A=\begin{pmatrix}
+    1&2&3&4&4&4\\ 
+    5&6&7&9&9&9\\ 
+    4&4&4&5&5&5
+\end{pmatrix}=M_{12}^{12}=\begin{vmatrix}
+    1&2\\ 
+    5&6
+\end{vmatrix}=-4$$\quad \exists M_{12}\neq 0 \forall M_{3}=0,\text{ т.к }\vec{a_{3}}=\vec{a_{2}}=\vec{a_{1}} \implies RgA=2$ 
+
+\begin{definition}
+    Пусть $RgA=r.$ Любой ненулевой $\tcircle{$M_{r}$}$ называется базисным, а строки и столбцы, на которых он располагается соотвественно называются базисными строками и базисными столбцами.
+\end{definition}
+\vspace{1cm}
+\begin{theorem} 
+   \quad 
+   $ \begin{aligned}&1. \text{Базисные строки и базисные столбцы матрицы } A \text{ ЛНЗ}. \\ 
+        &2. \text{Любые строки(столбцы) матрицы } A \text{являются ЛК базиса}.
+    \end{aligned}$
+\end{theorem}
+
+\begin{proof}
+    1.(от противного)(для столбцов). Пусть базисные столбцы ЛЗ. Тогда один из них является ЛК остальных. Тогда в $\tcircle{$M_{r}$}$, который располагается в этих столбцах. Один столбец также является ЛК остальных$\implies \tcircle{$M_{r}$}=0$ (по свойству $det$) - противоречие $\implies$ базисные столбцы ЛНЗ. 
+
+    \noindent 2. Пусть $M\begin{matrix}
+        i_{1}\dots i_{r}\\ 
+        j_{1}\dots j_{r}
+    \end{matrix}\neq =0$ Рассмотрим $D=\begin{pmatrix}
+        a_{i1j1} &\dots& a_{i1jr} & \dots&a_{i_{1}j} \\ 
+        \vdots &\ddots&\vdots &\ddots&\vdots\\
+        a_{irj1} &\dots& a_{irjr} & \dots&a_{i_{r}j}\\ 
+        a_{ij_{1}} &\dots& a_{ij_{r}} & \dots&a_{ij}
+    \end{pmatrix}$. Возможны случаи: \\ 
+    а)$\begin{cases}
+    {i\notin{i_{1}\dots i_{r}}}\\
+    i\notin{j_{1}\dots j_{r}}
+    \end{cases}$ $\implies detD=\tcircle{$M_{r+1}$}=0$
+    
+    \noindent б) $\left[\begin{gathered}
+        i\in{i_{1}\dots i_{r}}\\
+        j\in{j_{1}\dots j_{r}}
+    \end{gathered}\right.$ $\implies detD=0$ (по свойству $det$). \\ 
+    С другой стороны $detD=(\text{по последней стркое})=c_{j1}a_{ij1}+\dots+c_{jr}a_{ijr}+\dots+c_{j}a_{ij}=0$\\ 
+    $c_{jl}$ - алгебраическое дополнение $j_{l}$ элемента последней строки.(не зависит от $i$)
+    $c_{j}=M\begin{matrix}
+        i_{1}\dots i_{r}\\ 
+        j_{1}\dots j_{r}
+    \end{matrix}$ $\implies \underset{\downarrow}{c_{j_{1}}a_{j_{1}}}+\dots+c_{jr}a_{jr}+\tcircle{$M_{r}$}a_{j}=0\implies a_{j}=-\frac{c_{j_{1}}}{\tcircle{$M_{r}$}}a_{j_{1}}-\dots-\frac{c_{jr}}{\tcircle{$M_{r}$}}a_{jr}$, т.е $\forall j=1,n \quad j-$тый столбей является ЛК базисных. Для строк аналогично. 
+
+\end{proof}
+
+\begin{corollary}
+    Квадратная $A$ вырожденная $\Leftrightarrow$ ее строки (столбцы) ЛЗ.
+\end{corollary}
+\begin{proof}
+    $\implies A=(a_{ij})_{m}^{n}-$вырожденная, т.е $detA=0\implies \text{ ед. } \tcircle{$M_{r}$}=detA=0\implies RgA =r<n\implies \exists \tcircle{$M_{r}$}\neq 0-\text{ базисный  минор } \implies \exists \text{ строка матрицы }A,$ являющаяся ЛК базисных $\implies$ строки ЛЗ.
+    
+    \noindent $\impliedby \text{строки ЛЗ} \implies detA=0,$ т.е $A - $вырожденная.(Для столбцов аналогично.)
+\end{proof}
+
+\noindent Пример. $Rg\begin{pmatrix}
+    1&2&3&4&4&4\\ 
+    5&6&7&9&9&9\\
+    4&4&4&5&5&5
+\end{pmatrix}$ $= 2.\qquad M_{12}^{12}=\begin{vmatrix}
+    1&2\\ 
+    5&6
+\end{vmatrix}=\neq 0\implies \text{ 1 и 2 строки ЛНЗ и 1 и 2 столбец ЛНЗ. }.$$ M_{12}^{45}=\begin{vmatrix}
+    4&4\\ 
+    9&9
+\end{vmatrix}$$=0$ отсюда не следует, что 1 и 2 строки ЛЗ. Но 4 и 5 столбцы ЛЗ. Любой минор 2-го порядка на них будет нулевым. 
+
+\begin{corollary}
+    Если $RgA = r,$ то любые $(r+1)$ строка или $(r+1)$(если они найдутся) столбец являются ЛЗ.
+\end{corollary}
+\begin{proof}
+    Пусть имеется $(r+1)$ ЛНЗ столбец $\underset{\downarrow}{a_{j_{1}}}\dots a_{j_{r+1}}$. Допустим $m\geqslant r+1.\text{ Тогда }\exists \tcircle{$M_{r+1}$}, \text{ расположенный на этих столбцах }: \tcircle{$M_{r+1}$} \neq 0\implies RgA \geqslant r+1 - \text{противоречие.}$
+
+    \noindent Пусть $m=r$ и имеется $(r+1)$ ЛНЗ столбец $\underset{\downarrow}{a_{j_{1}}}\dots a_{r+1}.$ Тогда если среди этих столбцов имееются базисные (т.е на них $\exists \tcircle{$M_{r}$}\neq 0$), то оставшийся столбец является их ЛК $\implies$ система столбцов ЛЗ.
+    Если же на этих столбцах $\forall \tcircle{$M_{r}$} = 0,$ то система $r $ столбцов - ЛЗ. $\implies$ система $r+1$ столбцов тоже ЛЗ.
+\end{proof}
+\begin{theorem}
+    Ранг матрицы $A$ равен максимальному числу ЛНЗ строк (равен максимальному числу ЛНЗ столбцов)
+\end{theorem}
+\begin{proof}
+    Самостоятельно.
+\end{proof}
+
+\begin{corollary}
+    max число ЛНЗ строк = max числу ЛНЗ столбцов в любой матрице.
+\end{corollary}
+
+\section{Элементарные преобразования строк и столбцов матрицы.}
+    
+\noindent К элементарным преобразованиям строк матрицы A относятся следующие операции:
+\begin{enumerate}
+    \item Обмен местами двух строк матрицы.
+    \item Умножение строки на ненулевое число.
+    \item Прибавление к одной строке другой строки, умноженной на любое число.
+\end{enumerate}
+Для столбцов аналогично.
+
+Тот факт, что  $B$ получена из $A$ элементарными преобразованиям обозначается так:$A\sim B$
+\begin{theorem}
+    Если $A\sim B$, то $B\sim A$
+\end{theorem}
+\begin{theorem}
+    Если $A\sim B$ и $B\sim C$, то $A\sim C$
+\end{theorem}
+\begin{proof}
+    Самостоятельно.
+\end{proof}
+\begin{theorem}
+    Если $A \sim  B,$ то $RgA=RgB$
+\end{theorem}
+\begin{proof}
+    1,2 не изменяет колв-о ЛНЗ строк (столбцов). 
+    
+    3. БОО можно считать, что $B$ получена из $A$ путем добавления ко 2-ой строке первой строки, умноженной на $\alpha$. 
+    
+    $A=\begin{pmatrix}
+        \vec{a_{1}}\\
+        \vec{a_{2}}\\
+        \vdots\\ 
+        \vec{a_{m}}
+    \end{pmatrix}$, $B=\begin{pmatrix}
+        \vec{b}_{{1}}\\ 
+        \vec{b}_{2}\\
+        \vdots \\
+        \vec{b}_{m}
+    \end{pmatrix}=\begin{pmatrix}
+        \vec{a_{1}} \\ 
+        \vec{a_{2}}+\lambda \vec{a_{1}} \\ 
+        \vdots \\ 
+        \vec{a_{m}}
+    \end{pmatrix}$
+    Пусть $RgA=r$. $\begin{aligned}
+        & \tcircle{$M$}-\text{ минор матрицы $A$} \\ 
+        & \tcircle{$\tilde{M}$}- \text{ минор матрицы $B$ }
+    \end{aligned}$ 
+    
+    Возможны три случая:
+
+    1) Если $\tcircle{$\tilde{M}_{r+1}$}$ не содержит $\vec{b}_{2},$ то $\tcircle{$\tilde{M}_{r+1}$}=\tcircle{$M_{r+1}$}=0$
+
+    2)Если $\tcircle{$\tilde{M}_{r+1}$}$ содержит $\vec{b}_{2}$, но не содержит $\vec{b}_{1}$, тогда $\tcircle{$\tilde{M}_{r+1}$}=\underset{\substack{\text{минор $A$, который} \\ \text{содержит $\vec{a}_{1},$} \\ \text{но не содержит $\vec{a}_{2}$}}}{\tcircle{$M_{r+1}$}}+\lambda \underset{\substack{\text{минор $A$, который} \\ \text{содержит $\vec{a}_{2},$}\\ \text{но не содержит $\vec{a}_{1}$}}}{\tcircle{$M_{r+1}$}}=0+\lambda * 0 =0$
+
+    3)Если $\tcircle{$\tilde{M}_{r+1}$}$ содержит $\vec{b}_{1}$ и $\vec{b}_{2}$, то $\tcircle{$\tilde{M}_{r+1}$}=\underset{\substack{\text{минор $A$,} \\ \text{содержащий $\vec{a}_{1}$ и $\vec{a}_{2}$}}}{\tcircle{$M_{r+1}$}}+\lambda \underset{\substack{\text{имеет две} \\ \text{одинаковые строки}}}{detC}$
+
+    Отсюда $RgB \leqslant RgA$. Далее поскольку $A\sim B$, то $B\sim A\implies $ рассуждая аналогично, получим $RgA\leqslant RgB\implies \begin{cases}
+        RgA\leqslant RgB \\ 
+        RgB\leqslant RgA
+    \end{cases}\implies \fbox{RgA=RgB}$
+\end{proof} 
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}
+\end{document}
