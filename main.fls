@@ -415,6 +415,53 @@ INPUT .\tex\chapter2\lec3.tex
 INPUT tex\chapter2\lec3.tex
 INPUT .\tex\chapter2\lec3.tex
 INPUT tex\chapter2\lec3.tex
+INPUT .\tex\chapter2\lec4.tex
+INPUT tex\chapter2\lec4.tex
+INPUT .\tex\chapter2\lec4.tex
+INPUT tex\chapter2\lec4.tex
+INPUT .\tex\chapter2\lec5.tex
+INPUT tex\chapter2\lec5.tex
+INPUT .\tex\chapter2\lec5.tex
+INPUT tex\chapter2\lec5.tex
+INPUT .\tex\chapter3.tex
+INPUT tex\chapter3.tex
+INPUT .\tex\chapter3.tex
+INPUT tex\chapter3.tex
+INPUT .\tex\chapter3\lec5'.tex
+INPUT tex\chapter3\lec5'.tex
+INPUT .\tex\chapter3\lec5'.tex
+INPUT tex\chapter3\lec5'.tex
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm5.tfm
+INPUT .\tex\chapter3\lec6.tex
+INPUT tex\chapter3\lec6.tex
+INPUT .\tex\chapter3\lec6.tex
+INPUT tex\chapter3\lec6.tex
+INPUT .\tex\chapter3\lec7.tex
+INPUT tex\chapter3\lec7.tex
+INPUT .\tex\chapter3\lec7.tex
+INPUT tex\chapter3\lec7.tex
+INPUT .\tex\chapter3\lec8.tex
+INPUT tex\chapter3\lec8.tex
+INPUT .\tex\chapter3\lec8.tex
+INPUT tex\chapter3\lec8.tex
+INPUT .\tex\chapter4.tex
+INPUT tex\chapter4.tex
+INPUT .\tex\chapter4.tex
+INPUT tex\chapter4.tex
+INPUT .\tex\chapter4\lec8'.tex
+INPUT tex\chapter4\lec8'.tex
+INPUT .\tex\chapter4\lec8'.tex
+INPUT tex\chapter4\lec8'.tex
+INPUT .\tex\chapter4\lec9.tex
+INPUT tex\chapter4\lec9.tex
+INPUT .\tex\chapter4\lec9.tex
+INPUT tex\chapter4\lec9.tex
 INPUT main.aux
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati0700.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati0700.pk
@@ -456,7 +503,11 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy5.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy5.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm7.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm7.pfb

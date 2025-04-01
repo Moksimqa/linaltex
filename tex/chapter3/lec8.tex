@@ -1,0 +1,27 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\newpage
+\lecture{8}{24.03}{}
+\begin{theorem}
+    $f: \V \to k$ является ЛФ $\Leftrightarrow \forall x \in \V \implies f(x)=\alpha_{1}\xi_{1} + \dots+ \alpha_{n}\xi_{n}$, где $\alpha_{1},\dots,\alpha_{n}\in k $ - определенные числа (не зависящие от $x$), а ($\xi_{1},\dots,\xi_{n}$) - координаты $x$ в некотором базисе. 
+\end{theorem}
+\begin{proof}
+    Пусть $\mathcal{E}$ - базис, в котором заданы координаты $x$, т.е $x = [\mathcal{E}]\underset{\downarrow}{\xi}$. 
+    \\$\tcircle{$\implies$}$ $\alpha_{k}=f(e_{k})\; k=\overline{1,n}$ (см. выше)
+    \\$\tcircle{$\impliedby$}$ $f: \V \to k$. Пусть $x=[\mathcal{E}]\underset{\downarrow}{\xi}, y = [\mathcal{E}]\underset{\downarrow}{\eta}$, тогда $f(x) = \vec{\alpha}\underset{\downarrow}{\xi}, f(y) = \vec{\alpha}\underset{\downarrow}{\eta}, f(x+y) = \vec{\alpha}(\underset{\downarrow}{\xi} + \underset{\downarrow}{\eta}) = \vec{\alpha}\underset{\downarrow}{\xi}+\vec{\alpha}\underset{\downarrow}{\eta}=f(x)+f(y)$.
+    \\$f(\lambda x )= \lambda f(x)$ - аналогично. Самостоятельно. 
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

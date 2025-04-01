@@ -1,0 +1,198 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{4}{3.03}{}
+Пример $\begin{cases}
+    x_{1}+x_{2}+x_{3}+x_{4}=4 \\ 
+    x_{1}+x_{2}+\phantom{x_{3}+x_{4}}=2
+\end{cases}$
+\\ $\begin{pmatrix}[cccc|c]
+    1 & 1 & 1 & 1 & 4 \\ 
+    1 & 1 & 0 & 0 & 2
+\end{pmatrix}\sim \begin{pmatrix}[cccc|c]
+    1 & 1 & 1 & 1 & 4 \\ 
+    0 & 0 & -1 & -1 & -2
+\end{pmatrix}\sim \begin{pmatrix}[cccc|c]
+    x_{1}& x_{3}& x_{2}&x_{4} \\ 
+    1& 1 & 1 & 1 &4 \\
+    0 & -1 & 0 & -1 & -2
+\end{pmatrix}\sim \begin{pmatrix}[cc|cc|c]
+    1 & 0  & 1 & 0 & 2 \\
+    0 & 1 & 0 & 1 & 2
+\end{pmatrix}\\ RgA=2, n = 4 $
+\\ Исходная СЛАУ$\sim\begin{cases}
+    x_{1}=2-x_{2}\\ 
+    x_{3}=2-x_{4}
+\end{cases} \begin{aligned}\qquad &\text{Общее решение в координатной форме:} \begin{cases}
+    x_{1} = 2-C_{1} \\ 
+    x_{3} = 2 - C_{2} \\
+    x_{2}= C_{1} \\ 
+    x_{4} = C_{2} 
+\end{cases} \\ &\text{В векторной форме: } \underset{\downarrow}{x}=\begin{pmatrix}
+    2 -C_{1} \\ 
+    C_{1} \\ 
+    2- C_{2}\\ 
+    C_{2}
+\end{pmatrix}\; C_{1},C_{2},C_{3} \in \R \end{aligned}$
+
+
+\section{Теорема Кронекера-Капелли.}
+\begin{theorem}[Критейрий совместности СЛАУ]
+    СЛАУ (1) $A\underset{\downarrow}{x}=\underset{\downarrow}{b}$ совместна $\Leftrightarrow RgA = Rg(A|\underset{\downarrow}{b})$
+    \\($Rg(\underset{\downarrow}{a_{1}},\dots,\underset{\downarrow}{a_{n}})=Rg(\underset{\downarrow}{a_{1}},\dots,\underset{\downarrow}{a_{n}}|\underset{\downarrow}{b})$)
+
+\end{theorem}
+\begin{proof}
+    СЛАУ (1) можно записать в виде эквивалентой форме: $(2) \; x_{1} \underset{\downarrow}{a_{1}}+\dots+x_{n}\underset{\downarrow}{a_{n}}=\underset{\downarrow}{b}$    
+    \\ $\tcircle{$\implies$}$ Пусть СЛАУ (1) совместна $\implies \exists x_{1},\dots,x_{n}: $ выполнено $(2)\implies\underset{\downarrow}{b}$ является ЛК $\underset{\downarrow}{a_{1}},\dots,\underset{\downarrow}{a_{n}} \implies \underset{\downarrow}{b}$ линейно зависит от $\underset{\downarrow}{a_{1}},\dots,\underset{\downarrow}{a_{n}}\implies $ число ЛНЗ столбцов в системах $\{\underset{\downarrow}{a_{1}},\dots,\underset{\downarrow}{a_{n}}\}$ и $\{\underset{\downarrow}{a_{1}}.\dots,\underset{\downarrow}{a_{n}|\underset{\downarrow}{b}}\} $ одинаковое $\implies RgA=Rg(A|\underset{\downarrow}{b})$
+    \\ $\tcircle{$\impliedby$}$ \;$RgA=Rg(A|\underset{\downarrow}{b})=r\implies$ в области матрицы $A\; \exists \tcircle{$M_{r}$}\neq 0$, его столбцы ЛНЗ и любые столбцы матрицы $A$ являются ЛК столбцов, входящих в этот базисный минор $\implies \underset{\downarrow}{b}=\alpha_{1}\underset{\downarrow}{a}_{i1}+\dots+a_{r}\underset{\downarrow}{a}_{ir}\implies$ (2) имеет решение $\implies $ (1) совместна.  
+\end{proof}
+
+\newpage \section{Однородные СЛАУ.}
+\begin{definition}
+    СЛАУ $A \underset{\downarrow}{x}= \underset{\downarrow}{b}$ называется \underline{однородной}, если $\underset{\downarrow}{b}=\underset{\downarrow}{0}$, т.е $A \underset{\downarrow}{x}= \underset{\downarrow}{0}$ ($1_{0}$) - ОСЛАУ
+\end{definition}
+Замечание. ОСЛАУ всегда совместна. Ее решение $\underset{\downarrow}{x}=\underset{\downarrow}{0}$ называется \underline{тривиальным}. Прочие решения, если они имеются, называются \underline{нетривиальными}.
+\begin{theorem}[О ЛК решений ОСЛАУ]
+    Если $\underset{\downarrow}{x}^{(1)},\dots, \underset{\downarrow}{x}^{(k)}$ - любые решение ОСЛАУ, то $\forall C_{1},\dots,C_{k}\in \\ \in \R(\C)\implies C_{1}\underset{\downarrow}{x}^{(1)}+\dots+C_{k}\underset{\downarrow}{x}^{(k)}=\underset{\downarrow}{\alpha}$ - тоже решение этой ОСЛАУ.
+\end{theorem}
+\begin{proof}
+    $A\underset{\downarrow}{a}=A(C_{1}\underset{\downarrow}{x}^{(1)}+\dots+C_{k}\underset{\downarrow}{x}^{(k)})=C_{1}A\underset{\downarrow}{x}^{(1)}+\dots C_{k}A \underset{\downarrow}{x}^{(k)}= C_{1}\underset{\downarrow}\cdot{0}+\dots C_{k}\cdot\underset{\downarrow}{0}=\underset{\downarrow}{0}$
+\end{proof}
+\begin{corollary}
+    Если ОСЛАУ имеет хотя бы одно нетривиальное решение, то их будет бесконечно много.
+\end{corollary}
+\begin{theorem}
+    $\begin{aligned} &1) \text{Если } RgA=r=n \;\text{(число неизвестных)},\text{ то ОСЛАУ обладает только тривиальным решением. }\\ &2) \text{Если } RgA=r<n, \text{ то ОСЛАУ имеет нетривиальные решения. }  \end{aligned}$
+\end{theorem}
+\begin{proof}
+    $\tcircle{$2$}\; \begin{pmatrix}[ccc|c]
+    a_{11}&\dots & a_{1n} & b_{1}\\ 
+    \vdots & \ddots & \vdots & \vdots \\ 
+    a_{m1} & \dots & a_{mn} & b_{m}
+\end{pmatrix}(1_{0})\sim \text{эл. преобр. только строк }\sim \begin{pmatrix}[ccccc|c]
+    a'_{11} & \dots & a'_{1r}&\dots  & a'_{1n}& 0 \\
+    0 & \ddots & \dots &\dots  & a'_{1n}& \vdots \\
+    0 & \dots & a'_{rr} & \dots& a'_{rn} &0  \\ \hline
+    \multicolumn{4}{c}{\text{НУЛИ}}& &0\\\hline
+    \multicolumn{4}{c}{\text{НУЛИ}}& &0
+\end{pmatrix}\;(2_{0}) \\ x_{1},\dots,x_{r} - \text{ главные}, x_{r+1},\dots,x_{n}-\text{ свободные } \begin{cases}
+    x_{1}=-a''_{1r+1}x_{r+1}-\dots-a''_{1n}x_{n} \\ 
+    \phantom{x_{1}=-a''_{1r+1}x} \dots \\ 
+    x_{r}=-a''_{rr+1}x_{r+1}-\dots-a''_{rn}x_{n} \\ 
+    x_{r+1},x_{r+2},\dots,x_{n} \in\mathbb{R}
+\end{cases}$ \\Методом Г-Ж ($1_{0}$) приводится к $(2_{0})$, причем $n-r>0\implies$ свободные переменные имеются.  \\Положим $x_{r+1}=x_{n-1}=0,x_{n}=1$.
+Тогда получим $\underset{\downarrow}{\alpha}=\begin{pmatrix}
+     -a''_{1n}\\ 
+     \vdots \\ 
+     -a''_{rn}\\
+     0\\ 
+     \vdots \\ 
+    0\\ 
+    1
+\end{pmatrix}$ - нетривиальное решение.\\ 
+$\tcircle{$2$}\;\;$Если $r=n$, то в $(2_{0})$ не будет свободных переменных: $\begin{pmatrix}[cccc|c]
+    1 & 0 & \dots & 0 & 0\\
+    0 & 1 & \dots & 0 &0\\
+    \vdots & \vdots & \ddots & \vdots & 0\\
+    0 & 0 & \dots & 1 & 0 \\ 
+    \hline 
+    0 & 0 & \dots & 0 & 0
+    
+\end{pmatrix},$ т.е $(1_{0})\sim (3_{0}) \; \begin{cases}
+    x_{1}=0 \\ 
+    \vdots \\ 
+    x_{n} =0
+\end{cases} $ т.е имеется только тривиальное решение.
+
+\end{proof}
+
+\section{Фундаментальная система решений ОСЛАУ.}
+Рассмотрим ОСЛАУ. $(1_{0}) \; A\underset{\downarrow}{x}=\underset{\downarrow}{0}$
+\begin{definition}
+    Упорядоченная, ЛНЗ система этой ОСЛАУ $(1_{0})$ $\underset{\downarrow}{\varphi}^{(1)},\dots,\underset{\downarrow}{\varphi}^{(k)}$ называется фундаментальной системой решений (ФСР), если для любого решения ОСЛАУ $(1_{0})\implies \exists C_{1},\dots,C_{k}\in \R(\C): \underset{\downarrow}{\alpha}=\\=C_{1}\underset{\downarrow}{\varphi}^{(1)}+\dots+C_{k}\underset{\downarrow}{\varphi}^{(k)}$
+\end{definition} 
+\begin{theorem}[О нормальной системе решений (НСР)]
+    Если $RgA=r<n$, то ОСЛАУ $(1_{0})$ имеет $(n-r)$ ЛНЗ решений, через которые выражаются любое решения.
+    
+\end{theorem}
+\begin{proof}
+    Пусть $RgA=r<n$ (число неизвестных). Тогда $(1_{0})\sim(2_{0})$ с $(n-r)$ свободных переменных, которым придадим следующие наборы значений:$\begin{aligned} &x_{r+1}=1, x_{r+2}=0,\dots,x_{n}=0 \\ &x_{r+1}=0,x_{r+2}=1,\dots,x_{n}=0\\&\phantom{x_{r+1}=0,x_{r+2}}\dots\\ &x_{r+1}=0,x_{r+2}=0,\dots,x_{n}=1\end{aligned}$\\По этим наборам найдем значения главных переменных, получим $(n-r)$ решений: \\ $\underset{\downarrow}{\varphi}^{(1)}=\begin{pmatrix}
+        -a''_{1r+1}\\
+        \vdots\\
+        -a''_{rr+1}\\
+        1\\ 
+        0\\ 
+        \vdots\\ 
+        0
+    \end{pmatrix}\; \underset{\downarrow}{\varphi}^{(2)}=\begin{pmatrix}
+        -a''_{1r+2}\\
+        \vdots\\
+        -a''_{rr+2}\\
+        0\\ 
+        1\\ 
+        \vdots\\ 
+        0
+    \end{pmatrix}\;\dots\; \underset{\downarrow}{\varphi}^{(n-r)} = 
+    \begin{pmatrix}
+        -a''_{1n}\\
+        \vdots\\
+        -a''_{rn}\\
+        0\\ 
+        0\\ 
+        \vdots\\ 
+        1
+    \end{pmatrix}$ 
+    \\ Рассмотрим $\varPhi = (\underset{\downarrow}{\varphi}^{(1)},\dots,\underset{\downarrow}{\varphi}^{(n-r)})=r\begin{pmatrix}
+        -a''_{1r+1} & -a''_{1r+2} & \dots & -a''_{1n}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        -a''_{rr+1} & -a''_{rr+2} & \dots & -a''_{rn}\\
+        1 & 0 & \dots & 0\\
+        0 & 1 & \dots & 0\\
+        \vdots & \vdots & \ddots & \vdots\\
+        0 & 0 & \dots & 1
+    \end{pmatrix}$ \\В нижней части $\varPhi$ имеется $\tcircle{$M_{n-r}$}=detE=1\neq 0$, у $\varPhi$ $(n-r)$ столбцов $\implies Rg\varPhi = n-r\implies$ ее столбцы ЛНЗ $\implies \underset{\downarrow}{\varphi}^{(1)},\dots,\underset{\downarrow}{\varphi}^{(n-r)}$ - ЛНЗ система решений 
+\end{proof}
+\begin{definition}
+    Построенная таким образом система решений называется \underline{нормальной} (НСР)
+\end{definition}
+\newpage Покажем теперь, что $\forall \underset{\downarrow}{\alpha} - $ решение $(1_{0})$ можно представить в виде ЛК $\underset{\downarrow}{\varphi}^{(1)},\dots,\underset{\downarrow}{\varphi}^{(n-r)}$. 
+Пусть $\underset{\downarrow}{\alpha}=\begin{pmatrix} \vec{\alpha}_{1}\\ \vdots\\ \vec{\alpha}_{n} \end{pmatrix}$ - любое решение $(1_{0})$. 
+Рассмотрим $\underset{\downarrow}{y}=\underset{\downarrow}{\alpha_{1}}-\alpha_{r+1}\underset{\downarrow}{\varphi}^{(1)}+\dots+\alpha_{n}\underset{\downarrow}{\varphi}^{(n-r)}=\begin{pmatrix}
+    \beta_{1} \\ 
+    \vdots \\ 
+    \beta_{r} \\ 
+    0 \\ 
+    \vdots \\ 
+    0
+\end{pmatrix}$ \\Поскольку $\underset{\downarrow}{y}$ является ЛК решений ОСЛАУ $(1_{0})$, то $\underset{\downarrow}{y}$ тоже является решением $(1_{0})\implies$ его компаненты удовлетворяют $(2_{0})$. Откуда, учитывая, что все свободные переменные равны 0, получим (см. $(2_{0})$) $\begin{cases}
+    \beta_{1}=0 \\ 
+    \vdots \\ 
+    \beta_{r}=0
+\end{cases},$ т.е $\underset{\downarrow}{y}=\underset{\downarrow}{0}\implies \underset{\downarrow}{\alpha}=\alpha_{r+1}\underset{\downarrow}{\varphi}^{(1)}+\dots+\alpha_{n}\underset{\downarrow}{\varphi}^{(n-r)}$. Заметим, что отсюда следует, что б$\acute{\text{о}}$льшего, чем $(n-r)$ количества ЛНЗ решений быть не может.
+
+\begin{theorem}[О ФСР]
+    Если $RgA=r=n,$ то ФСР ОСЛАУ не существует, если $RgA=r<n,$ то\\ $\begin{aligned}
+        1) &\exists \text{ ФСР ОСЛАУ } (1_{0}) \\ 
+        2) &\text{Любая ФСР ОСЛАУ } (1_{0}) \text{ содержит ровно } (n-r) \text{ элементов }\\ 
+        3) &\text{Любые } (n-r) \text{ ЛНЗ решений ОСЛАУ } (1_{0}) \text{ образуют ее ФСР} \\ 
+        4) &\text{Если } \underset{\downarrow}{\varphi}^{(1)},\dots,\underset{\downarrow}{\varphi}^{(n-r)} - \text{ некоторая ФСР ОСЛАУ } (1_{0}), \text{ то ее общее решение имеет вид: }\\  &\underset{\downarrow}{x_{\text{оо}}}=C_{1}\underset{\downarrow}{\varphi}^{(1)}+\dots+C_{n-r}\underset{\downarrow}{\varphi}^{(n-r)}, \text{ где } C_{1},\dots,C_{n-r} - \text{ произвольные числа } \R (\C)
+    \end{aligned}$
+
+\end{theorem}
+\begin{proof}
+    $RgA=r=n\implies$ имеется только тривиальное решение (оно всегда ЛЗ) $\implies$ нет ФСР.  
+    \\ $RgA=r<n \implies$ 
+    \\1) Уже доказано, т.к $\exists$ НСР, она является частным случаем ФСР. 
+    \\2) Будет доказано позже. 
+    \\3) Будет доказано позже. 
+    \\4) $\tcircle{$\impliedby$}$ Поскольку $\underset{\downarrow}{\varphi}^{(1)},\dots,\underset{\downarrow}{\varphi}^{(n)}$ - решение ОСЛАУ, то любая их ЛК также является решением (см. выше).
+    \\ $\tcircle{$\implies$}$ Пусть $\underset{\downarrow}{y} $ - произвольное решение ОСЛУ. По определению ФСР $\exists \tilde{C}_{1},\dots,\tilde{C}_{n}: \underset{\downarrow}{y}=\tilde{C}_{1}\underset{\downarrow}{\varphi}^{(1)}+\dots+\tilde{C}_{n-r}\underset{\downarrow}{\varphi}^{(n-r)}$
+\end{proof}
+
+
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}
+\end{document}

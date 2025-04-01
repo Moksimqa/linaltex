@@ -1,0 +1,136 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\newpage
+\lecture{7}{17.03}{}
+\section{Матрица перехода.}
+Пусть $\V$ - ЛП над $k$. $\dim \V = n, \mathcal{E}=\{e_{1},\dots,e_{n}\}, \mathcal{E'}=\{e_{1}',\dots,e_{n}'\}$ - базисы в $\V$. 
+\\Разложим элементы базиса $\mathcal{E'}$ по базису $\mathcal{E}$: $\begin{cases}e_{1}'=t_{11}e_{1}+\dots+t_{n1}e_{n},\\\dots\\e_{n}'=t_{1n}e_{1}+\dots+t_{nn}e_{n} \end{cases}(1)$.  Тогда $T_{\mathcal{E}\to\mathcal{E'} }= \begin{pmatrix}
+    t_{11} & \dots & t_{1n}\\
+    \vdots & \ddots & \vdots\\
+    t_{n1} & \dots & t_{nn}
+\end{pmatrix}$ - матрица, в столбцах которой записаны координаты векторов базиса $\mathcal{E'}$ в базисе $\mathcal{E}$, называется матрицей перехода от базиса $\mathcal{E}$ к базису $\mathcal{E'}$. Введем $[\mathcal{E}]=(e_{1},\dots,e_{n})$ - строку векторов базса $\mathcal{E}$ и $[\mathcal{E'}]=(e_{1}',\dots,e_{n}')$ - строку векторов базиса $\mathcal{E'}$. Тогда соотношение $(1)$ можно переписать в виде $(e_{1}',\dots,e_{n}')=\\= (e_{1},\dots,e_{n})\begin{pmatrix}
+    t_{11} & \dots & t_{1n}\\
+    \vdots & \ddots & \vdots\\
+    t_{n1} & \dots & t_{nn}
+\end{pmatrix}$. Или еще короче: $[\mathcal{E'}]=[\mathcal{E}]T_{\mathcal{E}\to\mathcal{E'}}\;(3)$. (1),(2) и (3) означают одно и то же.
+
+\begin{theorem}
+    $\det T_{\mathcal{E}\to\mathcal{E'}}\neq 0$.
+\end{theorem}
+
+\begin{proof}
+    От противного. Допустим, что $\det \begin{pmatrix}
+        t_{11} & \dots & t_{1n}\\
+        \vdots & \ddots & \vdots\\
+        t_{n1} & \dots & t_{nn}
+\end{pmatrix} = 0$. Тогда столбцы $T_{\mathcal{E}\to\mathcal{E'}}$ линейно зависимы. В силу изоморфизма $\V \sim k^{n}$, это означает, что $\{e_{1}',\dots,e_{n}'\}$ тоже линейна зависима, но это невозможно, т.к $\mathcal{E'}$ - базис - противоречие, а значит $\implies \det T_{\mathcal{E}\to \mathcal{E'}}\neq 0$.  
+\end{proof}
+\begin{corollary}
+    $T_{\mathcal{E}\to\mathcal{E'}}$ - обратима. (т.е $\exists T^{-1}_{\mathcal{E'}\to\mathcal{E}}$)
+\end{corollary}
+\begin{proof}
+    Из критерия обратимости. 
+\end{proof}
+\begin{lemma}[О матрице обратного перехода]
+    $T_{\mathcal{E'}\to\mathcal{E}}=T^{-1}_{\mathcal{E}\to\mathcal{E'}}$. 
+\end{lemma}
+\begin{proof}
+    Пусть $[\mathcal{E'}] = [\mathcal{E}]T_{\mathcal{E}\to\mathcal{E'}}$. Тогда $[\mathcal{E'}]\cdot T^{-1}_{\mathcal{E}\to\mathcal{E'}} = ([\mathcal{E}]T_{\mathcal{E}\to\mathcal{E'}})\cdot T^{-1}_{\mathcal{E}\to\mathcal{E'}} = $ (ассоциативность матричного умножения) $= [\mathcal{E}](T_{\mathcal{E}\to\mathcal{E'}}\cdot T^{-1}_{\mathcal{E}\to\mathcal{E'}}) = [\mathcal{E}] \cdot E = [\mathcal{E}]$. Таким образом $[\mathcal{E}]= [\mathcal{E'}]\cdot T^{-1}_{\mathcal{E}\to\mathcal{E'}}$, но $[\mathcal{E}]= [\mathcal{E'}]\cdot T_{\mathcal{E'}\to\mathcal{E}}$, т.е $ [\mathcal{E}] = [\mathcal{E'}]\cdot T^{-1}_{\mathcal{E}\to\mathcal{E'}} = [\mathcal{E}] T_{\mathcal{E'}\to\mathcal{E}}$, "сокращая" на базис матрицы, получаем: $T_{\mathcal{E'}\to\mathcal{E}} = T^{-1}_{\mathcal{E}\to\mathcal{E'}}$.
+    \\В качестве упражнения посмотреть, что свойства ассоциативности верно для строк векторов.
+\end{proof}
+
+\begin{theorem}[О преобразовании координат вектора при смене базиса ]
+    Если $\mathcal{E},\mathcal{E'}$ - базисы в $\V$ и $x = \xi_{1}e_{1} + \dots + \xi_{n}e_{n}= [\mathcal{E}]\underset{\downarrow}{\xi}, x' = \xi_{1}'e'_{1} + \dots + \xi_{n}'e'_{n} = [\mathcal{E'}]\underset{\downarrow}{\xi'}$, то  $\underset{\downarrow}{\xi'} = T^{-1}_{\mathcal{E}\to\mathcal{E'}}\underset{\downarrow}{\xi}$, где $T_{\mathcal{E}\to\mathcal{E'}}$ - матрица перехода от базиса $\mathcal{E}$ к базису $\mathcal{E'}$.
+\end{theorem}
+\begin{proof}
+    $[\mathcal{E'}] = [\mathcal{E}]T_{\mathcal{E}\to\mathcal{E'}}$. Тогда $x = [\mathcal{E'}] \underset{\downarrow}{\xi'} = [\mathcal{E}]\underset{\downarrow}{\xi}= ([\mathcal{E'}]T^{-1}_{\mathcal{E}\to\mathcal{E'}})\underset{\downarrow}{\xi} =$ ассоциатевность матричного умножения со строкой векторов (Упр.) $= [\mathcal{E'}](T^{-1}_{\mathcal{E}\to\mathcal{E'}}\underset{\downarrow}{\xi})$. Получаем, что $[\mathcal{E'}]\underset{\downarrow}{\xi'} = [\mathcal{E'}](T^{-1}_{\mathcal{E}\to\mathcal{E'}}\underset{\downarrow}{\xi})$, сокращая на базис, получаем $\underset{\downarrow}{\xi'} = T^{-1}_{\mathcal{E}\to\mathcal{E'}}\underset{\downarrow}{\xi}$. 
+\end{proof}
+Замечание. Закон преобразования координат называют контравариантным и если (базисы связаны матрицей $T$, то координаты - матрицей $T^{-1}$)
+\begin{corollary}
+    $\fbox{$\underset{\downarrow}{\xi}= T_{\mathcal{E}\to\mathcal{E'}}\underset{\downarrow}{\xi'}$}\qquad \fbox{$\underset{\downarrow}{\xi'}= T_{\mathcal{E'}\to\mathcal{E}}\underset{\downarrow}{\xi}$}$
+\end{corollary}
+
+\section{Линейные формы в ЛП. Сопряженное пространство, его базис и размерность. Преобразование коэффициентов линейной формы при смене базиса.}
+Пусть $\V$ - ЛП над $k, \dim \V = n$. 
+\begin{definition}[Закон (правило)]
+    $f$, ставящий каждому элементу $\V$ (вектору) единственный скаляр из поля $k$ $(\forall x\in \V \implies \exists! f(x)\in k)$ таким образом, что выполняется: $\begin{aligned}
+        &1) \forall x,y \in \V \implies f(x+y) = f(x)+f(y)\\
+        &2) \forall x \in \V, \forall \alpha \in k \implies f(\alpha x) = \alpha f(x)
+    \end{aligned}$ называется линейным функционалом или линейной формой (ЛФ).
+\end{definition}
+Примеры: 
+\\1. $\V = C[a,b]= \{x(t) -\text{ непрерывные на $[a,b]$}\}$. Тогда $f(x)=\int\limits_{a    }^{b    } x(t)dt$. 
+\\2. Пусть $\mathcal{E}$ - базис в $\V, \; x= [\mathcal{E}]\underset{\downarrow}{\xi}= \xi_{1}e_{1}+\dots+\xi_{n}e_{n}$. Тогда $f(x) = \xi_{1}$. 
+
+
+\begin{definition}
+    ЛФ $f_{1}$ и $f_{2}$ назовем равными, если $\forall x\in \V \implies f_{1}(x) = f_{2}(x)$.
+    
+\end{definition}
+\begin{definition}
+    $f$ называется суммой ЛФ $f_{1}$ и $f_{2}$ (обозначается $f=f_{1}+f_{2}$), если $\forall x\in \V \implies f(x) = f_{1}(x)+f_{2}(x)$.
+\end{definition}
+\begin{definition}
+    $f$ называется произведением $f_{1}$ на скаляр $\alpha \in k$ (обозначается $f=\alpha f_{1}$), если $\forall x\in \V \implies f(x) = \alpha f_{1}(x)$.
+\end{definition}
+\begin{definition}
+    Совокупность всевозможных ЛФ, действующих в ЛП $\V$, обозначим $\V^{*}$
+\end{definition}
+
+\begin{theorem}
+    $\V^{*}$ с введенными операциями сложения и умножения на скаляры образует ЛП. 
+\end{theorem}
+\begin{proof}
+\begin{lemma}
+    $f =  \fbox{$f_{1} + f_{2}$}$ - ЛФ. 
+\end{lemma}
+
+    $f(x+y) \underset{\text{def}}{=} f_{1}(x+y)+f_{2}(x+y) \underset{\text{def ЛФ}}{=} f_{1}(x)+f_{1}(y)+f_{2}(x)+f_{2}(y) \underset{\text{def}}{=} f(x)+f(y)$.
+    \\Аналогично доказывается, что $f(\lambda x ) \underset{\text{def}}{=} f_{1}(\lambda x)+f_{2}(\lambda x) \underset{\text{def ЛФ}}{=} \lambda f_{1}(x)+\lambda f_{2}(x) \underset{\text{def}}{=} \lambda f(x)$.
+    \\$f= \alpha f_{1} $ - ЛФ. Доказывается аналогично - самостоятельно.
+
+Далее доказываем свойства $1-8$ ЛП. 1,2,5-8 - очевидны (самостоятельно).
+Докажем 3,4. Рассмотрим так называемую "нуль-форму". $\varPhi(x): \forall x \in\V \implies \varPhi (x) = 0$. $(\varPhi(x+y)=0, \varPhi(x) +\varPhi(y) = 0+ 0 = 0 )\implies \varPhi(x+y)=\varPhi(x)+\varPhi(y)$. Аналогично $\varPhi(\alpha x)=0, \alpha \cdot \varPhi(x)+\alpha \cdot 0=0 \implies \varPhi(\alpha x) = \alpha\cdot \varPhi(x), \varPhi$ - ЛФ. 
+\\$f+\varPhi \; \forall x\in \V \implies (f+\varPhi)(x) = f(x)+\varPhi(x) = f(x)+0 = f(x) \implies \fbox{$f+\varPhi = f$}$, т.е $\varPhi$ - нейтральный элемент $\V^{*}$
+\\Рассмотрим $f'=-1\cdot f$,  т.е $\forall x \in\V \implies f(x)=-f(x), f'$ - ЛФ (очевидно) и $\forall x \in \V \implies (f+f')(x) = f(x)+f'(x) = f(x)-f(x) = 0 = \varPhi(x)\implies \fbox{$f+ f' = \varPhi$}$\; Тогда $f'$ - противоположная ЛФ. 
+
+Из выполнения свойств $1-8\implies \V^{*}$ - ЛП, которое назовем линейным пространством, сопряженным к $\V$ (сопряженным пространством)
+\end{proof}
+\begin{theorem} 
+    Если $\dim \V = n< +\infty$, то $\dim \V^{*} = n$. 
+\end{theorem}
+\begin{proof}
+    Пусть $\mathcal{E}=\{e_{1},\dots,e_{n}\}$ - некоторый базис в $\V$. Рассмотрим систему $G = \{g_{1},\dots,g_{n}\}$ из $\V^{*}: \forall i=\overline{1,n}, \forall j =\overline{1,n}\implies \fbox{$g_{i}(e_{j}) = \delta_{ij}$}$. Тогда $\forall x\in\V \implies x = [\mathcal{E}]\underset{\downarrow}{\xi} = \xi_{1}e_{1}+\dots+\xi_{n}e_{n}, g_{i}(x)= g_{i}(\xi_{1}e_{1}+\dots+\xi_{n}e_{n}) = \xi_{1}g_{i}(e_{1})+\dots+\xi_{n}g_{i}(e_{n}) = \xi_{1}\cdot 0 + \dots + \xi_{i}g_{i}(e_{i})+\dots+\xi_{n}\cdot 0 = \xi_{i}$. Покажем, что система $\{g_{1},\dots,g_{n}\}$ линейной независима в $\V^{*}$. По определению рассмотрим ЛК $\lambda_{1}g_{1}+\dots+\lambda_{n}g_{n} = \varPhi\;(1)$. Тогда $\forall i=\overline{1,n}\implies (\lambda_{1}g_{1}+\dots+\lambda_{n}g_{n})(e_{i}) = \lambda_{1}g_{1}(e_{i})+\dots+\lambda_{n}g_{n}(e_{i}) = \lambda_{1}\cdot 0 + \dots + \lambda_{i}g_{i}(e_{i})+\dots+\lambda_{n}\cdot 0 = \lambda_{i} = \varPhi (e_{i}) = 0\implies  $ ((1) выполнена $\Leftrightarrow \lambda_{1}=\dots=\lambda_{n}=0$) $\implies G = \{g_{1},\dots,g_{n}\}$ - ЛНЗ в $\V^{*}$. 
+    Пусть $f\in\V^{*} $ - произвольная ЛФ. Тогда $\forall x \in \V \implies f(x) = f(\xi_{1}e_{1}+\dots+\xi_{n}e_{n}) = \xi_{1}f(e_{1})+\dots+\xi_{n}f(e_{n}) = g_{1}(x)\alpha_{1}+ \dots + g_{n}(x)\alpha_{n} = (\alpha_{1}g_{1} + \dots+ \alpha_{n}g_{n})(x)\implies \fbox{$f= \alpha_{1}g_{1}+\dots+\alpha_{n}g_{n}$}$, где $\alpha_{1} = f(e_{1}),\dots,\alpha_{n} = f(e_{n})$ - коэффициенты ЛФ $f$ в базисе $\mathcal{E}$. 
+    \\Мы доказали, что $\tcircle{1}\;$ любая ЛФ может быть разложена по упорядоченной ЛНЗ системе $G\implies G$ - базис. И $\tcircle{2}\;$, что действие ЛФ полностью определяется ее действием на базисные векторы ЛП $\V$. Можно заключить, что $\fbox{$\dim \V^{*} = n$}$\; $f= \alpha_{1}g_{1}+\dots+\alpha_{n}g_{n}=\begin{pmatrix}
+        g_{1}&\dots&g_{n}
+    \end{pmatrix} \begin{pmatrix} {\alpha}_{1}\\ \vdots\\ {\alpha}_{n} \end{pmatrix}  = [G]\underset{\downarrow}{\alpha}$.
+    \\$f(x)=f(\xi_{1}e_{1}+\dots+\xi_{n}e_{n}) = \xi_{1}f(e_{1})+\dots+\xi_{n}f(e_{n}) = \vec{\alpha}\underset{\downarrow}{\xi}$
+
+\end{proof}
+Замечание. Базис $G$, построенный в доказательстве теоремы ($g_{i}(e_{j})=\delta_{ij}$) называется биортогональным к базису $\mathcal{E}$. 
+\begin{theorem}[О преобразовании коэффициентов ЛФ при смене базиса]
+    Пусть $f \in \V^{*}, \mathcal{E}, \mathcal{E'}$ - базисы в $\V: [\mathcal{E'}]= [\mathcal{E}]T_{\mathcal{E}\to\mathcal{E'}}$, и $x = [ \mathcal{E}]\underset{\downarrow}{\xi} = [\mathcal{E'}]\underset{\downarrow}{\xi'}$. $f(x)=\vec{\alpha}\underset{\downarrow}{\xi} = \vec{\alpha'}\underset{\downarrow}{\xi'}$. Тогда коэффициенты $(\alpha_{1},\dots,\alpha_{n})$ и $(\alpha_{1}', \dots,\alpha_{n}')$  формы $f$ в базисах $\mathcal{E}$ и $\mathcal{E'}$ соответственно, связаны следующим образом: $\fbox{$\vec{\alpha'} = \vec{\alpha}T_{\mathcal{E}\to\mathcal{E'}}$}$ (ковариантный закон преобразования)
+    
+\end{theorem}
+\begin{proof}
+    \begin{corollary}
+       
+     Если $\forall \underset{\downarrow}{\xi} \implies \vec{\alpha} \underset{\downarrow}{\xi} = \vec{\beta}\underset{\downarrow}{\xi}$, то $\vec{\alpha} = \vec{\beta}$. 
+    \end{corollary}
+     \begin{proof}
+            $\vec{\alpha}\underset{\downarrow}{\xi} = \vec{\beta}\underset{\downarrow}{\xi }\implies (\vec{\alpha}-\vec{\beta})\underset{\downarrow}{\xi} = 0$. Возьмем $\underset{\downarrow}{\xi} = (\underset{\downarrow}{\overline{\alpha}}-\underset{\downarrow}{\overline{\beta}})$, тогда $(\vec{\alpha}-\vec{\beta})\underset{\downarrow}{\xi} = (\vec{\alpha}-\vec{\beta})(\underset{\downarrow}{\overline{\alpha}}-\underset{\downarrow}{\overline{\beta}}) = (\vec{\alpha}-\vec{\beta})\overline{(\underset{\downarrow}{\alpha}-\underset{\downarrow}{\beta})} = |\alpha_{1}-\beta_{1}|^{2} + \dots+ |\alpha_{n}-\beta_{n}|^{2} = 0\Leftrightarrow \alpha_{1}=\beta_{1},\dots,\alpha_{n}=\beta_{n}$, т.е $\vec{\alpha} = \vec{\beta}$.
+        \end{proof}
+        $f(\alpha)=\vec{\alpha}\underset{\downarrow}{\xi} = \vec{\alpha'}\underset{\downarrow}{\xi'}\implies \vec{\alpha}(T_{\mathcal{E}\to\mathcal{E'}}\underset{\downarrow}{\xi'}) =$ ассоцитивность $ = (\vec{\alpha} T _{\mathcal{E}\to\mathcal{E'}})\underset{\downarrow}{\xi'}$, т.е для $\forall x \in \V$ (а значит и для $\forall \underset{\downarrow}{\xi'}$) выполнено $\vec{\alpha'}\underset{\downarrow}{\xi'} = (\vec{\alpha}T_{\mathcal{E}\to\mathcal{E'}})\underset{\downarrow}{\xi'}\implies \vec{\alpha'} = \vec{\alpha}T_{\mathcal{E}\to\mathcal{E'}}$.
+
+
+
+\end{proof}
+
+
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}
+\end{document}

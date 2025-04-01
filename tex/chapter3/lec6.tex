@@ -1,0 +1,347 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\newpage
+\lecture{6}{15.03}{}
+\begin{proof}
+    1. Пусть $\exists \theta_{1} $ и $\theta_{2}$ - нейтральные элементы $\V$. Тогда $\theta_{1} = \theta_{1} + \theta_{2} = \theta_{2}= \theta_{2} + \theta_{1} = \theta_{2}$. 
+    \\2. Пусть у некоторого $a \in \V$ имеется противоположные элементы $a'$ и $a''$. Тогда $a' = a' + \theta = a' + (a + a'') = (a' + a) + a'' = \theta + a'' = a'' + \theta = a''$.
+    \\3. $0\cdot a = 0\cdot a + \theta = 0\cdot a +(a + a') = (0\cdot a + a) +a' = (0\cdot a + 1\cdot a)+ a'= (0+1)\cdot a + a' = 1\cdot a + a' = a + a' = \theta$.
+    \\4. $\lambda \cdot \theta = \lambda \cdot \theta + \theta = \lambda \cdot \theta + ( \lambda \theta + (\lambda \theta)')= ( \lambda \theta +\lambda \theta) + (\lambda \theta)' = \lambda ( \theta + \theta) + (\lambda \theta) ' = \lambda \theta + (\lambda \theta)'= \theta$
+    \\5. $(-1)\cdot a = (-1)\cdot a + \theta = (-1)\cdot a + (a + a') = ((-1)\cdot a + a) + a' = ((-1)\cdot a + 1\cdot a) + a' = ((-1 + 1)\cdot a) + a' = 0\cdot a + a' = \theta+a' =a' +\theta = a'$. 
+
+
+\end{proof}
+\section{Линейная зависимость и линейная независимость системы векторов}
+Понятия ЛЗ и ЛНЗ для уже вводили неоднократно. Напомним следующие определения и утверждения: Пусть $\V $ - ЛП над $k$. 
+\begin{definition}
+    Упорядоченная совокупность не обязательно различных элементов из $\V$ называется системой элементов (векторов). Любые подмножества системы элементов называются подсистемами элементов (векторов). Обозначение: $\{x_{1},\dots,x_{m}\}=\{x_{i}\}_{i=1}^{m}=X\subset \V$. 
+\end{definition}
+\begin{definition}
+    Система $X$ называется линейно зависимой (ЛЗ), если $\exists$ нетривиальный набор $\lambda_{1},\dots,\lambda_{m}\in k: (1) \lambda_{1}x_{1}+\dots+\lambda_{m}x_{m}=\theta$. Если же (1) выполняется толкьо при $\lambda_{1}=\dots=\lambda_{m}=\theta,$ то система $X$ называется линейно независимой (ЛНЗ).
+\end{definition}
+\begin{theorem}
+    Если $\theta \in X,$ то $X$ - ЛЗ.
+\end{theorem}
+\begin{proof}
+    Самостоятельно.
+\end{proof}
+\begin{theorem}
+    Если $X$ содержит ЛЗ подсистему, то $X$ - ЛЗ. 
+\end{theorem}
+\begin{proof}
+    Самостоятельно.
+\end{proof}
+\begin{theorem}
+    Любая подсистема линейно независимой системы является линейно независимой.
+\end{theorem}
+\begin{proof}
+    Самостоятельно.
+\end{proof}
+\begin{theorem}[Критерий ЛЗ]
+    $X$ - ЛЗ $\Leftrightarrow$ один из ее элементов является линейной комбинацией остальных.
+\end{theorem}
+\begin{proof}
+    Самостоятельно.
+\end{proof}
+
+Примеры:
+\\1. $\R^{n}$
+\\Рассмотрим, например, строки длины n. $e_{1}=(1,0,\dots,0), e_{2}=(0,1,0,\dots,0),\dots,e_{n}=(0,\dots,0,1)$ - ЛНЗ. 
+\begin{proof}
+    $\lambda_{1}e_{1} + \dots + \lambda_{n}e_{n} = (\lambda_{1},\dots,\lambda_{n}) = \theta \Leftrightarrow \lambda_{1}=\dots=\lambda_{n}=0$.
+\end{proof}
+2. $P_{n}: \quad e_{0}=1, e_{1} = t ,\dots, e_{n}=t^{n}$ - ЛНЗ.
+\begin{proof}
+    $\lambda_{0}e_{0}+\dots+\lambda_{n}e_{n}=\lambda_{0}+\lambda_{1}t+\dots+\lambda_{n}t^{n}=\theta \Leftrightarrow \lambda_{0}=\dots=\lambda_{n}=0$ (иначе бы многочлен степени  n обращался бы в ноль более, чем в n точках, это невозможно)
+\end{proof}
+3. $\mathfrak{M}_{m\times n}$
+\\Рассмотрим набор матриц $B_{ij}= \begin{pmatrix}
+    0& \dots & 0 & \dots &0\\ 
+    \vdots & \ddots & \vdots & \ddots & \vdots\\
+    0& \dots & 1 & \dots & 0 \\ 
+    \vdots & \ddots & \vdots & \ddots & \vdots \\
+    0& \dots & 0 & \dots & 0
+\end{pmatrix}$. Единственный ненулевой элемент находится на пересечении $i$-ой строки и $j$-ого столбца.
+\begin{proof}
+    Доказать, что система матриц $\{B_{ij}\}_{i=\overline{1,m},\;j=\overline{1,n}}$ - ЛНЗ.
+\end{proof}
+4. ФСР ОСЛАУ. Элементы ФСР линейной независимы по определению.
+
+\section{Базис и размерность линейного пространства}
+Рассмотрим $\V$ - ЛП над $k$. 
+\begin{definition}
+    Если в ЛП $\V$ имеется система ЛНЗ элементов из $n\;(n\in \N)$ элементов, а любая система из $(n+1)$ элемента является ЛЗ, то говорят, что размерность $\V$ равна $n$. Обозначение: $\dim \V = n$.
+
+\end{definition}
+Замечание. Если в $\V$ нет ни одной ЛНЗ системы, то по определению считают, что $\dim \V = 0$.
+
+Замечание. Если $\forall n\in\N\implies $ в $\V$ найдется ЛНЗ система из $n$ элементов, то $\V$ называется бесконечномерным.
+
+В курсе ЛА будем рассматривать конечномерные ЛП.
+ \begin{definition}
+    Упорядоченная система ЛНЗ элементов $\mathcal{E}=\{e_{1},\dots,e_{n}\}$ называется базисом ЛП $\V$, если $\forall x \in \V\implies \exists \xi_{1},\dots  \xi_{n}\in k: x = \xi_{1}e_{1}+\dots+\xi_{n}e_{n}\;(1)$.
+ \end{definition}
+Представление (1) называется разложением вектора $x$ по базису $\mathcal{E}$, коэффициенты этого разложения называются координатами вектора $x$ в базисе $\mathcal{E}$.
+
+\begin{theorem}[О связи базиса и размерности]
+    $\dim\V=n \Leftrightarrow $ (в нем $\exists$ базис из $n$ элементов). 
+\end{theorem}
+\begin{proof}
+    $\tcircle{$\implies$}$ Пусть $\dim\V =n \implies \exists$ ЛНЗ $X = \{x_{1},\dots,x_{n}\}\subset \V$. Пусть $x\in \V -$ произвольный элемент. Тогда $\{x_{1},\dots,x_{n},x\}$ - ЛЗ $\implies \exists$ нетривиальный набор $\lambda_{1},\dots,\lambda_{n},\lambda_{n+1}\in k: (2) \; \lambda_{1}x_{1}+\dots+\lambda_{n}x_{n}+\lambda_{n+1}x=\theta$, причем $\lambda_{n+1} \neq  0$ (т.е $X$ - ЛНЗ) $\implies x= - \frac{\lambda_{1}}{\lambda_{n+1}}x_{1}-\dots- \frac{\lambda_{n}}{\lambda_{n+1}}x_{n} = \xi_{1}x_{1}+\dots+\xi_{n}x_{n}\implies X$ - базис из $n$ элементов.
+    \\$\tcircle{$\impliedby$}$ Пусть $\mathcal{E}=\{e_{1},\dots,e_{n}\}$ - базис в $\V$ из $n$ элементов. Рассмотрим произвольную систему $\mathcal{Y} =\{ y_{1},\dots,y_{n+1}\}\subset \V$. Проверим возможно ли, чтобы нетривиальная ЛК элементов $\mathcal{Y}$ давала бы $\theta$? Имеем разложение по $\mathcal{E}: \begin{cases}
+        y_{1} = \xi_{11}e_{1}+\dots+\xi_{1n}e_{n}\\
+        \phantom{y_{1}=\xi_{11}e_{1}+ } \vdots\\
+        y_{n+1} = \xi_{n+11}e_{1}+\dots+\xi_{n+1n}e_{n}
+    \end{cases}$ Берем ЛК $\lambda_{1}y_{1}+ \dots + \lambda_{n+1}y_{n+1} = \theta\:(4) $. Подставим $(3)$ в $(4)$: $\theta= \lambda_{1}(\xi_{11}e_{1}+ \dots + \xi_{1n}e_{n})+ \dots + \lambda_{n+1}(\xi_{n+11}e_{1}+ \dots + \xi_{n+1n}e_{n}) = (\lambda_{1}\xi_{11}+ \dots + \lambda_{n+1}\xi_{n+11})e_{1}+ \dots + (\lambda_{1}\xi_{1n}+ \dots + \lambda_{n+1}\xi_{n+1n})e_{n}\;(5)$.
+    \\ Поскольку $\{e_{1},\dots,e_{n}\}$ - ЛНЗ, то $(5)$ возможно $\Leftrightarrow$  все коэффициенты ЛК - нулевые, $\begin{cases}
+        \lambda_{1}\xi_{11}+ \dots + \lambda_{n+1}\xi_{n+11} = 0\\
+        \phantom{\lambda_{1}\xi_{11}+ ..}\vdots\\
+        \lambda_{1}\xi_{1n}+ \dots + \lambda_{n+1}\xi_{n+1n} = 0
+    \end{cases}(6)$
+    Но $(6)$ - это ОСЛАУ относительно $\lambda_{1},\dots,\lambda_{n+1}$, вида $A \underset{\downarrow}{\lambda}=\underset{\downarrow}{0}$, причем $RgA \leqslant n < n+1\implies \exists$ нетривиальное решение, т.е $\exists$ нетривиальный набор $\lambda_{1}^{(0)},\dots,\lambda^{(0)}_{n+1}$, удовлетвоярющий ОСЛАУ $(6)$, но для этого же нетривиального набора выполненено $(4)$ $\implies $ любая система $\mathcal{Y}$ из $(n+1)$ элемента будет ЛЗ. $\implies \dim \V=n$
+\end{proof}
+\begin{corollary}
+    Если $\dim \V=n$, то любой базис состоит из $n$ элементов.
+\end{corollary}
+\begin{corollary}
+    Если $\dim \V=n$, то любая система из $n$ ЛНЗ элементов образует его базис. 
+\end{corollary}
+\begin{proof}
+    Самостоятельно. 
+\end{proof}
+
+Примеры базисов:
+\\1. $k^{n} \;(\R^{n}, \C^{n})$ - строки длины $n$, столбцы высоты $n$.
+\\$e_{1} = (1, 0,\dots,0) ,\dots, e_{n} = (0,\dots,0,1)$. выше было показано, что $\{e_{1},\dots,e_{n}\}$ - ЛНЗ. Далее $\forall x \in k^{n}\implies x= (\xi_{1},\dots,\xi_{n})=\xi_{1}e_{1}+\dots+\xi_{n}e_{n}\implies \{e_{1},\dots,e_{n}\}$ - базис. $\fbox{$\dim k^{n}=n$}$ 
+Его еще называют $n$ - мерным координатным пространством. 
+\\2. $P_{n}$ - многочлены степени $\leqslant n$
+\\$e_{0}=1,e_{1}=t ,\dots, e_{n}=t^{n}$. ЛНЗ показана выше. $\forall x(t)\in P_{n}\implies x(t)=a_{0}+a_{1}t+\dots+a_{n}t^{n}=a_{0}e_{0}+\dots+a_{n}e_{n}\implies \{e_{0},\dots,e_{n}\}$ - базис.$ \fbox{$\dim P_{n}=n+1. $}$
+\\3. $\mathfrak{M}_{m\times n}$. 
+\\$\left\{e_{ij}= \begin{pmatrix}
+    0& \dots & 0 & \dots &0\\ 
+    \vdots & \ddots & \vdots & \ddots & \vdots\\
+    0& \dots & 1 & \dots & 0 \\ 
+    \vdots & \ddots & \vdots & \ddots & \vdots \\
+    0& \dots & 0 & \dots & 0
+\end{pmatrix}\right\}_{i=\overline{1,m}}^{j=\overline{1,n}}$ (Единственный ненулевой элемент находится на пересечении $i$-ой строки и $j$-ого столбца.) - ЛНЗ системы матрицы. $\forall A \in \mathfrak{M}_{m\times n}\implies A =(a_{ij})_{m}^{n} = a_{11}e_{11}+\dots+a_{1n}e_{1n}+\dots+a_{m1}e_{m1}+\dots+a_{mn}e_{mn}\implies \{e_{ij}\} - $ базис. $\fbox{$\dim \mathfrak{M}_{m\times n} = m\cdot n$}$.
+\\4. Множество всевозможных решений ОСЛАУ $\V_{sol}$ $(6) \; A\underset{\downarrow}{x}=\underset{\downarrow}{0}$ \quad ($\equiv$ общее решение ОСЛАУ). 
+\\Пусть $A= (a_{ij})_{m}^{n}, RgA=r$. При $r<n \exists $ ФСР ОСЛАУ $(6)$, например НСР, состоящая из $(n-r)$ элементов $\underset{\downarrow}{\varphi}^{(1)},\dots,\underset{\downarrow}{\varphi}^{(n-r)}$. Эта система упорядоченная, ЛНЗ и любое решение через нее выражается $\implies$ это базис в общем решении $\implies \fbox{$\dim\V_{sol}=n-r$}$  
+\\Таким образом: доказательство теоремы о ФСР и структуре общего решение (где не были доказаны 2 и 3 пункты.)
+\begin{proof}
+    2. $\dim \V_{sol}=n-r \implies $ любой базис содержит $(n-r)$ элементов. Всякая ФСР представляет собой базис $\implies$ всякая ФСР содержит $(n-r)$ элементов. 
+    \\3. Любые $(n-r)$ ЛНЗ упорядоченных элементов $\V_{sol}$, т.е любые $(n-r)$ ЛНЗ упорядоченных решений, образуют базис $\V_{sol}\implies $ образуют ФСР. 
+\end{proof}
+Замечание. Видим, что можно дать альтернативное определение ФСР: фактически ФСР - это произвольный базис в ЛП всевозможных решений ОСЛАУ. 
+
+\section{Подпространства линейного пространства. Линейная оболочка системы векторов}
+Пусть $\V$ - ЛП над $k$. Рассмотрим множество $L: L\subset\V$. 
+\begin{definition}
+    $L$ называется линейным подпространством (ЛПП) линейного пространства $\V$, \\если: $\begin{aligned}
+        &1. \forall x,y \in L \implies x+y \in L\\
+        &2. \forall x\in L, \forall \alpha \in k \implies \alpha x \in L
+    \end{aligned}$
+\end{definition}
+
+\begin{theorem}
+    Всякое ЛПП является ЛП (над тем же полем $k$)
+\end{theorem}
+\begin{proof}
+    Линейные операции в $L$ определяются так же, как в основном ЛП $\V$, и они не выводят из $L$ (по определению ЛПП). Требуется доказать свойства 1-8 линейного пространства:
+    \\1,2 выполняются, т.к $L \subset \V$
+    \\3. $\theta\in L$, т.к $0\cdot x\in L$, но $0\cdot x=\theta$. 
+    \\4. $\forall x\in L \implies \exists x' \in L : x+x' = \theta$, т.к $(-1)\cdot x\in L $, а $(-1)\cdot x = x'$. 
+    \\5-8 выполняются, т.к $L\subset \V$.
+    \\1,2,5-8 проверить самостоятельно еще раз. 
+\end{proof}
+Рассмотрим систему $X =\{x_{1},\dots,x_{m}\}\subset \V$. 
+\begin{definition}
+   Совокупность всевозможных ЛК элементов системы $X$ называется линейной оболочкой (ЛО) на системе $X$ (или на элементах $x_{1},\dots,x_{m}$). Обозначение: $\spann(x),\spann(x_{1},\dots,x_{m})$, \\то $\fbox{$\spann(x)=\{\alpha_{1}x_{1}+ \dots + \alpha_{m}x_{m}; \alpha_{1},\dots,\alpha_{m}\in k\}$}$. Говорят, что система $X $ порождает ЛО $\spann(x)$.
+\end{definition}
+Пусть $L=\spann (x)$. Очевидно, $L\subset \V$. 
+\begin{theorem}[О линейной оболочке]
+    $L$ является ЛПП of ЛП $\V$.
+    
+\end{theorem}
+\begin{proof}
+    $x,y \in L \implies \exists \alpha_{1},\dots\alpha_{m},\beta_{1},\dots,\beta_{m}: \left.\begin{aligned}
+        &x = \alpha_{1}x_{1}+\dots+\alpha_{m}x_{m}\\
+        &y = \beta_{1}x_{1}+\dots+\beta_{m}x_{m}
+    \end{aligned}\right\} \implies x+y = \alpha_{1}x_{1}+\dots+\alpha_{m}x_{m}+\beta_{1}x_{1}+\dots+\beta_{m}x_{m} = (\alpha_{1}+\beta_{1})x_{1}+\dots+(\alpha_{m}+\beta_{m})x_{m}\in L$.
+    \\$\alpha x= \alpha(\alpha_{1}x_{1}+\dots+\alpha_{m}x_{m}) = (\alpha\alpha_{1})x_{1}+\dots+(\alpha\alpha_{m})x_{m}\in L$.
+\end{proof}
+\begin{theorem}[О размерности ЛО]
+    Пусть $L =\spann (x), x=\{x_{1},\dots,x_{m}\}\subset \V$. Тогда $\dim L = \max $ количеству ЛНЗ элеметнов в системе $X$.
+    
+\end{theorem}
+\begin{proof}
+    Пусть $\max$ количество ЛНЗ элементов в $X$ равно $p$. БОО можно считать, что $\{x_{1},\dots,x_{p}\}$ - ЛНЗ (иначе перенумеруем элементы $X$). Тогда каждая из системы $\{x_{1},\dots,x_{p},x_{p+1}\},\dots,\{x_{1},\dots,x_{p},x_{m}\}$ - ЛЗ $\implies$ по критерию линейной зависимости $(1)\begin{cases}
+        x_{p+1}=\alpha_{p+1} x_{1}+\dots+\alpha_{p+1}x_{p},\dots\\
+        x_{m}=\alpha_{m}x_{1}+\dots+\alpha_{m}x_{p}
+    \end{cases}$
+    \\Рассмотрим произвольный $y\in L: y=\lambda_{1} x_{1}+\dots+\lambda_{m}x_{m}=(1)= \lambda_{1}x_{1}+\dots+\lambda_{p}x_{p}+\lambda_{p+1}(\alpha_{p+11}x_{1}+\dots+\alpha_{p+1p} x_{p})+\dots+\lambda_{m}(\alpha_{m1}x_{1}+\dots+\alpha_{mp}x_{p}) = (\lambda_{1}+\lambda_{p+1}\alpha_{p+11} + \dots + \lambda_{m}\alpha_{m1})x_{1}+\dots+(\lambda_{p}+\lambda_{p+1}\alpha_{p+1p}+\dots+\lambda_{m}\alpha_{mp})x_{p} = \beta_{1}x_{1} + \dots + \beta_{p}x_{p}$. Таким образом, $\{x_{1},\dots,x_{p}\}$ ЛНЗ и $\forall y\in L$ представляется их линейной комбинацией $\implies \{x_{1},\dots,x_{p}\}$ - базис в $L \implies \dim L = p$. 
+\end{proof}
+\begin{theorem}[О неполном базисе]
+    Пусть $X = \{x_{1},\dots,x_{m}\}$ - ЛНЗ в ЛП $\V,  \dim \V = n> m$. Тогда $\exists x_{m+1},..,x_{n}\in \V: \{x_{1},\dots,x_{m},x_{m+1},\dots,x_{n}\}$ - базис в $\V$. То есть всякую ЛНЗ систему в $\V$ можно дополнить до базиса. 
+\end{theorem}
+\begin{proof}
+    Рассмотрим $L = \spann (x) =\spann (x_{1},\dots,x_{m}), \dim L = m< n = \dim \V \implies L \neq  \V \implies \exists x_{m+1}: \begin{cases}
+        x_{m+1}\in \V\\
+        x_{m+1}\notin L
+    \end{cases} \implies x_{m+1}$ не является линейной комбинацией элементов $X\implies $ система $\{x_{1}, \dots , x_{m}, x_{m+1}\}$ - ЛНЗ. Если $m+1=n$, то теорема доказана. Если $m+1<n$, то дальше действуем аналаогично. $\exists x_{m+\alpha}: \begin{cases}
+        x_{m+\alpha}\in \V\\
+        x_{m+\alpha}\notin \spann (x_{1},\dots,x_{m},x_{m+1})
+    \end{cases}$ и т.д. За конечное число шагов получим базис $\{x_{1},\dots,x_{m},x_{m+1},\dots,x_{n}\}$.
+\end{proof}
+
+\section{Координаты вектора в базисе}
+Пусть $\V$ - ЛП над $k, \mathcal{E} = \{e_{1},\dots,e_{n}\}$ - базис в $\V$. Тогда $\forall x \in \V\implies (1)\; x=\xi_{1}e_{1}+\dots+\xi_{n}e_{n}$ - разложение по базису.  
+\begin{lemma}
+    Разложение по базису единственно. 
+\end{lemma}
+\begin{proof}
+    $\left.\begin{aligned}
+        &x= \xi_{1}e_{1}+\dots+\xi_{n}e_{n} \\ 
+        &x= \xi'_{1}e_{1}+\dots+\xi'_{n}e_{n}
+    \end{aligned}\right\}\implies \theta = (\xi_{1}-\xi'_{1})e_{1}+\dots+(\xi_{n}-\xi'_{n})e_{n}\;(*)$. Базис - ЛНЗ система, то $(*)$ возможно $\Leftrightarrow \xi_{1} - \xi'_{1} = \dots = \xi_{n} - \xi'_{n} = 0$, т.е $\xi_{1} = \xi'_{1},\dots,\xi_{n} = \xi'_{n}$. 
+\end{proof}
+Таким образом координаты вектора в данном базисе определены единственным образом и $\exists$ взаимно однозначное соответствие между элементами ЛП $\V$ и их координатами в заданном базисе. Обозначим это $x \leftrightarrow (\xi_{1},\dots,\xi_{n})$.
+\begin{theorem}[О координатах суммы векторов и произведении вектора на скаляр]
+    Пусть в $\V$ фиксирован базис $\mathcal{E}$. 
+    \\Если $x \leftrightarrow (\xi_{1},\dots,\xi_{n}), y \leftrightarrow (\eta_{1},\dots,\eta_{n})$, то $\begin{aligned} 
+        &x+y \leftrightarrow (\xi_{1}+\eta_{1},\dots,\xi_{n}+\eta_{n}) \\ 
+        &\alpha x \leftrightarrow (\alpha \xi_{1},\dots,\alpha \xi_{n})
+    \end{aligned}$
+\end{theorem}
+\begin{proof}
+$\begin{aligned}
+    x\leftrightarrow (\xi_{1},\dots,\xi_{n}), \text{ т.е } x = \xi_{1}e_{1}+\dots+\xi_{n}e_{n}\\
+    y\leftrightarrow (\eta_{1},\dots,\eta_{n}), \text{ т.е } y = \eta_{1}e_{1}+\dots+\eta_{n}e_{n}
+\end{aligned}$, тогда $x+y = \xi_{1}e_{1} + \dots+ \xi_{n}e_{n} + \eta_{1}e_{1} + \dots + \eta_{n}e_{n} = (\xi_{1}+\eta_{1})e_{1}+\dots+(\xi_{n}+\eta_{n})e_{n} \leftrightarrow (\xi_{1}+\eta_{1},\dots,\xi_{n}+\eta_{n})$.     
+Самостоятельно доказать для $\alpha x$.
+\end{proof}
+Итак, координаты суммы векторов равны сумме соответствующих координат, координаты произведения вектора на скаляр равны произведению координат на этот скаляр. Поскольку ВОС между векторами и координатами сохраняет линейные операции часто вместо знака $\leftrightarrow$ пишут знак $=$.
+\\$x= (\xi_{1},\dots,\xi_{n}), y = (\eta_{1},\dots,\eta_{n})$ и т.д. На самом деле это означает, что $x= \xi_{1}e_{1}+\dots+\xi_{n}e_{n} =$ формально $=(e_{1},\dots,e_{n})\begin{pmatrix}
+    \xi_{1}\\
+    \vdots\\
+    \xi_{n}
+\end{pmatrix}= [\mathcal{E}]\underset{\downarrow}{\xi}$. 
+\\$y= \eta_{1}e_{1}+\dots+\eta_{n}e_{n} = (e_{1},\dots,e_{n})\begin{pmatrix}
+    \eta_{1}\\
+    \vdots\\
+    \eta_{n}
+\end{pmatrix}= [\mathcal{E}]\underset{\downarrow}{\eta}$.
+\\Т.е записи $x= (\xi_{1},\dots,\xi_{n}), x = \xi_{1}e_{1}+\dots+\xi_{n}e_{n}, x= [\mathcal{E}]\xi$ означают одно и то же: вектор $x$ имеет в базисе $\mathcal{E}$ координаты ($\xi_{1},\dots,\xi_{n}$)
+\\В этих обозначениях $[\mathcal{E}]= (e_{1},\dots,e_{n})$ - строка базисных векторов. 
+Замечание о так называемом "сокращении на базис". Поскольку векторы равны $\Leftrightarrow$ совпадают их координаты, то имеем: $x=y \Leftrightarrow \begin{cases}
+    \xi_{1} = \eta_{1}\\
+    \phantom{\xi_{1}} \vdots\\
+    \xi_{n} = \eta_{n}
+\end{cases} \leftrightarrow \\\leftrightarrow \underset{\downarrow}{\xi}= \underset{\downarrow}{\eta}$
+\\С другой стороны $x = [\mathcal{E}]\underset{\downarrow}{\xi}, y = [\mathcal{E}]\underset{\downarrow}{\eta}$, т.е $\fbox{$[\mathcal{E}] \underset{\downarrow}{\xi} = [\mathcal{E}]\underset{\downarrow}{\eta} \Leftrightarrow \underset{\downarrow}{\xi} = \underset{\downarrow}{\eta}$}$ Это формально значит, что в равенстве $[\mathcal{E}]\underset{\downarrow}{\xi} = [\mathcal{E}]\underset{\downarrow}{\eta}$ на базис $[\mathcal{E}]$ можно "сократить": $\underset{\downarrow}{\xi}= \underset{\downarrow}{\eta}$
+\\Этим свойством "сокращения на базис" будем пользоваться в дальнейшем.
+\section{Изоморфизм линейных пространств}
+Пусть $\V, \W $ - ЛП над $k$. Пусть $\exists $ правило $\varphi$, по которому каждому элементу из $\V$ ставится в соответствие элемент из $\W$, так что выполнены следующие условия:
+$\begin{aligned}
+    &1. \forall x \in \V \implies \exists ! y \in \W: y = \varphi(x)\\
+    &2. \forall y \in \W \implies \exists ! x \in \V: y = \varphi(x)
+\end{aligned}$
+\\Иными словами, установлено взаимно однозначное соответствие между элементами ЛП $\V$ и $\W$ с помощью правила $\varphi$.
+\begin{definition}
+    Такое соотстветствие называется изоморфизмом, если 
+    $\begin{aligned}
+        &1. \forall x_{1},x_{2} \in \V \implies \varphi(x_{1}+x_{2}) = \varphi(x_{1})+\varphi(x_{2})\\ 
+        &2. \forall x\in \V, \forall \lambda \in k \implies \varphi(\lambda x) = \lambda \varphi(x)
+    \end{aligned}$, т.е сохраняются лиенйные операции.
+\end{definition}
+При этом говорят, что $\V$ изоморфно $\W$ и обозначают $\V \sim \W$
+
+Замечание. Очевидно, что $\varphi^{-1}$ тоже изоморфизм, т.е $\W \sim \V$, то ЛП $\V$ и $W$ изоморфны друг другу.
+
+Замечание. Выше мы фактически доказали, что если $\dim \V = n $, то $\V \sim k^{n}$, т.е $\exists $ ВОС между элементами ЛП $\V$ и $n$-мерным координатным пространством, сохраняющее линейные операции. 
+
+Свойства изоморфизма:
+\\1. $\V \sim \V$ (рефлексивность) 
+\\2. Если $\V \sim \W$, то $\W \sim \V$ (симметричность)
+\\3. Если $\V\sim \U, \U \sim \W$, то $\V \sim \W$ (транзитивность)
+\\4. Пусть $\V\sim \W$, тогда если $\begin{aligned}
+    &\theta_{\V} - \text{ нейтральный элемент } \V \\
+    &\theta_{\W} - \text{ нейтральный элемент } \W
+\end{aligned}$, то $\theta_{\V} \sim \theta_{\W}$   
+\begin{proof}
+    $\forall x \in \V \implies 0 \cdot x = \theta_{\V}, \varphi(0\cdot x) = 0\cdot \varphi(x) = 0\cdot y = \theta_{\W}$. В силу ВОС $\theta_{\V} \sim \theta_{\W}$
+\end{proof}
+5. Пусть $\V \sim \W$, тогда если $X = \{x_{1},\dots,x_{m}\}$ - ЛНЗ в $\V$ , то $Y = \{ y_{1},\dots,y_{m}\}: \forall i=\overline{1,m} \; y_{i} = \varphi(x_{i})$ - ЛНЗ в $\W$. 
+\begin{proof} 
+    Самостоятельно. 
+\end{proof}
+6. Пусть $\V \sim \W$, тогда если $X=\{x_{1},\dots,x_{m}\}$ - ЛЗ в $\V$, то $Y = \{y_{1},\dots,y_{m}\}: \forall i=\overline{1,m} \; y_{i} = \varphi(x_{i})$ - ЛЗ в $\W$.
+\begin{proof}
+    Самостоятельно.
+\end{proof}
+7. Если $\V,\W$ конечномерны, то $\fbox{$ \V \sim \W \Leftrightarrow \dim \V = \dim \W$}$ критерий изоморфизма конечномерных ЛП. 
+\begin{proof}
+    $\tcircle{$\implies$}$ $\V\sim\W\implies$ их базисы содержат равное количество элементов (см. свойства 5 и 6) $\implies \dim \V = \dim \W$
+    \\$\tcircle{$\impliedby$}$ $\left.\begin{aligned}
+        &\dim \V = n \implies \V \sim k^{n}\\
+        &\dim \W = n \implies \W \sim k^{n}
+    \end{aligned}\right\}\underset{2, 3}{\implies} \V \sim \W$.  
+\end{proof}
+Видим, что изоморфизм между ЛП устанавливается путем установления ВОС между элементами базисов этих ЛП.
+
+Замечание. С точки зрения свойств, связанных с линейными операциями, эелменты всех изоморфных ЛП равной размерности ведут себя одинаково (так же как и элементы $k^{n}$).
+\begin{corollary}[О размерности ЛО]
+    Пусть $\V$ - ЛП над $k, \dim \V = n$. Пусть $\begin{aligned}
+        &\mathcal{E} = \{e_{1},\dots,e_{n}\} - \text{ базис в } \V\\
+        &X = \{x_{1},\dots,x_{m}\} - \text{ система в } \V
+    \end{aligned}$ $x_{1}= [\mathcal{E}]\underset{\downarrow}{\xi_{1}},\dots,x_{m} = [\mathcal{E}]\underset{\downarrow}{\xi_{m}}$. Пусть $L = \spann (X)$. Тогда $\dim L = Rg(\underset{\downarrow}{\xi_{1}}\dots\underset{\downarrow}{\xi_{m}})$
+\end{corollary}
+\begin{proof}
+    $\dim L = \max$ количеству ЛНз векторов в системе $X = (\V \sim k^{n})= \max $ количеству ЛНЗ столбцов в системе $\{\underset{\downarrow}{\xi_{1}},\dots,\underset{\downarrow}{\xi_{m}}\}=$ т. о ранге матрицы $= Rg(\underset{\downarrow}{\xi_{1}}\dots \underset{\downarrow}{\xi_{m}})$
+\end{proof}
+\section{Сумма и пересечение линейных пространств}
+Пусть $\V$ - ЛП над $k$. $\V_{1}, \V_{2}$ - его ЛПП. 
+\begin{definition}
+    Суммой ЛПП $\V_{1}$ и $\V_{2}$ называется $\fbox{$S=\{x\in\V : x= x_{1} + x_{2}, x_{1}\in \V_{1}, x_{2}\in \V_{2}\}$}$ - совокупность всевозможных сумм элементов из $\V_{1}$ и $\V_{2}$. Обозначение: $\V_{1}+\V_{2}$ 
+\end{definition} 
+\begin{definition} 
+    Пересечением ЛПП $\V_{1}$ и $\V_{2}$ называется $\fbox{$D = \{x\in \V : x\in \V_{1}, x\in \V_{2}\}$}$ - совокупность общих элементов $\V_{1}$ и $\V_{2}$. Обозначение: $\V_{1}\cap \V_{2}$
+\end{definition}
+\begin{theorem}[О сумме и пересечении ЛПП]
+    $S,D$ являются ЛПП of ЛП $\V$.
+\end{theorem}
+\begin{proof}
+    Самостоятельно.
+\end{proof}
+\begin{corollary}
+    $S,D$ являются ЛП над тем же полем $k$, что и $\V$.
+\end{corollary}
+\begin{theorem}[О размерности $S$ и $D$]
+    $\fbox{$\dim(\V_{1}+\V_{2}) = \dim \V_{1} + \dim \V_{2} - \dim(\V_{1}\cap \V_{2})$}$
+\end{theorem}
+\begin{proof}
+    Без доказательства.
+\end{proof}
+\begin{definition}
+    Говорят, что ЛП $\V$ раскладывается в прямую сумму своих ЛПП $\V_{1}$ и $\V_{2}$, если\\ $\fbox{$\forall x \in \V \implies \begin{cases}
+        \exists! x_{1}\in \V_{1} \\ 
+        \exists! x_{2}\in \V_{2}
+    \end{cases}: x = x_{1}+x_{2}$}$ Обозначение: $\V = \V_{1}\oplus \V_{2}$ (т.е каждый элемент из $\V$ единственным образом представляется в виде суммы элементов из $\V_{1}$ и $\V_{2}$)
+\end{definition}
+\begin{theorem}[Необходимое и достаточное условие разложения $\V$ в прямую сумму $\V_{1}$ и $\V_{2}$]
+    $\V = \V_{1}\oplus \V_{2} \Leftrightarrow \left\{\begin{aligned}
+        &1. \V_{1}+\V_{2} = \V\\
+        &2. \V_{1}\cap \V_{2} = \{\theta\}
+    \end{aligned}\right.$
+\end{theorem}
+\begin{proof}
+    Без доказательства.
+\end{proof}
+
+
+
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}
+\end{document}

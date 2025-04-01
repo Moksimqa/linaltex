@@ -1,0 +1,102 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+Непустое множество $k$ элементов называется \underline{полем}, если в нем определены две операции "+" и "$\cdot$" (не выводящие из $k$) и выполнены  следующие свойства: 
+\\1. $\forall a,b \in k \implies a+b=b+a$ (коммутативность)
+\\2. $\forall a,b,c \in k \implies (a+b)+c=a+(b+c)$ (ассоциативность)
+\\3. $\exists \theta \in k: \forall a \implies a+ \theta= a$ (нейтральный элемент)
+\\4. $\forall a \in k \exists a' \in k: a+a'=\theta$ (противоположный элемент)
+\\5. $\forall a,b \in k\implies a\cdot b= b\cdot a$ (коммутативность)
+\\6. $\forall a,b,c \in k \implies (a\cdot b)\cdot c=a\cdot(b\cdot c)$ (ассоциативность)
+\\7. $\exists e \in k: \forall a \in k \implies a\cdot e = a$ (нейтральный элемент)
+\\8. $\forall a \in k: a \neq  \theta \implies \exists \tilde{a}: a\cdot \tilde{a}=e$ (обратный элемент)
+\\9. $\forall a,b,c \in k \implies (a+b)\cdot c = a\cdot c + b\cdot c$ (дистрибутивность)
+
+Примеры: $\R, \C, \Q$ - поля, $\{1,0,-1\}$ - поле. $\Z$ - не поле.
+
+\section{Определение и примеры ЛП}
+Пусть $\mathbb{V} $ - множество элементов произвольной природы, для которых определены операции сложения и умножения на элементы из поля $k$, не выводящие из $\mathbb{V}$, т.е $\begin{aligned} &\forall a,b\in \mathbb{V}\implies a+b\in \mathbb{V}\\ &\forall a \in \mathbb{V} \;\forall \alpha \in k \implies \alpha \cdot a \in \mathbb{V} \end{aligned}$
+\begin{definition}
+    $\mathbb{V}$ называется линейным пространством (ЛП) над полем $k$ ($\R$ или $\C$), если выполнены следующие свойства (аксиомы) линейного пространства:
+    \\1. $\forall a,b \in \mathbb{V}\implies a+b = b+ a $
+    \\2. $\forall a,b,c \in \mathbb{V}\implies (a+b)+c = a+(b+c)$
+    \\3. $\exists \theta \in \mathbb{V}: \forall a \in \mathbb{V} \implies a+\theta = a$ 
+    \\4. $\forall a \in \mathbb{V} \;\exists a' \in \mathbb{V}: a+a' = \theta$
+    \\$\theta$ называется \underline{нейтральным} элементом, $a'$ называется элементом, \underline{противоположным} к $a$
+    \\5. $\forall a,b \in \V \;\forall \alpha \in k \implies \alpha (a+b)=\alpha a + \alpha b$
+    \\6. $\forall a \in \V \;\forall \alpha, \beta \in k \implies (\alpha + \beta)a = \alpha a + \beta a$
+    \\7. $\forall a \in \V \;\forall \alpha, \beta \in k \implies \alpha(\beta a) = (\alpha \beta) a$
+    \\8. $\forall a \in \V \implies 1\cdot a = a$
+\end{definition}
+Если $k=\R$, то $\V$ - вещественное ЛП (ВЛП), если $k=\C$, то $\V$ - комплексное ЛП (КЛП)
+
+Далее элементы $\V$ будем называть \underline{векторами} и обозначать (чаще всего) латинскими буквами без стрелок, а элементы поля $k$ - \underline{скалярами} и обозначть (чаще всего) греческими буквами. 
+
+Примеры: 1. ЛПВ, ЛПВпл, ЛПВпр
+\\2. Множество всевозможных столбцов или строк фиксированной высоты (длины) с обычными операциями сложения и умножения на числа. $\underset{\downarrow}{x}=\begin{pmatrix}
+    \xi_{1}\\ 
+    \vdots \\ 
+    \xi_{n}
+\end{pmatrix}\; \underset{\downarrow}{y}=\begin{pmatrix}
+    \eta_{1}\\ 
+    \vdots \\ 
+    \eta_{n}
+\end{pmatrix}, \quad \underset{\downarrow}{x}+\underset{\downarrow}{y}\underset{\text{def}}{=} \begin{pmatrix}
+    \xi_{1}+\eta_{1}\\ 
+    \vdots \\ 
+    \xi_{n}+\eta_{n}
+\end{pmatrix}, \alpha \underset{\downarrow}{x}\underset{\text{def}}{=}\begin{pmatrix}
+    \alpha \xi_{1}\\ 
+    \vdots \\ 
+    \alpha \xi_{n}
+\end{pmatrix}$
+\\ 1, 2, 5-8 - очевидно 
+\\ $\underset{\downarrow}{\theta}=\begin{pmatrix}
+    0\\ 
+    \vdots \\ 
+    0
+\end{pmatrix}\; \underset{\downarrow}{x'}=\begin{pmatrix}
+    -\xi_{1}\\ 
+    \vdots \\ 
+    -\xi_{n}
+\end{pmatrix}$
+Для строк $\vec{x}=\begin{pmatrix}
+    \xi_{1} & \ldots & \xi_{n}
+\end{pmatrix},\; \vec{y}= \begin{pmatrix}
+    \eta_{1} & \ldots & \eta_{n}
+\end{pmatrix}$ аналогично 
+\\3. $P_{n}$ - совокупность всевозможных многочленов степени $\leqslant n$. $P_{n}=\{\alpha_{0}+\alpha_{1}t+\dots+\alpha_{n}t^{n},\alpha_{i}\in\R(\C), i=\overline{1,n}\}$
+\\$\theta = x(t)\equiv 0 \quad x(t)=\alpha_{0}+\alpha_{1}t+\dots+\alpha_{n}t^{n},\; x'(t)= -\alpha_{0}-\dots-\alpha_{n}t^{n}$
+\\4.$\mathfrak{M}_{m\times n}$ - всевозможные прямоугольные матрицы ($m\times n$). $\theta=\Theta = \begin{pmatrix}
+    0 & \ldots & 0\\ 
+    \vdots & \ddots & \vdots\\ 
+    0 & \ldots & 0
+\end{pmatrix}. \\ A = (a_{ij})_{m}^{n},\quad A' =(-a_{ij})_{m}^{n}$
+\\ Остальное - самостоятельно.
+\\5. Всевозможные решения ОСЛАУ $x_{\text{оо}}=\{\underset{\downarrow}{x_{\text{оо}}}\},\quad \underset{\downarrow}{\theta}=\begin{pmatrix}
+    0 \\ 
+    \vdots \\
+    0
+\end{pmatrix}, \underset{\downarrow}{ x}=\begin{pmatrix}
+    x_{1} \\ 
+    \vdots \\ 
+    x_{n}
+\end{pmatrix}, $ то $\underset{\downarrow}{x'}= \begin{pmatrix}
+    -x_{1} \\ 
+    \vdots \\ 
+    -x_{n}
+\end{pmatrix}$
+\\6. $C[a,b]\qquad (f+g)(x)\underset{\text{def}}{=} f(x)+g(x), \quad (\alpha f)(x)\underset{\text{def}}{=}\alpha f(x)$
+\\$\theta=\left(f(x)\equiv_{0}\right)\qquad \tilde{f}(x)=-f(x)$ 
+\\7. Декартово произведение ЛП. Пусть $\mathbb{V},\mathbb{W} $ - ЛП. Тогда $\V \times \W\underset{\text{def}}{=} \{(x,y):x\in\V, y\in\W\}$ - совокупность всевозможных пар элементов. 
+\\Сумма: $(x_{1},y_{1})+(x_{2},y_{2})\underset{\text{def}}{=}(x_{1}+x_{2},y_{1}+y_{2}),\quad$ умножение на скаляр: $ \alpha (x,y)\underset{\text{def}}{=}(\alpha x,\alpha y)$. $\theta=(0,0)$.
+
+\vspace{0.5cm}
+\textbf{Свойства ($\theta$ и $a'$)}
+\\1. $\theta$ - единственный. 
+\\2. $a'$ - единственный.\;($\forall a \in \V$)
+\\3. $\forall a \in \V \implies  a\cdot \theta =\theta$
+\\4. $\forall \alpha \in k \implies \alpha \cdot \theta=\theta$
+\\5. $\forall a \in \V \implies a' = -1 \cdot a$
+
+
+\end{document}

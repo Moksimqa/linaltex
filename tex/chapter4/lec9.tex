@@ -1,0 +1,216 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{9}{31.03}{}
+Ранее было показано, что каждому ЛО $A \in L(\V,\V)$ однозначно ставится в соответствие его матрица в фиксированном базисе $M_{A}^{\mathcal{E}}\in \mathfrak{M}_{n \times n}$ $A\to M_{A}^{\mathcal{E}}$. $\begin{pmatrix}
+    A(e_{1}) & \dots & A(e_{n}) \\
+\end{pmatrix}= \begin{pmatrix}
+    e_{1} & \dots & e_{n} \\
+\end{pmatrix} M_{A}^{\mathcal{E}}. [A\mathcal{E}]=[\mathcal{E}]M_{A}^{\mathcal E}$
+ \begin{theorem}
+    $\forall M \in \mathfrak{M}_{n\times n} \exists ! A \in L(\V,\V): M_{A}^{\mathcal{E}}=M$ ($\mathcal{E}$ - некоторый базис)
+ \end{theorem}
+\begin{proof}
+    Рассмотрим $\mathcal{E}=(e_{1}\dots e_{n})$. Пусть $M = (m_{ij})^{n}_{n}$.
+    \\ Рассмотрим систему векторов $\mathcal{V}$
+    $\begin{cases}
+        v_{1} = m_{11}e_{1} + \dots + m_{1n}e_{n} \\
+        \phantom{v_{1}=m_{11}e_{1}+}\dots \\ 
+        v_{n} = m_{n1}e_{1} + \dots + m_{nn}e_{n}
+    \end{cases}$, т.е $[\mathcal{V}]= [\mathcal{E}]M$. Ранее было доказано, что $\exists ! A \in L(\V,\V): A (e_{i})= v_{i}\; i=\overline{1,n}$. Пусть $A $ такой ЛО, но тогда из того, что $[\mathcal{V}]=[\mathcal{E}]M_{A}^{\mathcal{E}}\implies \fbox{$M_{A}^{\mathcal{E}}=M$}$\\ То есть $M$ будет  матрицей ЛО $A$ в базисе $\mathcal{E}$. 
+    \\Докажем единственность. Пусть $A, B : M_{A}^{\mathcal{E}}=M_{B}^{\mathcal{E}}\implies \forall x \in \V \implies A(x)=A([\mathcal{E}]\underset{\downarrow}{\xi})= [A\mathcal{E}]\underset{\downarrow}{\xi}= [\mathcal{E}]M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi}= [\mathcal{E}]M_{B}^{\mathcal{E}}\underset{\downarrow}{\xi}= \dots = B(x) \Leftrightarrow A=B$ 
+\end{proof}
+
+\begin{theorem}
+    $M_{A+B}^{\mathcal{E}}= M_{A}^{\mathcal{E}}+M_{B}^{\mathcal{E}}, \mathcal{E}$ - фиксированный базис.
+\end{theorem}
+\begin{proof}
+    $(A+B)(x)=(A+B)([\mathcal{E}]\underset{\downarrow}{\xi})= [\mathcal{E}]M_{A+B}^{\mathcal{E}}\underset{\downarrow}{\xi}$. С другой стороны $A(x)+B(x)= [\mathcal{E}]M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi}+ [\mathcal{E}]M_{B}^{\mathcal{E}}\underset{\downarrow}{\xi}= [\mathcal{E}](M_{A}^{\mathcal{E}}+M_{B}^{\mathcal{E}})\underset{\downarrow}{\xi}\implies [\mathcal{E}]M_{A+B}^{\mathcal{E}}\underset{\downarrow}{\xi}= [\mathcal{E}](M_{A}^{\mathcal{E}}+M_{B}^{\mathcal{E}})\underset{\downarrow}{\xi}$
+\end{proof}
+\begin{lemma}
+    Если $\forall \underset{\downarrow}{\xi}\implies M_{1}\underset{\downarrow}{\xi}=M_{2} \underset{\downarrow}{\xi},$ то $M_{1}=M_{2}$
+\end{lemma}
+\begin{proof}
+    Самостоятельно. Совет: рассмотреть $\underset{\downarrow}{\xi}= 
+    \begin{pmatrix}
+        1 \\
+        0 \\
+        \vdots \\
+        0 \\
+    \end{pmatrix} \begin{pmatrix}
+        0 \\
+        1 \\
+        \vdots \\
+        0 \\
+    \end{pmatrix} \dots \begin{pmatrix}
+        0 \\
+        0 \\
+        \vdots \\
+        1 \\
+    \end{pmatrix}$
+    \\Далее сокращаем на столбец ( в случае произвольности $\underset{\downarrow}{\xi}$). $M_{A+B}^{\mathcal{E}}=M_{A}^{\mathcal{E}}+M_{B}^{\mathcal{E}}$
+\end{proof}
+\begin{theorem}
+    $M_{\alpha A}^{\mathcal{E}}= \alpha M_{A}^{\mathcal{E}}$
+\end{theorem}
+\begin{proof}
+    Самостоятельно. 
+\end{proof}
+
+Таким образом, установлено ВОС $A \leftrightarrow M$, сохраняющее линейные операции. Т.е установлен изоморфизм $L (\V,\V) \sim \mathfrak{M}_{m\times n}$
+\begin{corollary}
+    $\dim{L(\V,\V)}=n^{2}$
+\end{corollary}
+\begin{theorem}[О преобразовании матрицы ЛО при смене базиса]
+    Пусть $A \in L(\V,\V)$, $\mathcal{E}=(e_{1} \dots e_{n}),  \mathcal{E'} = (e_{1}' \dots e_{n}')$ - базисы в $\V$. Тогда $\fbox{$M_{A}^{\mathcal{E'}}= T_{\mathcal{E} \to \mathcal{E'}}^{-1}  M_{A}^{\mathcal{E}}  T_{\mathcal{E} \to \mathcal{E'}}$}$\; , где $[\mathcal{E'}] = [\mathcal{E}]T_{\mathcal{E} \to \mathcal{E'}}$, т.е $T_{\mathcal{E} \to \mathcal{E'}}$ - матрица перехода от $\mathcal{E}$ к $\mathcal{E'}$.
+\end{theorem}
+\begin{proof}
+    $x= [\mathcal{E}]\underset{\downarrow}{\xi}= [\mathcal{E'}]\underset{\downarrow}{\xi}$. $A(x)= A([\mathcal{E}]\underset{\downarrow}{\xi})= [A\mathcal{E}] \underset{\downarrow}{\xi} = [\mathcal{E}]M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi} = [\mathcal{E}]M_{A}^{\mathcal{E}}(T_{\mathcal{E}\to\mathcal{E'}} \underset{\downarrow}{\xi'}) = [\mathcal{E}](M_{A}^{\mathcal{E}}T_{\mathcal{E}\to\mathcal{E'}})\underset{\downarrow}{\xi'}$
+    \\$A(x)=A([\mathcal{E'}]\underset{\downarrow}{\xi'})=\dots=[\mathcal{E'}]M_{A}^{\mathcal{E'}}\underset{\downarrow}{\xi'}= ([\mathcal{E}]T_{\mathcal{E}\to\mathcal{E'}})M_{A}^{\mathcal{E'}}\underset{\downarrow}{\xi'}= [\mathcal{E}](T_{\mathcal{E}\to\mathcal{E'}}M_{A}^{\mathcal{E'}}\underset{\downarrow}{\xi'})\implies [\mathcal{E}](M_{A}^{\mathcal{E}}T_{\mathcal{E}\to\mathcal{E'}})\underset{\downarrow}{\xi'}= [\mathcal{E}](T_{\mathcal{E}\to \mathcal{E'}}M_{A}^{\mathcal{E'}})\underset{\downarrow}{\xi'}$, в силу произвольности $\underset{\downarrow}{\xi'}\implies M_{A}^{\mathcal{E}}T_{\mathcal{E}\to\mathcal{E'}}M_{A}^{\mathcal{E'}} \bigg| \cdot T^{-1}_{\mathcal{E}\to\mathcal{E'}}\implies T^{-1}_{\mathcal{E}\to\mathcal{E'}}M_{A}^{\mathcal{E}}T_{\mathcal{E}\to\mathcal{E'}}= T^{-1}\mathcal{\mathcal{E}\to\mathcal{E'}}(T_{\mathcal{E}}\to\mathcal{E'}M_{A}^{\mathcal{E}}) = (T^{-1}_{\mathcal{E}\to\mathcal{E'}}T_{\mathcal{E}\to\mathcal{E'}})M_{A}^{\mathcal{E'}}=E \cdot M_{A}^{\mathcal{E'}}=M_{A}^{\mathcal{E'}}$
+\end{proof}
+\begin{corollary}
+    $\det{M_{A}^{\mathcal{E}}}$ не зависит от выбора базиса. 
+\end{corollary}
+\begin{proof}
+    $\det{ M_{A}^{\mathcal{E'}}}= \det{(T^{-1}_{\mathcal{E}\to\mathcal{E'}}M_{A}^{\mathcal{E}}T_{\mathcal{E}\to\mathcal{E'}})} = \frac{1}{\det{T_{\mathcal{E}\to\mathcal{E'}}}} \det{M_{A}}^{\mathcal{E}}\cdot\det{T_{\mathcal{E}\to\mathcal{E'}}}=\det{M_{A}^{\mathcal{E}}}$
+\end{proof}
+
+\begin{definition}
+    Определителем ЛО $A$ называется $\det{M_{A}^{\mathcal{E}}}$ в любом базисе.
+ \end{definition}
+
+\begin{theorem}
+    $M_{A\circ B }^{\mathcal{E}}=M_{A}^{\mathcal{E}}\cdot M_{B}^{\mathcal{E}}$
+\end{theorem}
+\begin{proof}
+    Берем любой $x \in \V$. $(A\circ B )(x) = \dots = [\mathcal{E}]M_{A\circ B}^{\mathcal{E}}\underset{\downarrow}{\xi}$
+    \\$A(B(x)) = A([\mathcal{E}]M_{B}^{\mathcal{E}}\underset{\downarrow}{\xi}) = [A\mathcal{E}]M_{B}^{\mathcal{E}}\underset{\downarrow}{\xi}= ([\mathcal{E}]M_{A}^{\mathcal{E}})M_{B}^{\mathcal{E}}\underset{\downarrow}{\xi}= [\mathcal{E}](M_{A}^{\mathcal{E}}\cdot M_{B}^{\mathcal{E}})\underset{\downarrow}{\xi}\implies [\mathcal{E}]M_{A\circ B}^{\mathcal{E}}= [\mathcal{E}](M_{A}^{\mathcal{E}} \cdot M_{B}^{\mathcal{E}})\underset{\downarrow}{\xi}$ \\В силу произвольности $\underset{\downarrow}{\xi}\implies M_{A\circ B}^{\mathcal{E}}= M_{A}^{\mathcal{E}}\cdot M_{B}^{\mathcal{E}}$
+\end{proof}
+Примеры: $M_{A}^{\mathcal{E}}= \begin{pmatrix}
+    1 & 2 \\ 
+    4 & 5
+\end{pmatrix}$
+\\\noindent $\begin{cases}
+    e_{1}' = e_{1} + e_{2} \\
+    e_{2}' = 2e_{1} - e_{2}
+\end{cases} \quad M_{A}^{\mathcal{E}} - ?$
+\\$T_{\mathcal{E}\to\mathcal{E'}}= \begin{pmatrix}
+    1 & 2 \\
+    1 & -1 \\
+\end{pmatrix}\quad M_{A}^{\mathcal{E'}}= T^{-1}_{\mathcal{E}\to\mathcal{E'}}\cdot M_{A}^{\mathcal{E}}\cdot T_{\mathcal{E}\to\mathcal{E'}}$. 
+\\$(A|B)\underset{\text{строк}}{\sim} (E|A^{-1}B)$
+\\ $(T_{\mathcal{E}\to\mathcal{E'}}|M_{A}^{\mathcal{E}})\underset{\text{строк}}{\sim} (E | T^{-1}_{\mathcal{E}\to \mathcal{E'}}M_{A}^{\mathcal{E}})$
+$\begin{pmatrix}[cc|cc]
+    1 & 2 & 1 & 2 \\
+    1 & -1 & 4 & 5 \\
+\end{pmatrix}\sim \begin{pmatrix}[cc|cc]
+     1 & 2 & 1 & 2 \\
+    0 & -3 & 3 & 3 \\
+\end{pmatrix}\sim \begin{pmatrix}[cc|cc]
+    1& 2 & 1 & 2 \\
+    0 & 1 & -1 & -1 \\
+\end{pmatrix}\sim \begin{pmatrix}[cc|cc]
+    1 & 0 & 3 & 4 \\ 
+    0 & 1 & -1 & -1 \\
+\end{pmatrix}$ $M_{A}^{\mathcal{E'}}=\begin{pmatrix}
+    3 & 4 \\
+    -1 & -1 \\
+\end{pmatrix}\begin{pmatrix}
+    1 & 2 \\
+    1 & -1 \\
+\end{pmatrix}=\begin{pmatrix}
+    7 & 2 \\ 
+    -2 & -1 
+\end{pmatrix}$
+
+
+\newpage \noindent Пример:
+\\1.$I$ - тождественный оператор, $\mathcal{E}= \begin{pmatrix}
+    e_{1}& \dots & e_{n}
+\end{pmatrix}$ - любой базис.\\ $\forall i=\overline{1,n}\implies I_{e_{i}}=e_{i}\implies M_{I}^{\mathcal{E}}=\begin{pmatrix}
+    1 & 0 & \dots & 0 \\
+    0 & 1 & \dots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \dots & 1 \\
+\end{pmatrix}= E $
+
+\noindent 2. $A $ - поворот на $\varphi$ против часовой на плоскости. $A(\vec{i}) = \vec{i}\cos{\varphi}+\vec{j}\sin{\varphi}, A(\vec{j})= -\vec{i}\sin{\varphi}+\vec{j}\cos{\varphi}. M_{A}^{\{\vec{i},\vec{j}\}}= \begin{pmatrix}
+    \cos{\varphi} & -\sin{\varphi} \\    
+    \sin{\varphi} & \cos{\varphi} \\
+\end{pmatrix}$ 
+Самостоятельно: $M_{A}^{\{\vec{i}+\vec{j}, \vec{i}-\vec{j}\}}-?$. Указание: восполнить матрицы перехода.
+
+\section{Обратный оператор и его свойства}
+Пусть $\V$ ЛП над $k, A\in L(\V,\V), \mathcal{E}$ - базис в $\V$. 
+\begin{definition}
+    Оператор $B$ называется обратным к $A$, если $A\circ B = B\circ A = I$. Обозначение: $B = A^{-1}$
+\end{definition}
+ \begin{definition}
+    Если $A$ имеет обратный, то $A $ называется обратимым.
+ \end{definition}
+
+\begin{theorem}
+    Если $A$ обратим, то $
+    \begin{aligned}
+        &1. A^{-1}\in L(\V,\V), \text{ т. е $A^{-1}$ - ЛО} \\ 
+        &2. A^{-1} - \text{единственный}.
+    \end{aligned}$    
+\end{theorem}
+\begin{proof}
+    $\tcircle{1}$ \; $1) A^{-1}(x+y)= A^{-1}(I(x)+I(y))= A^{-1}((A\circ A^{-1})(x)+(A\circ A^{-1})(y)) = A^{-1}(A(A^{-1}(x))+ A(A^{-1}(x)))=A^{-1}(A(A^{-1}(x)+A^{-1}(y)))= (A^{-1}\circ A)(A^{-1}(x)+A^{-1}(y))=I(A^{-1}(x)+A^{-1}(y))=A^{-1}(x)+A^{-1}(y)\implies A^{-1}(x+y) = A^{-1}(x)+A^{-1}(y)$
+    \\2) $A^{-1}(\alpha x)= \alpha(A^{-1}(x))$. Самостоятельно. 
+    \\$\tcircle{2}$\;Пусть $B_{1},B_{2}$ - обратимые к A, тогда $B_{1} = B_{1} \circ I = B_{1} \circ (A \circ B_{2}) = (B_{1}\circ A)\circ B_{2} = I \circ B_{2} = B_{2}$
+\end{proof}
+
+\begin{theorem}
+    Если $A$ обратим, то $M_{A^{-1}}^{\mathcal{E}} = (M_{A}^{\mathcal{E}})^{-1}$
+\end{theorem}
+\begin{proof}
+    $A\circ A^{-1}= A^{-1}\circ A = I$. $M_{A\circ A^{-1}}^{ \mathcal{E}} = M_{A^{-1}\circ A}^{\mathcal{E}} = M_{I}^{\mathcal{E}}$ 
+    \\$M_{A}^{\mathcal{E}}\cdot M_{A^{-1}}\mathcal{E}=M_{A^{-1}}^{\mathcal{E}}\cdot M_{A}^{\mathcal{E}}=M_{I}\mathcal{E}=E\implies M_{A^{-1}}^{\mathcal{E}}$ - обратимая к $M_{A}^{\mathcal{E}}$, т.е $M_{A^{-1}}^{\mathcal{E}}=(M_{A}^{\mathcal{E}})^{-1}$ 
+\end{proof}
+\begin{corollary}
+    Если $A$ обратим, то в любом базисе $\det{M_{A}^{\mathcal{E}}}\neq 0$
+\end{corollary}
+\begin{proof}
+    $\exists A^{-1}\implies \exists (M_{A}^{\mathcal{E}})^{-1}\Leftrightarrow \det{M_{A}^{\mathcal{E}}}\neq 0$
+\end{proof}
+
+\begin{theorem}[Критерий обратимости]
+    Следующие утверждения эквивалентны: \\$
+    \begin{aligned}
+        &1. \exists A^{-1}, \text{т.е $A$ обратим} \\
+        &2. \text{В некотором базисе $\mathcal{E}$} \det{M_{A}^{\mathcal{E}}}\neq 0 \\
+        &3. A \text{ биективна (т.е взаимно однозначно) отображает $\V$ на всё $\V$}
+    \end{aligned}$
+\end{theorem}
+(Биекция $\V\Leftrightarrow \V 
+\forall x \in \V \exists! y \in \V : y= A(x), \forall y \in V \exists ! x \in \V : y = A(x)$)
+\begin{proof}
+    $1^{\circ}\implies 2^{\circ} \implies 3^{\circ} \implies 1^{\circ}$
+    \\$1^{\circ}\implies 2^{\circ}$ уже доказано. 
+    \\$2^{\circ}\implies 3^{\circ}.\quad \det{M_{A}^{\mathcal{E}}}\neq 0 \implies $ СЛАУ $M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi}=\underset{\downarrow}{\eta}$ всегда имеет единственное решение, т.е $\forall y = [\mathcal{E}]\underset{\downarrow}{\eta} \; \exists ! x = [\mathcal{E}]\underset{\downarrow}{\xi}: y = A(x)$ и $\forall x = [\mathcal{E}]\underset{\downarrow}{\xi} \; \exists ! y = [\mathcal{E}]\underset{\downarrow}{\eta}:  y = A(x)$, т.е $\underset{\downarrow}{\eta}= M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi}$
+    \\$3^{\circ}\implies 1^{\circ}$. Пусть $A$ - биекция $\V$ на $\V$. Тогда $\forall y \in \V \implies \exists ! x : y=A(x)$. Тогда определим оператор $B$ следующим образом: $B: y\to x : y = A(x)$, т.е тот $x$, из которого этот $y$ получен. Тогда $\forall x \in \V \implies (B\circ A)(x) = B(A(x)) = B(y)= x =I (x)\implies B\circ A = I$ и $\forall y \in \V \implies (A\circ B)(y) = A(B(y))=A(x)=y = I(y)\implies A\circ B = I\implies B= A^{-1}$, т.е $A$ обратим. 
+\end{proof}
+\vspace{1cm}
+Пусть $\V$ - ЛП над $k$, $A\in L(\V,\V)$, $\mathcal{E} = \{e_{1},\dots,e_{n}\}$ - базис. $M_{A}^{\mathcal{E}}=(a_{ij})^{n}_{n}$ - матрица $A$ в базисе $\mathcal{E}$
+Рассмотрим $P_{n}(\lambda) = \det{(M_{A}^{\mathcal{E}}-\lambda )}= \begin{vmatrix}
+    a_{11}- \lambda & a_{12} & \dots & a_{1n} \\
+    a_{21} & a_{22}-\lambda & \dots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \dots & a_{nn}-\lambda \\
+\end{vmatrix}= (-1)^{n}(\lambda^{n}+C_{1} \lambda^{n-1}+\dots +C_{n})$ 
+\begin{definition}
+    $P_{n}(\lambda)$ называется характеристическим многочленом ЛО $A$. 
+\end{definition}
+\begin{theorem}
+    $P_{n}(\lambda)= inv$, т.е не зависит от выбора базиса. 
+\end{theorem}
+\begin{proof}
+    Пусть $\tilde{\mathcal{E}}$ - другой базис, тогда $\tilde{P}_{n}(\lambda) = \det(M_{A}^{\tilde{\mathcal{E}}}-\lambda E)=\det{(T^{-1}_{\mathcal{E}-\tilde{\mathcal{E}}}\cdot M_{A}^{\mathcal{E}}T_{\mathcal{E}\to\tilde{\mathcal{E}}}- T^{-1}_{\mathcal{E}\to\tilde{\mathcal{E}}}(\lambda E)T_{\mathcal{E}\to\tilde{\mathcal{E}}})}=\det{((T^{-1}_{\mathcal{E}\to\tilde{\mathcal{E}}}-\lambda E)T_{\mathcal{E}\to\tilde{\mathcal{E}}})}= \frac{1}{\det{T_{\mathcal{E}\to\tilde{\mathcal{E}}}}}\cdot \det{(M_{A}^{\mathcal{E}}-\lambda E)\det{T_{\mathcal{E}\to \tilde{\mathcal{E}}}}}= det(M_{A}^{\mathcal{E}}-\lambda E)= P_{n}(\lambda)$
+\end{proof}
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}
+\end{document}

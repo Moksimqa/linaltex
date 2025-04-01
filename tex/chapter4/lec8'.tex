@@ -1,0 +1,174 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{8}{24.03}{}
+\section{Определние линейного оператора (ЛО). Линейное пространство линейных операторов(ЛПЛО).}
+Пусть $\V,\W$ - ЛП над $k$ (одним и тем же)
+\begin{definition}
+    Правило (закон) $A$, по которому каждому $x\in \V$ ставится в соответствие единственный $y\in \W$, называется оператором с областью определения $\V$ и множеством значений $\W$.
+    \\Обозначение: $A: \V\to \W$.
+\end{definition}
+\begin{definition}
+    Если $A: \V \to \W$ и
+    $\begin{aligned}
+        &1. \forall x,y \in \V  \implies A(x+y) = A(x) + A(y)\\
+        &2. \forall x\in \V , \forall \alpha \in k \implies A(\alpha x) = \alpha A(x)
+    \end{aligned}\implies A$ называется линейным оператором (ЛО)
+\end{definition}
+Замечание. $\begin{aligned}
+    &1. \text{Если } \W=k, \text{ то } A \text{ - линейный функционал.}\\
+    &2. \text{Если } \V=\W, \text{ то } A \text{ - линейное преобразование.}
+\end{aligned}$
+
+\noindent Далее мы будем рассматривать преимущественно линейные преобразования, но называть их будем более общим названием (линейными операторами).
+
+Примеры: 
+\\1. $A: \R^{2} \to \R ^{2}$ - ЛО поворота. 
+\\ $A(x_{1}+x_{2}) = A(x_{1})+A(x_{2}), A(\alpha x )=\alpha A(x)$. Самостоятельно проверить. 
+\\2. $D: P_{n} \to P_{n-1}, n\geqslant 1$ - ЛО дифференцирования.
+\\$D = \frac{d}{dt}\qquad \forall x(t)\in P_{n}\implies D(x) = \frac{dx}{dt}$
+\\$D(x_{1}+x_{2})=D(x_{1})+D(x_{2}), D(\alpha x)=\alpha D(x)$.
+\\3. Пусть $\V = V_{1} \oplus V_{2}$
+\\$A: \V \to V_{1}$ - оператор параллельного проектирования. 
+\\$\forall x\in \V \implies x=x_{1}+x_{2}, x_{1}\in \V_{1}, x_{2}\in \V_{2}, A(x)=x_{1} $. Тогда $A(x+y)=A(x)+A(y), A(\alpha x) = \alpha A(x)=\alpha x_{1}$ 
+
+Обозначим совокупность всех ЛО, действующих из $\V$ в $\V$ через $L(\V,\V)$.
+\begin{definition}
+    Пусть $A,B\in L(\V,\V)$. Говорят, что $A=B$, если $\forall x \in \V \implies A(x)=B(x)$.
+\end{definition}
+\begin{definition}
+    Пусть $A,B \in L(\V,\V)$. Говорят, что $C$ - сумма $A$ и $B$ (об. $C=A+B$), если $\forall x\in \V \implies\\\implies C(x)=A(x)+B(x)$. (иными словами, $(A+B)(x) \underset{\text{def}}{=} A(x)+B(x)$)
+\end{definition}
+Самостоятельно показать, что $A+B\in L(\V,\V)$.
+\begin{definition}
+    Пусть $A\in L(\V,\V), \alpha\in k, C=\alpha A$ ($C$ является произведением $A$ на скаляр $\alpha$), если $\forall x\in \V \implies C(x)=\alpha A(x)$. (иными словами, $(\alpha A)(x)\underset{\text{def}}{=}\alpha A(x)$)
+\end{definition}
+Самостоятельно показать, что $\alpha A\in L(\V,\V)$.
+\begin{theorem}
+С введенными линейными операциями $L(\V,\V)$ образует ЛП, называемое линейным пространством линейных операторов (ЛПЛО).    
+\end{theorem}
+\begin{proof}
+    1, 2, 5-8 доказать самостоятельно. 
+    \\3. Введем $\mathcal{O}$ - нулевой оператор: $\forall x \in \V \implies \mathcal{O}(x)=\theta$. Самостоятельно проверить, что $\mathcal{O}(x+y) = \mathcal{O}(x)+\mathcal{O}(y), \mathcal{O}(\alpha x)=\alpha \mathcal{O}(x)$, т.е $\mathcal{O}$ - ЛО. ($\mathcal{O}\in L(\V,\V)$). Тогда $\forall A \in L(\V,\V) \implies A+\mathcal{O} = A$, т.к $\forall x \in \V \implies (A+\mathcal{O})(x)\underset{\text{def суммы}}{=}A(x)+\mathcal{O}(x)=A(x)+\theta=A(x) \implies L(\V,\V)$ имеет нейтральный элемент. 
+    \\4. Введем для $\forall A\in L(\V,\V)\; A' = -1 \cdot A$. Покажем, что всегда $A+A' = \mathcal{O}$, т.е. $A'$ - противоположный элемент. $\forall x \in \V \implies (A + A')(x) \underset{\text{def суммы}}{=} A(x)+A'(x)=A(x)+ (-1)\cdot A(x)\underset{\text{def произв.}}{=} A(x)-A(x)=\theta = \mathcal{O}(x) \implies$ в $L(\V,\V)$ каждый элемент имеет противоположный. 
+\end{proof}
+\begin{definition}
+    $I: \forall x\in \V \implies I(x)=x$ называется тождественным оператором.
+\end{definition}
+Самостоятельно показать, что $I\in L(\V,\V)$.
+
+Далее в $L(\V,\V)$ можно ввести операторы композиции. 
+\begin{definition}
+    Говорят, что $C$ является композицией $A$ и $B$ (обозначается $C=A\circ B$), если $\forall x\in \V \implies C(x)=A(B(x))$, т.е $(A \circ B)(x)\underset{\text{def}}{=}A(B(x))$.
+\end{definition}
+Самостоятельно показать, что $A\circ B \in L(\V,\V)$.
+
+
+Свойства композиции:
+\\1. $\forall A,B \in L(\V,\V)$ и $\forall \alpha\in k \implies (\alpha A) \circ B = A \circ (\alpha B) = \alpha (A\circ B)$. 
+\\2. $\forall A,B,C \in L(\V,\V) \implies (A+B) \circ C = A\circ C + B\circ C$. 
+\\3. $\forall A,B,C \in L(\V,\V) \implies A\circ (B+C) = A\circ B + A\circ C$.
+\\4. $\forall A,B,C \in L(\V,\V) \implies (A\circ B) \circ C = A\circ (B\circ C)$.
+\begin{proof}
+    1, 3, 4 - cамостоятельно.
+    \\2. $\forall x\in \V ((A+B)\circ C)(x) \underset{\text{def}}{=} (A+B)(C(x))\underset{\text{def суммы}}{=} A(C(x))+B(C(x))\underset{\text{def комп}}{=} (A \circ C)(x) + (B\circ C)(x) \underset{\text{def суммы}}{=}\\= (A\circ C + B\circ C)(x)$. 
+\end{proof}
+\noindent 5. Вообще говоря, $A\circ B \neq B\circ A$. \qquad(примеры позже)
+\begin{definition}
+    $A,B \in L(\V,\V): A\circ B = B \circ A$ называется коммутирующими.
+\end{definition}
+\newpage
+\section{Матрица ЛО}
+Пусть $A\in L(\V,\V), \V$ - ЛП над $k$, $dim\V = n, \mathcal{E} = \{e_{1},\dots,e_{n}\}$ - некоторый базис в $\V$.
+\\Рассмотрим строку $\begin{pmatrix}
+    A(e_{1}) & \dots & A(e_{n})
+\end{pmatrix}$, образовавшихся базисных векторов под действием $A$. Введем обозначение $\begin{pmatrix}
+    A(e_{1}) & \dots & A(e_{n})
+\end{pmatrix}\underset{\text{def}}{\equiv} [A\mathcal{E}]$
+\\Пусть $x\in\V, x= [\mathcal{E}]\underset{\downarrow}{\xi}$, т.е $x=\begin{pmatrix}
+    e_{1} & \dots & e_{n}
+\end{pmatrix}\begin{pmatrix}
+    \xi_{1} \\ 
+    \vdots\\ 
+    \xi_{n}
+\end{pmatrix} = \xi_{1}e_{1}+..+\xi_{n}e_{n}$
+\begin{theorem}[О преобразовании вектора под действием ЛО]
+    Если $x= [\mathcal{E}]\underset{\downarrow}{\xi},$ то $A(x)=[A\mathcal{E}]\underset{\downarrow}{\xi}$
+\end{theorem}
+\begin{proof}
+    $A(x)= A(\xi_{1}e_{1}+\dots+\xi_{n}e_{n})=\xi_{1} A(e_{1})+\dots+\xi_{n}A(e_{n})=\begin{pmatrix}
+        A(e_{1})&\dots&A(e_{n})
+    \end{pmatrix}\begin{pmatrix}
+        \xi_{1}\\
+        \vdots\\
+        \xi_{n}
+    \end{pmatrix} =  [A\mathcal{E}]\underset{\downarrow}{\xi}$.
+\end{proof}
+Таким образом, имеет место равенство $\fbox{$A([\mathcal{E}]\underset{\downarrow}{\xi})=[A\mathcal{E}]\underset{\downarrow}{\xi}$}\;(1)$
+\vspace{0.5cm}
+\begin{theorem}[О задании ЛО]
+   Пусть $\mathcal{V}=\{v_{1},\dots,v_{n}\}\subset \V$ - произвольная система векторов в ЛП $\V$. Тогда $\exists! A \in L(\V,\V): \forall i=\overline{1,n}\implies A(e_{i})=v_{i}$, где $\mathcal{E}=\{e_{1},\dots,e_{n}\}$ - произвольный базис в $\V$.  
+\end{theorem}
+\begin{proof}
+    Рассмотрим $A: \forall x\in\V \;(x=[\mathcal{E}]\underset{\downarrow}{\xi})\implies A(x)= [\mathcal{V}]\underset{\downarrow}{\xi}=\xi_{1}v_{1}+\dots+\xi_{n}v_{n}$, т.е $A([\mathcal{E}\underset{\downarrow}{\xi}]) = [\mathcal{V}]\underset{\downarrow}{\xi}$. $\begin{pmatrix}
+        v_{1} & \dots & v_{n}
+    \end{pmatrix}$ - строка векторов из условия. Покажем, что $A\in L(\V,\V)$. $x= [\mathcal{E}]\underset{\downarrow}{\xi}, y= [\mathcal{E}]\underset{\downarrow}{\eta}$, тогда $x+y = [\mathcal{E}](\underset{\downarrow}{\xi}+\underset{\downarrow}{\eta}), A(x+y) = A([\mathcal{E}](\underset{\downarrow}{\xi}+\underset{\downarrow}{\eta})) = [\mathcal{V}](\underset{\downarrow}{\xi}+\underset{\downarrow}{\eta})=[\mathcal{V}]\underset{\downarrow}{\xi}+[\mathcal{V}]\underset{\downarrow}{\eta}=A(x)+A(y)$.
+     \\Аналогично (самостоятельно) показать, что $A(\alpha x)=\alpha A(x)$, то $A\in L(\V,\V)$. Далее, $\forall i=\overline{1,n}\implies A(e_{i})=A\left([\mathcal{E}]\begin{pmatrix}
+        0\\
+        \vdots\\
+        1\\
+        \vdots\\
+        0
+     \end{pmatrix}\cdot i\right) = [\mathcal{V}]\begin{pmatrix}
+        0\\
+        \vdots\\
+        1\\
+        \vdots\\
+        0
+        \end{pmatrix}\cdot i = v_{i}$.
+        \\Докажем единственность. Пусть $A,B \in L(\V,\V): \forall i=\overline{1,n} \to A(e_{i})= v_{i}, B(e_{i})= v_{i}$. \\Тогда $\forall x \in \V (x=[\mathcal{E}]\underset{\downarrow}{\xi}) \implies A(x) = A([\mathcal{E}]\underset{\downarrow}{\xi}) = [A\mathcal{E}]\underset{\downarrow}{\xi} = [\mathcal{V}]\underset{\downarrow}{\xi} = [B \mathcal{E}]\underset{\downarrow}{\xi} = B([\mathcal{E}]\underset{\downarrow}{\xi}) = B(x)$, т.е $A=B$
+
+\end{proof}
+\begin{corollary}
+    Действие любого ЛО однозначно определяется его действием на базисные векторы.
+\end{corollary}
+
+Рассмотрим векторы $A(e_{1}),\dots,A(e_{n})$ и разложим их по базису $\mathcal{E}$: 
+$\begin{cases}
+    A(e_{1}) = a_{11}e_{1}+\dots+a_{n1}e_{n}\\
+    A(e_{2}) = a_{12}e_{1}+\dots+a_{n2}e_{n}\\
+    \phantom{A(e_{n})}\dots\\
+    A(e_{n}) = a_{1n}e_{1}+\dots+a_{nn}e_{n}
+\end{cases}(2)$ 
+\begin{definition}
+    Матрица $M_{A}^{\mathcal{E}}=\begin{pmatrix}
+        A(e_{1})& A(e_{2}) & \dots & A(e_{n}) \\ \hline 
+        a_{11} & a_{12} & \dots & a_{1n}\\ 
+        \vdots & \vdots & \vdots & \vdots\\
+        a_{n1} & a_{n2} & \dots & a_{nn}\\ 
+        
+    \end{pmatrix}$ в столбцах которой записаны координаты базисных векторов в этом базисе, называется матрицей линейного оператора $A$ в базисе $\mathcal{E}$.
+\end{definition}
+\noindent Тогда $(2)$ примет вид: $(3)\; \begin{pmatrix}
+    A(e_{1}) & \dots & A(e_{n})
+\end{pmatrix}= \begin{pmatrix}
+    e_{1}& \dots & e_{n}
+\end{pmatrix} \begin{pmatrix}
+    a_{11} & \dots & a_{1n}\\   
+    \vdots & \vdots & \vdots\\
+    a_{n1} & \dots & a_{nn}
+\end{pmatrix}$ или $(4)\;[A\mathcal{E}]=[\mathcal{E}]\cdot M_{A}^{\mathcal{E}}$
+
+
+\begin{theorem}[]
+    Если $x=[\mathcal{E}]\underset{\downarrow}{\xi}, A(x)=y$ и $y = [\mathcal{E}]\underset{\downarrow}{\eta}$, то $\fbox{$\underset{\downarrow}{\eta} = M_{A}^{\mathcal{E}}\cdot \underset{\downarrow}{\xi}$}$ или $A([\mathcal{E}]\underset{\downarrow}{\xi})=[\mathcal{E}]M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi}$ 
+\end{theorem}
+\vspace{0.5cm}
+\begin{proof}
+    $\left.\begin{aligned}A(x) = A([\mathcal{E}]\underset{\downarrow}{\xi})  \underset{\substack{\text{т. о преобр вектора} \\ \text{под действием $A$}}}{=} [A\mathcal{E}]\underset{\downarrow}{\xi} \underset{(4)}{=} ([\mathcal{E}] M_{A}^{\mathcal{E}})\underset{\downarrow}{\xi}=
+     \text{ассоц. }= &[\mathcal{E}](M_{A}^{\mathcal{E}}\cdot \underset{\downarrow}{\xi}),\\ 
+         &A(x)=y= [\mathcal{E}]\underset{\downarrow}{\eta}\end{aligned}\right\} \implies [\mathcal{E}]\underset{\downarrow}{\eta}= [\mathcal{E}](M_{A}^{\mathcal{E}}\cdot \underset{\downarrow}{\xi}) \implies \underset{\downarrow}{\eta} = M_{A}^{\mathcal{E}}\cdot \underset{\downarrow}{\xi}$. $y=A(x), \underset{\downarrow}{\eta} = M_{A}^{\mathcal{E}}\cdot \underset{\downarrow}{\xi}$.
+\end{proof}
+
+
+
+\end{document}

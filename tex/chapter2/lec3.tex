@@ -120,8 +120,8 @@ $A' = (a_{ij})_{m'}^{n'}, \; \underset{\downarrow}{b'}=\begin{pmatrix} \vec{b'}_
 Тогда обратным ходом приводим расширенную матрицу к виду: $\begin{pmatrix}[ccc|ccc|c]
     1 & \dots & 0&a''_{1r+1} &\dots & a''_{1n}& b''_{1} \\
     \vdots & \ddots &\vdots  &\vdots  & \ddots& \vdots&\vdots \\
-    0 & \dots & 1 & a''_{rr+1}& \dots&a''_{rr} &b_{r}  \\ \hline
-    \multicolumn{5}{c}{\text{НУЛИ}}& &0\\\hline
+    0 & \dots & 1 & a''_{rr+1}& \dots&a''_{rr} &b''_{r}  \\ \hline
+    \multicolumn{5}{c}{\text{НУЛИ}}& &b''_{r+1}\\\hline
     \multicolumn{5}{c}{\text{НУЛИ}}& &0
 \end{pmatrix}$ \\ Т.е фактически: $A \underset{\downarrow}{x}= \underset{\downarrow}{b}\sim A' \underset{\downarrow}{x}=\underset{\downarrow}{b'} \sim A'' \underset{\downarrow}{x}=\underset{\downarrow}{b''} \text{ в коорд. форме:} \begin{cases}
     x_{1}+a''_{1r+1}x_{r+1}+\dots+a''_{1n}x_{n}=b''_{1}\\ 
@@ -162,6 +162,7 @@ $A' = (a_{ij})_{m'}^{n'}, \; \underset{\downarrow}{b'}=\begin{pmatrix} \vec{b'}_
     0
 \end{pmatrix}$
 то  чтобы получить решение $\underset{\downarrow}{\alpha}$ исходной СЛАУ $A \underset{\downarrow}{x}=\underset{\downarrow}{b},$ нужно свободные переменным придать значения $x_{11}=\alpha_{11},\dots,x_{n}=\alpha_{n}$. Таким образом (3) исчерпывает все решения СЛАУ $A \underset{\downarrow}{x}= \underset{\downarrow}{b}$ и такой вид решения называется общим решением по методу Гаусса (Г-Ж) 
+$\fbox{$\underset{\downarrow}{x}_{\text{общ}}=\underset{\downarrow}{x}(C_{1},\dots,C_{n-r})$}$
 \\Замечание. Иногда свободным переменным придают значения $C_{1},\dots,C_{n-r}$, т.е $x_{r+1}=C_{1},\dots,x_{n}=C_{n-r}$ и в (3) вместо $x_{r+1},\dots,x_{n}$ пишут $C_{1},\dots,C_{n-r}$
 
 Таким образом, в случаях совместности СЛАУ ее общее решение является $n-r$ параметрическим множеством.

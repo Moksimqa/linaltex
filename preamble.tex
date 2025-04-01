@@ -48,6 +48,9 @@
 \renewcommand\O{\ensuremath{\emptyset}}
 \newcommand\Q{\ensuremath{\mathbb{Q}}}
 \renewcommand\C{\ensuremath{\mathbb{C}}}
+\newcommand\V{\ensuremath{\mathbb{V}}}
+\newcommand\W{\ensuremath{\mathbb{W}}}
+\renewcommand\U{\ensuremath{\mathbb{U}}}
 \newcommand*\tcircle[1]{%
   \tikz[baseline=(C.base)]\node[draw,circle,inner sep=0.5pt](C) {#1};\!
 }
@@ -61,7 +64,9 @@
 \makeatother
 
 \everymath{\displaystyle}
-
+%for span
+\DeclareMathOperator{\spann}{span}
+\newcommand\spanset[1]{\ensuremath\spann(#1)}
 
 % Easily typeset systems of equations (French package)
 \usepackage{systeme}

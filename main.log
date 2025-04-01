@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.8)  24 FEB 2025 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.8)  1 APR 2025 20:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1009,19 +1009,19 @@ Package: fancyhdr 2024/07/23 v4.3.1 Extensive control of page headers and footer
 )
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 245.
+(fancyhdr)                Please consider using the `twoside' option on input line 250.
 
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 246.
+(fancyhdr)                Please consider using the `twoside' option on input line 251.
 
 
 Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 248.
+(fancyhdr)                Please consider using the `twoside' option on input line 253.
 
 
 Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 249.
+(fancyhdr)                Please consider using the `twoside' option on input line 254.
 
 (C:\Program Files\MiKTeX\tex/latex/todonotes\todonotes.sty
 Package: todonotes 2024/01/05 v1.1.7 Todonotes source and documentation.
@@ -1276,24 +1276,146 @@ Overfull \hbox (35.80367pt too wide) in paragraph at lines 99--142
 \T2A/cmr/m/n/10 Идея ме-то-да Гаусса-Жордана. $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^X \OT1/cmr/m/n/10 ([] \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 )$\T2A/cmr/m/n/10 . Пря-мой ход $[] \OMS/cmsy/m/n/10 ^^X [] ^^X
  []
 
-[10] [11])) [12] (main.aux)
+[10] [11]) (tex/chapter2/lec4.tex [12]
+Overfull \hbox (41.82928pt too wide) in paragraph at lines 65--66
+[]\T2A/cmr/bx/n/10 Теорема 2.5. []$[][]$ 
+ []
+
+
+Overfull \hbox (42.40079pt too wide) in paragraph at lines 68--106
+[]$[]   [] \OT1/cmr/m/n/10 (1[]) \OMS/cmsy/m/n/10 ^^X [] ^^X []  \OT1/cmr/m/n/10 (2[])[] 
+ []
+
+[13] [14]) (tex/chapter2/lec5.tex [15]
+
+LaTeX Warning: Command \cyrch invalid in math mode on input line 73.
+
+
+LaTeX Warning: Command \cyrn invalid in math mode on input line 73.
+
+Missing character: There is no ч in font cmr7!
+Missing character: There is no н in font cmr7!
+
+LaTeX Warning: Command \cyrch invalid in math mode on input line 73.
+
+
+LaTeX Warning: Command \cyrn invalid in math mode on input line 73.
+
+Missing character: There is no ч in font cmr7!
+Missing character: There is no н in font cmr7!
+
+LaTeX Warning: Command \cyrch invalid in math mode on input line 73.
+
+
+LaTeX Warning: Command \cyrn invalid in math mode on input line 73.
+
+Missing character: There is no ч in font cmr7!
+Missing character: There is no н in font cmr7!
+
+Overfull \hbox (0.25525pt too wide) in paragraph at lines 60--76
+[]$\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :RgA \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 r \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 n$ \T2A/cmr/m/n/10 (чис-ло неиз-вест-ных), то эле-мен-тар-ны-ми пре-об-ра-зо-ва-ни-я-ми строк $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^X
+ []
+
+[16])) (tex/chapter3.tex [17]
+{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
+(tex/chapter3/lec5'.tex [18
+
+]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 69.
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)) (tex/chapter3/lec6.tex [19]
+Overfull \hbox (2.45413pt too wide) in paragraph at lines 14--14
+[]\T2A/cmr/bx/n/14.4 Линейная за-ви-си-мость и ли-ней-ная неза-ви-си-мость си-сте-мы век-
+ []
+
+[20]
+Overfull \hbox (8.04404pt too wide) in paragraph at lines 90--102
+[] $ \T2A/cmr/m/n/10 Пусть $\OMS/cmsy/m/n/10 E \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]; [] ; e[]\OMS/cmsy/m/n/10 g$ \T2A/cmr/m/n/10 - ба-зис в $\U/msb/m/n/10 V$ \T2A/cmr/m/n/10 из $\OML/cmm/m/it/10 n$ \T2A/cmr/m/n/10 эле-мен-тов. Рас-смот-рим про-из-воль-ную си-сте-му $\OMS/cmsy/m/n/10 Y \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 y[]; [] ; y[]\OMS/cmsy/m/n/10 g ^^Z
+ []
+
+
+Overfull \hbox (51.80324pt too wide) in paragraph at lines 90--102
+\T2A/cmr/m/n/10 Поскольку $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]; [] ; e[]\OMS/cmsy/m/n/10 g$ \T2A/cmr/m/n/10 - ЛНЗ, то $\OT1/cmr/m/n/10 (5)$ \T2A/cmr/m/n/10 воз-мож-но $\OMS/cmsy/m/n/10 ,$ \T2A/cmr/m/n/10 все ко-эф-фи-ци-ен-ты ЛК - ну-ле-вые, $[] \OT1/cmr/m/n/10 (6)$
+ []
+
+[21]
+Overfull \hbox (0.40596pt too wide) in paragraph at lines 113--131
+[][]$ \T2A/cmr/m/n/10 (Един-ствен-ный нену-ле-вой эле-мент на-хо-дит-ся на пе-ре-се-че-нии $\OML/cmm/m/it/10 i$\T2A/cmr/m/n/10 -ой стро-
+ []
+
+[22]
+Overfull \hbox (2.01392pt too wide) in paragraph at lines 177--182
+[]\T2A/cmr/m/n/10 Пусть $[]$ ко-ли-че-ство ЛНЗ эле-мен-тов в $\OML/cmm/m/it/10 X$ \T2A/cmr/m/n/10 рав-но $\OML/cmm/m/it/10 p$\T2A/cmr/m/n/10 . БОО мож-но счи-тать, что $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 x[]; [] ; x[]\OMS/cmsy/m/n/10 g$
+ []
+
+[23]
+Overfull \hbox (12.7944pt too wide) in paragraph at lines 187--194
+\OMS/cmsy/m/n/10 9\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 : [] \OMS/cmsy/m/n/10 ) \OML/cmm/m/it/10 x[]$ \T2A/cmr/m/n/10 не яв-ля-ет-ся ли-ней-ной ком-би-на-ци-ей эле-мен-тов $\OML/cmm/m/it/10 X \OMS/cmsy/m/n/10 )$ \T2A/cmr/m/n/10 си-сте-ма $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 x[]; [] ; x[]; x[]\OMS/cmsy/m/n/10 g$
+ []
+
+
+Overfull \hbox (4.43872pt too wide) in paragraph at lines 187--194
+[]$ \T2A/cmr/m/n/10 и т.д. За ко-неч-ное чис-ло ша-гов по-лу-чим ба-зис $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 x[]; [] ; x[]; x[]; [] ; x[]\OMS/cmsy/m/n/10 g$\T2A/cmr/m/n/10 .
+ []
+
+[24]
+Overfull \hbox (36.33655pt too wide) in paragraph at lines 250--255
+[]\T2A/cmr/bx/n/10 Определение. []\T2A/cmr/m/n/10 Та-кое со-от-ст-вет-ствие на-зы-ва-ет-ся изо-мор-физ-мом, ес-ли $[][]$,
+ []
+
+[25]
+Overfull \hbox (12.09479pt too wide) in paragraph at lines 293--297
+[]\T2A/cmr/bx/n/10 Следствие 1 \T2A/cmr/m/n/10 (О раз-мер-но-сти ЛО)\T2A/cmr/bx/n/10 . []\T2A/cmr/m/it/10 Пусть $\U/msb/m/n/10 V$ \T2A/cmr/m/it/10 - ЛП над $\OML/cmm/m/it/10 k; [] \U/msb/m/n/10 V \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 n$\T2A/cmr/m/it/10 . Пусть $[][]$
+ []
+
+[26]) (tex/chapter3/lec7.tex [27] [28] [29]) (tex/chapter3/lec8.tex [30])) (tex/chapter4.tex [31]
+{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
+(tex/chapter4/lec8'.tex [32
+
+] [33]
+Overfull \hbox (6.91006pt too wide) in paragraph at lines 135--142
+[]\T2A/cmr/m/n/10 Рассмотрим век-то-ры $\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [] ; A\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 e[]\OT1/cmr/m/n/10 )$ \T2A/cmr/m/n/10 и раз-ло-жим их по ба-зи-су $\OMS/cmsy/m/n/10 E$\T2A/cmr/m/n/10 : $[] \OT1/cmr/m/n/10 (2)$ 
+ []
+
+[34]
+Overfull \hbox (2.03528pt too wide) in paragraph at lines 167--170
+[]$[] \OMS/cmsy/m/n/10 ) \OT1/cmr/m/n/10 [\OMS/cmsy/m/n/10 E\OT1/cmr/m/n/10 ][] =
+ []
+
+) (tex/chapter4/lec9.tex [35]
+Overfull \hbox (14.62889pt too wide) in paragraph at lines 67--69
+\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ([[]][]) = [] = [[]]\OML/cmm/m/it/10 M[][] \OT1/cmr/m/n/10 = ([\OMS/cmsy/m/n/10 E\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 M[][] \OT1/cmr/m/n/10 = [\OMS/cmsy/m/n/10 E\OT1/cmr/m/n/10 ](\OML/cmm/m/it/10 T[]M[][]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ) \OT1/cmr/m/n/10 [\OMS/cmsy/m/n/10 E\OT1/cmr/m/n/10 ](\OML/cmm/m/it/10 M[]T[]\OT1/cmr/m/n/10 )[] = [\OMS/cmsy/m/n/10 E\OT1/cmr/m/n/10 ](\OML/cmm/m/it/10 T[]M[]\OT1/cmr/m/n/10 )[]$\T2A/cmr/m/n/10 ,
+ []
+
+
+Overfull \hbox (17.85815pt too wide) in paragraph at lines 88--124
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 M[]\OT1/cmr/m/n/10 ) [] (\OML/cmm/m/it/10 E\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 T[]M[]\OT1/cmr/m/n/10 )$ $[] \OMS/cmsy/m/n/10 ^^X [] ^^X [] ^^X []$
+ []
+
+[36] [37]
+Overfull \hbox (32.31587pt too wide) in paragraph at lines 209--210
+[]\T2A/cmr/m/n/10 Пусть $[]$ - дру-гой ба-зис, то-гда $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 ) = [](\OML/cmm/m/it/10 M[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^UE\OT1/cmr/m/n/10 ) = [] [] =
+ []
+
+)) [38] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29201 strings out of 474486
- 607226 string characters out of 5753562
- 1966542 words of memory out of 5000000
- 50904 multiletter control sequences out of 15000+600000
- 577555 words of font info for 76 fonts, out of 8000000 for 9000
+ 29304 strings out of 474486
+ 609816 string characters out of 5753562
+ 1967542 words of memory out of 5000000
+ 50963 multiletter control sequences out of 15000+600000
+ 578263 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,17n,96p,766b,853s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati0700.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm0700.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass0900.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2488.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2074.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (12 pages, 282989 bytes).
+ 89i,21n,96p,1328b,853s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati0700.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm0700.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass0900.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2488.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2074.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on main.pdf (38 pages, 437022 bytes).
 PDF statistics:
- 449 PDF objects out of 1000 (max. 8388607)
+ 592 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

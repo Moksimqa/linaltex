@@ -1,0 +1,144 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\newpage
+\lecture{5}{10.03}{}
+Пример: $\begin{cases}
+    x_{1}+x_{2}+x_{3}+x_{4}=0 \\ 
+    x_{1}+x_{2}=0
+\end{cases}$
+$\begin{pmatrix}
+    1 & 1 & 1 & 1 \\ 
+    1 & 1 & 0 & 0
+\end{pmatrix}\sim \begin{pmatrix}
+    1 & 1 & 1 & 1 \\ 
+    0 & 0 & -1 & -1
+\end{pmatrix}\sim \begin{pmatrix}
+    x_{1}& x_{3} & x_{2} & x_{4} \\
+    1 & 1 & 1 & 1 \\ 
+    0 & -1 & 0 & -1 
+\end{pmatrix}\sim \begin{pmatrix}
+    1 &0&1&0 \\ 
+    0& 1 & 0 & 1
+\end{pmatrix} \quad RgA=2=r, n = 4. $
+\\$\begin{array}{c|c|c}
+    x_{1} & -1 & 0 \\ 
+    x_{2} & 1 & 0 \\ 
+    x_{3} & 0 & -1 \\ 
+    x_{4} & 0 & 1
+\end{array}\quad \text{ФСР: } \underset{\downarrow}{\varphi}^{(1)}= \begin{pmatrix}
+    -1 \\ 
+    1 \\
+    0 \\
+    0
+\end{pmatrix};\; \underset{\downarrow}{\varphi}^{(2)}=\begin{pmatrix}
+    0 \\ 
+    0 \\ 
+    -1 \\ 
+    1
+\end{pmatrix}, \qquad \underset{\downarrow}{x_{\text{оо}}}=C_{1}\begin{pmatrix}
+    1\\ 
+    -1\\
+    0\\
+    0
+\end{pmatrix}+C_{2}\begin{pmatrix}
+    0\\ 
+    0\\
+    1\\
+    -1
+\end{pmatrix}, C_{1},C_{2} \in \R (\C)$
+
+\section{Общее решение неоднородной СЛАУ.}
+\noindent $(1)\; A\underset{\downarrow}{x}=\underset{\downarrow}{b}$ называется неоднородной (НСЛАУ), если $\underset{\downarrow}{b}\neq \underset{\downarrow}{0}$.
+НСЛАУ (1) отвечает ОСЛАУ ($1_{0}$) $A\underset{\downarrow}{x}=\underset{\downarrow}{0}$
+\begin{theorem}
+    Пусть $RgA =r = Rg(A|\underset{\downarrow}{b})$ (т.е НСЛАУ совместна), тогда:
+    \\1. Если $r=n$, то $\exists !$ решение (1)
+    \\2. Если $r<n$, то $\underset{\downarrow}{x_{\text{он}}}=\underset{\downarrow}{x_{\text{оо}}}+\underset{\downarrow}{x_{\text{чн}}}$
+
+\end{theorem}
+\begin{proof}
+    $1. RgA=r=n$ (число неизвестных), то элементарными преобразованиями строк $(A|\underset{\downarrow}{b})\sim (A'|\underset{\downarrow}{b'}): \begin{cases}
+        a'_{11}x_{1} + \dots + a'_{1n}x_{n}=b'_{1} \\
+                    a'_{22}x_{2} + \dots + a'_{2n}x_{n}=b'_{2} \\
+                    \phantom{a'_{22}x_{2}+}\dots\\
+                    a'_{nn}x_{n}=b'_{n}
+    \end{cases} (A'|\underset{\downarrow}{b'})=\begin{pmatrix}[ccc|c]
+        a'_{11}& \dots & a'_{1n} & b'_{1} \\
+        0 & \dots & a'_{2n} & b'_{2} \\
+        \dots & \dots & \dots & \dots \\
+        0 & \dots & a'_{nn} & b'_{n}\\ \hline 
+        0 & \dots & 0 & 0
+        
+    \end{pmatrix}$ Тогда $detA' \neq 0\implies \exists! $ решение.
+    \\$2. $ Пусть $r<n$. Тогда $\tcircle{$\implies$}\; A\underset{\downarrow}{x_{\text{он}}}=A(\underset{\downarrow}{x_{\text{оо}}}+\underset{\downarrow}{x_{чн}})=A\underset{\downarrow}{x_{\text{оо}}}+A\underset{\downarrow}{x_{\text{чн}}}=\underset{\downarrow}{0}+\underset{\downarrow}{b}\implies \underset{\downarrow}{x_{\text{он}}} $ решение (1).
+    \\$\tcircle{$\impliedby$} $ Пусть $\underset{\downarrow}{y }$ - произвольное решение. Тогда $A(\underset{\downarrow}{y}-\underset{\downarrow}{x_{\text{чн}}})= A\underset{\downarrow}{y}-A\underset{\downarrow}{x_{\text{чн}}}=\underset{\downarrow}{b}-\underset{\downarrow}{b}=\underset{\downarrow}{0}$
+    $\implies \exists \tilde{C}_{1},\dots,\tilde{C}_{n-r}: \underset{\downarrow}{y}-\underset{\downarrow}{x_{\text{чн}}}=\tilde{C}_{1}\underset{\downarrow}{\varphi}^{(1)}+\dots+\tilde{C}_{n-r}\underset{\downarrow}{\varphi}^{(n-r)},\quad \underset{\downarrow}{\varphi}^{(1)},\dots,\underset{\downarrow}{\varphi}^{(n-r)}$ - произвольная ФСР ОСЛАУ ($1_{0}$) $\implies \underset{\downarrow}{y}=\tilde{C}_{1}\underset{\downarrow}{\varphi}^{(1)}+\dots+\tilde{C}_{n-r}\underset{\downarrow}{\varphi}^{(n-r)}+\underset{\downarrow}{x_{\text{чн}}}$, т.е $\forall \underset{\downarrow}{y}$ - частного решения, такие числа найдутся. Таким образом, $C_{1}\underset{\downarrow}{\varphi}^{(1)}+\dots+C_{n-r}\underset{\downarrow}{\varphi}^{(n-r)}+\underset{\downarrow}{x_{\text{чн}}}$ исчерпывают все решения. $\underset{\downarrow}{x_{\text{он}}}=C_{1}\underset{\downarrow}{\varphi}^{(1)}+\dots+C_{n-r}\underset{\downarrow}{\varphi}^{(n-r)}+\underset{\downarrow}{x_{\text{чн}}}=\underset{\downarrow}{x_{\text{оо}}}+\underset{\downarrow}{x_{\text{чн}}}$ 
+
+\end{proof}
+Пример: $\begin{pmatrix}[cccc|c]
+    1& 1 & 1 & 1 & 4 \\ 
+    1 & 1 & 0 & 0 & 2
+\end{pmatrix}\sim \begin{pmatrix}[cccc|c]
+    1 & 0 & 1 & 0 & 2 \\ 
+    0 & 1 & 0 & 1 & 2
+\end{pmatrix}\quad \underset{\downarrow}{x_{\text{оо}}}=C_{1}\begin{pmatrix}
+    1\\ 
+    -1\\
+    0\\
+    0
+\end{pmatrix}+C_{2}\begin{pmatrix}
+    0\\ 
+    0\\
+    1\\
+    -1
+\end{pmatrix}$
+\\ $\underset{\downarrow}{x_{\text{чн}}}$ найдется при любых частных значениях свободных переменных, например $x_{2}=x_{4}=0\implies\\\implies \underset{\downarrow}{x_{\text{чн}}}=\begin{pmatrix}
+    2\\ 
+    0\\
+    2\\
+    0
+\end{pmatrix}\quad \begin{cases}
+     x_{1}=2-x_{2}\\ 
+        x_{3}=2-x_{4}
+\end{cases}$\newpage \noindent А если $x_{2}=x_{4}=1\implies \underset{\downarrow}{x_{\text{чн}}}=\begin{pmatrix}
+    1\\ 
+    1\\
+    1\\
+    1
+\end{pmatrix}$ любое из них можно брать. 
+\\ $\underset{\downarrow}{x_{\text{он}}}=C_{1}\begin{pmatrix}
+    1\\ 
+    -1\\
+    0\\
+    0
+\end{pmatrix}+C_{2}\begin{pmatrix}
+    0\\ 
+    0\\
+    1\\
+    -1
+\end{pmatrix}+ \begin{pmatrix}
+    2\\ 
+    0\\
+    2\\
+    0
+\end{pmatrix}\qquad$
+$\underset{\downarrow}{x_{\text{он}}}=C_{1}\begin{pmatrix}
+    1\\ 
+    -1\\
+    0\\
+    0
+\end{pmatrix}+C_{2}\begin{pmatrix}
+    0\\ 
+    0\\
+    1\\
+    -1
+\end{pmatrix}+\begin{pmatrix}
+    1\\ 
+    1\\
+    1\\
+    1
+\end{pmatrix}$
+
+
+
+\end{document}
