@@ -1,0 +1,166 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{10}{07.04}{}
+Для справок: $C_{k}= (-1)^{k}\underset{\substack{1\leqslant j,k < \dots < j_{k}<\leqslant n}}{\sum} M\begin{matrix}
+    j_{1}  \cdots  j_{k} \\
+    j_{1}  \cdots  j_{k} \\
+\end{matrix}$
+\\В частности $C_{1} = - \sum_{j} M_{j}= - \sum a_{jj} \underset{\text{об}}{\equiv} -Tr (M_{A}^{{\mathcal{E}}}) \underset{\text{об}}{\equiv} -Sp (M_{A}^{{\mathcal{E}}})$
+$\qquad\fbox{$a_{11}+\dots+a_{nn}$}$ - след матрицы. 
+\\Замечание. $Tr, Sp$ любой квадратной матрицы не зависит от выбора базиса. 
+\\$C_{n}=(-1)^{n} \det{M_{A}^{\mathcal{E}}}$
+\section{Образ и ядро ЛО}
+Пусть $\V$ - ЛП над $k, A\in L(\V,\V), \mathcal{E} = \{e_{1} \dots e_{n}\}$ - базис в $\V$. 
+\begin{definition}
+$\Im A = \{y\in \V : y = A(x), x \in \V\}$. Образ ЛО - совокупность образов всех элементов ЛП.     
+\end{definition}
+\begin{definition}
+    $\ker{A}=\{x\in \V : A(x)= \theta\}$. Ядро ЛО - совокупность всех элементов ЛП, которые A обращает в $\theta$.
+\end{definition}
+\begin{theorem}
+    $
+    \begin{aligned}
+        &1. \Im{A} = \spann{(e_{1}),\dots,A(e_{n})} \\ 
+        &2. \Im A - \text{ ЛПП of $\V$} \\ 
+        &3. \ker{A} \text{ - ЛПП of $\V$} \\
+    \end{aligned}
+    $
+
+\end{theorem}
+\begin{proof}
+    $1^{\circ} \; \forall x \in \V \implies x = [\mathcal{E}]\underset{\downarrow}{\xi}.$ \\ 
+    $A(x)= A([\mathcal{E}]\underset{\downarrow}{\xi}) = [A\mathcal{E}]\underset{\downarrow}{\xi}$  
+    $[A\mathcal{E}]= \begin{pmatrix}
+        A(e_{1}) & \dots & A(e_{n}) \\
+    \end{pmatrix}\implies A(x)$ - есть ЛК элементов строки $[AE]\implies \\ \implies A(x)\in \spann{(A\mathcal{E})}$. С другой стороны $\forall y \in \spann{(A\mathcal{E})}\implies \exists \underset{\downarrow}{\alpha} = [A\mathcal{E}]\underset{\downarrow}{\alpha}= A([\mathcal{E}]\underset{\downarrow}{\alpha}) = A(x), x \in \V$.
+    \\$2^{\circ} \Im A= \spann{(A\mathcal{E})}$, всякая линейная оболочка есть ЛПП of $\V\implies \Im A $ - ЛПП of $\V$. \\ 
+    $3^{\circ}$ а) $\forall x_{1},x_{2} \in \ker{A}\implies A(x_{1}+x_{2}) = A(x_{1}) + A(x_{2}) = \theta + \theta = \theta\implies x_{1}+x_{2} \in \ker{A}$. \\ 
+    б) $\forall x\in \ker{A}, \forall \lambda \in k \implies A(\lambda x) = \lambda A(x) = \lambda \theta = \theta\implies \lambda x \in \ker{A}$.   
+
+\end{proof}
+Пример: Пусть $\V = V_{1} \oplus V_{2} ( \forall x \in \V \implies \exists ! x_{1} \in \V_{1} , \exists ! x_{2}\in \V_{2}: x = x_{1}+x_{2})$
+\\Оператор параллельного проектирования на $\V_{1}.$
+$\mathcal{P}(x)=x_{1}. \Im  \mathcal{P}=\V_{1}, \ker{\mathcal{P}}=\V_{2}$
+\\$\tilde{\mathcal{P}}(x)=x_{2}$ - проектирование $\V_{2}$. $\Im \tilde{\mathcal{P}}=\V_{2}, \ker{\tilde{\mathcal{P}}}=\V_{1}$. (рисунки добавлю позже)
+\vspace{0.5cm}
+
+Ранее было доказано, что $\det{M_{A}^{\tcircle{$\mathcal{E}$}}}=inv$. 
+\begin{definition}
+Поэтому число $\det{M_{A}^{\mathcal{E}}}$ обозначаем $\det{A}$ и назовем определителем ЛО $A$.
+\end{definition}
+\begin{definition} 
+    Рангом ЛО $A$ назовем размерность его образа. $RgA \underset{\text{def}}{=} \dim{\Im A}$. 
+\end{definition}
+
+\begin{theorem}
+    $RgA = RgM_{A}^{\mathcal{E}}, \mathcal{E}$ - любой базис.
+\end{theorem}
+\begin{proof}
+    $RgA = \dim{\Im A} = \dim{\spann{(A\mathcal{E})}} = \max$ число ЛНЗ элементов $= $ (изоморфизм) $= \max$ числу ЛНЗ столбцов $M_{A}^{\mathcal{E}}=RgM_{A}^{\mathcal{E}}$ ($[A\mathcal{E}] = [\mathcal{E}]M_{A}^{\mathcal{E}}$)
+    \\После перехода в другой базис - есть изоморфизм, то $RgM_{A}^{\mathcal{E'}}=RgM_{A}^{\mathcal{E}}$.
+\end{proof}
+\begin{definition}
+    Дефект ЛО $A$ это размерность его ядра. $\defect{A} \underset{\text{def}}{\equiv} \dim\ker{A}$ 
+\end{definition}
+\begin{theorem}
+    $\dim{\Im A} + \dim{\ker{A}} = \dim{\V}$    
+\end{theorem}
+\begin{proof}
+    Пусть $\dim{\V} = n, \dim{\Im A} = r$. Возьмем произвольный базис $\mathcal{E}$. Тогда $\forall x \in \ker{A}\implies x = [\mathcal{E}]\underset{\downarrow}{\xi}$ и $A(x) = [A\mathcal{E}]\underset{\downarrow}{\xi} = [\mathcal{E}]M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi} = \theta = [\mathcal{E}]\underset{\downarrow}{0}$. Получили, что $[\mathcal{E}]M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi} = [\mathcal{E}]\underset{\downarrow}{0}$, сокращая на базис, получим: $M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi}=\underset{\downarrow}{0}$ - ОСЛАУ. Ее общее решение - координаты всевозможных векторов, принадлежащих ядру. Общее решение есть ЛП $\V_{\text{sol}}.$ $\V_{\text{sol}} = \spann(\text{ФСР})\implies \dim{V_{\text{sol}}}=n-r\implies \dim{\ker{A}} = (\text{изоморфизм}) = \dim{\V_{\text{sol}}}=n-r = \dim{\V}- \dim{\Im A}$. 
+\end{proof}
+\vspace{0.5cm}
+\begin{theorem}[Доп. критерии обратимости]
+    Следующие условия эквивалентны:
+    $
+    \begin{aligned}
+        &1. A - \text{ обратим} (\exists A^{-1}) \\ 
+        &2. \Im A = \V \\ 
+        &3. \ker{A} = \{\theta\} 
+    \end{aligned}$
+    Замечание. Такие ядра ($3^{\circ}$) называются тривиальными.
+\end{theorem}
+\begin{proof}
+    $1^{\circ}\implies 3^{\circ}\implies 2^{\circ}.\\ 1^{\circ}\to 3^{\circ}$. $A$ - обратим $\implies \det{M_{A}^{\mathcal{E}}}\neq 0\implies M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi}=\underset{\downarrow}{0}$ имеет только тривиальное решение $\implies \ker{A} = \{\theta\}$.
+\\$3^{\circ}\to 2^{\circ}$. $\ker{A} = \{\theta\} \implies \dim{\ker{A}} = 0 \implies \dim{\Im A} = n \implies \Im A = \V$. \\ 
+$2^{\circ}\to 1^{\circ}$. $\Im A = \V \implies \ker{A} = \{\theta\} \implies M_{A}^{\mathcal{E}}$ - невырожденная $\implies \exists (M_{A}^{\mathcal{E}})^{-1}\implies \exists A^{-1}$.
+
+\end{proof}
+
+\section{Собственные векторы и собственные значения ЛО}
+Пусть $\V$ - ЛП над $k, A\in L(\V,\V), \mathcal{E} = \{e_{1} \dots e_{n}\}$ - базис в $\V$.
+\begin{definition}
+    $h \in \V$ называется собственным вектором ЛО $A$, если $h\neq \theta$ и $\exists \lambda \in k: A(h) = \lambda h$, при этом $\lambda$ называется собственным значением ЛО $A$. Говорят, что СВ $h$ отвечает СЗ $\lambda$. Обозначение $h \sim \lambda$
+\end{definition}
+Замечание. Если $h \sim \lambda$, то $\forall C \in k : C\neq 0 \implies Ch \sim \lambda$.
+\begin{proof}
+    $1^{\circ} Ch \neq  \theta$\\ 
+    $2^{\circ} A(Ch) = C A(h) = C \lambda h = \lambda (Ch)$
+\end{proof}
+\begin{definition}
+    Совокупность всевозможных СЗ of ЛО $A$ называется его спектром. Обозначение $\sigma(A)$.
+\end{definition}
+Пусть $P_{n}(\lambda) = \det(M_{A}^{\mathcal{E}}-\lambda E)$ - характеристический многочлен ЛО $A$. 
+\begin{definition}
+    Уравнение $P_{n}(\lambda)=0$, т.е $\det{M_{A}^{\mathcal{E}}-\lambda E} = 0$ называется характеристическим уравнением. 
+
+\end{definition}
+\begin{theorem}
+    $\lambda \in \sigma(A) \Leftrightarrow \begin{cases}
+        \lambda \in k \\ 
+        P_{n}(\lambda) = 0 
+    \end{cases}$
+\end{theorem}
+\begin{proof}
+    $\tcircle{$\implies$}$ \; $\lambda \in \sigma(A) \implies \begin{cases}
+        \lambda \in k \\ 
+        \exists h \in \V : \begin{cases}
+            h \neq \theta \\ 
+            A(h) = \lambda h
+        \end{cases}
+    \end{cases}$\; $A(h) = \lambda h \Leftrightarrow (A- \lambda E)(h) = \theta \Leftrightarrow $(изоморфизм)\\$\Leftrightarrow (M_{A}^{\mathcal{E}}- \lambda E)\underset{\downarrow}{\xi}=\underset{\downarrow}{0}$. Таким образом координаты СВ - это всевозможные нетривиальные решения этой квадратной ОСЛАУ. Оно обладает нетривиальным решением $\Leftrightarrow \det{(M_{A}^{\mathcal{E}}-\lambda E)}= 0 \Leftrightarrow P_{n}(\lambda)=0$ 
+\\$\tcircle{$\impliedby$}$\; Пусть $\begin{cases}
+    \lambda \in k \\ 
+    P_{n}(\lambda) = 0
+\end{cases}\implies (M_{A}^{\mathcal{E}} - \lambda E )\underset{\downarrow}{\xi} = \underset{\downarrow}{ 0 }$ обладает нетривиальным решением $\underset{\downarrow}{\xi*}$. Тогда $h = [\mathcal{E}]\underset{\downarrow}{\xi*}$ - есть СВ, т.к $A(h) = A( [\mathcal{E}]\underset{\downarrow}{\xi*})=[A\mathcal{E}]\underset{\downarrow}{\xi*}= [\mathcal{E}]M_{A}^{\mathcal{E}}\underset{\downarrow}{\xi*}=[\mathcal{E}](\lambda E \underset{\downarrow}{\xi*}) = \lambda [\mathcal{E}]\underset{\downarrow}{\xi*}= \lambda h\implies \lambda$ - СЗ.
+\\Замечание. В поле $\C$ характеристическое уравнение всегда имеет $n $ корней с учетом их кратности (следствие основной теоремы алгебры). В поле $\R$ характеристический многочлен может иметь менее $n$ корней, или не иметь их вовсе. Т.е у ЛО в $\V$ над полем $\C$ всегда есть СЗ, а у ЛО в $\V$ над $\R$ может не быть СЗ.
+Пример: $A_{\varphi}$ - оператор поворота на плоскости на угол $\varphi$. $M_{A_{\varphi}}^{\{\vec{i}\vec{j}\}} = 
+\begin{pmatrix}
+    \cos{\varphi} & -\sin{\varphi} \\
+    \sin{\varphi} & \cos{\varphi} \\
+\end{pmatrix}$
+\\$\begin{vmatrix}
+    \cos{\varphi} - \lambda & -\sin{\varphi} \\
+    \sin{\varphi} & \cos{\varphi} - \lambda \\
+\end{vmatrix} = (\cos{\varphi} - \lambda)^{2} + \sin^{2}{\varphi} = 0 \implies \lambda = \cos{\varphi} \pm i\sin{\varphi} = e^{\pm i\varphi} \notin \R$ (если $\varphi\neq  \pi k$ )
+\\ $\varphi = 2\pi m \implies M_{A_{\varphi}}^{\{\vec{i}\vec{j}\}} = \begin{pmatrix}
+    1 & 0 \\
+    0 & 1 \\
+\end{pmatrix} \quad (\lambda - 1)^{2} = 0 \implies \lambda_{1,2} = 1$  
+\\ $(M_{A_{\varphi}}-\lambda E)= \begin{pmatrix}
+    0 & 0 \\
+    0 & 0 \\
+\end{pmatrix}\implies $ любой $\vec{h}\neq  \vec{\theta}$ является СВ. 
+\\$\varphi = \pi + 2 \pi m \implies M_{A_{\varphi}}^{\{\vec{i}\vec{j}\}} = \begin{pmatrix}
+    -1 & 0 \\
+    0 & -1 \\
+\end{pmatrix} \quad (\lambda + 1)^{2} = 0 \implies \lambda_{1,2} = -1$\\ 
+$(M_{A_{\varphi}}-\lambda E)= \begin{pmatrix}
+    0 & 0 \\
+    0 & 0 \\
+\end{pmatrix}\implies $ любой $\vec{h}\neq  \vec{\theta}$ является СВ.
+\end{proof}
+\begin{definition}
+    Говорят, что $\lambda_{0}\in \sigma(A)$ имеет алгебраическую кратность, равную $k \in \N$, если $P_{n}(\lambda_{0}) = P'(\lambda_{0}) = \dots = P^{(k-1)}(\lambda_{0}) = 0. P_{n}^{(k)}(\lambda_{0}) \neq  0.$ Обозначени: АК($\lambda_{0}$)=$k$.
+    
+\end{definition}
+Самостоятельно проверить, что это равносильно $P_{n}(\lambda)=(\lambda-\lambda_{0})^{k}Q_{n-k}(\lambda), Q_{n-k}(\lambda_{0})\neq 0$ 
+\begin{definition}
+    Геометрической кратностью $\lambda_{0}\in\sigma(A)$ называется количество ЛНЗ СВ, отвечающих ему. Обозначение ГК($\lambda$)
+\end{definition}
+
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}
+\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.8)  1 APR 2025 20:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.8)  8 APR 2025 23:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1009,19 +1009,19 @@ Package: fancyhdr 2024/07/23 v4.3.1 Extensive control of page headers and footer
 )
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 250.
+(fancyhdr)                Please consider using the `twoside' option on input line 252.
 
 
 Package fancyhdr Warning: \fancyhead's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 251.
-
-
-Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
 (fancyhdr)                Please consider using the `twoside' option on input line 253.
 
 
 Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 254.
+(fancyhdr)                Please consider using the `twoside' option on input line 255.
+
+
+Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
+(fancyhdr)                Please consider using the `twoside' option on input line 256.
 
 (C:\Program Files\MiKTeX\tex/latex/todonotes\todonotes.sty
 Package: todonotes 2024/01/05 v1.1.7 Todonotes source and documentation.
@@ -1398,24 +1398,29 @@ Overfull \hbox (32.31587pt too wide) in paragraph at lines 209--210
 []\T2A/cmr/m/n/10 Пусть $[]$ - дру-гой ба-зис, то-гда $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 ) = [](\OML/cmm/m/it/10 M[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^UE\OT1/cmr/m/n/10 ) = [] [] =
  []
 
-)) [38] (main.aux)
+) (tex/chapter4/lec10.tex [38] [39]
+Overfull \hbox (11.97488pt too wide) in paragraph at lines 114--151
+[]$[] $  $\OML/cmm/m/it/10 ^^U \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 ^^[\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ) []$ $\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 h\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^Uh \OMS/cmsy/m/n/10 , \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^UE\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 h\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^R \OMS/cmsy/m/n/10 ,$\T2A/cmr/m/n/10 (изоморфизм) 
+ []
+
+)) [40] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29304 strings out of 474486
- 609816 string characters out of 5753562
+ 29311 strings out of 474486
+ 610010 string characters out of 5753562
  1967542 words of memory out of 5000000
- 50963 multiletter control sequences out of 15000+600000
+ 50967 multiletter control sequences out of 15000+600000
  578263 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,21n,96p,1328b,853s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati0700.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm0700.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass0900.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2488.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2074.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (38 pages, 437022 bytes).
+ <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati0700.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm0700.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass0900.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2488.pk> <C:\Users\moksimqa\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx2074.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on main.pdf (40 pages, 463173 bytes).
 PDF statistics:
- 592 PDF objects out of 1000 (max. 8388607)
+ 608 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
