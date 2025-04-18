@@ -1,0 +1,107 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{11}{14.04}{}
+\begin{theorem}
+    $\forall \lambda \in \sigma(A ) \implies$ АК($\lambda$) $\geqslant $ ГК($\lambda$) $\geqslant 1$. 
+\end{theorem}
+Алгоритм нахождения СЗ и СВ:
+
+\noindent 1. Выбрать базис $\mathcal{E}$ (произвольный) и записать $M_{A}^{\mathcal{E}}$.
+\\2. Записать характеристическое уравнение и найти все его корни $\det{(M_{A}^{\mathcal{E}}- \lambda E)} = 0$. $P_{n}(\lambda) = 0$ и найти всего его корни из поля $k$. Получим $\sigma(A)$
+\\3. $\forall \lambda \in \sigma(A)$ решаем ОСЛАУ $(M_{A}^{\mathcal{E}}-\lambda E)\underset{\downarrow}{\xi} = \underset{\downarrow}{0}$. Ее общее решение, за исключением нулевого столбца, дает координаты всевозможных СВ, отвечающих $\lambda$, в базисе $\mathcal{E}$.
+\section{Свойства собственных векторов и собственных значений ЛО.}
+
+\begin{definition}
+    Квадратная матрица $M = (m_{ij})_{n}^n$ называется диагональной, если $m_{ij} = 0$ при $i \neq j$.
+\end{definition}
+\begin{definition}
+    $A \in L(\V, \V)$ называется диагонализуемым, если $\exists$ базис в $\V$: $M_A^{\mathcal{E}}$ — диагональная.
+\end{definition}
+
+\begin{theorem}[Критерий диагонализуемости]
+    $A$ - диагонализуем $\Leftrightarrow$ $\exists$ базис из СВ $\mathcal{H} = \{ h_{1},\dots,h_{n}\}$ оператора $A$.
+\end{theorem}
+\begin{proof}
+    $\tcircle{$\implies$}$ Пусть $A$ диагонализуем. Тогда $\exists$ $\mathcal{E} = \{ e_{1} , \dots ,e_{n}\}$ - базис: $M_{A}^{\mathcal{E}}$ = $\begin{pmatrix}
+        \alpha_{1} & 0 & \dots & 0 \\
+        0 & \alpha_{2} & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & \alpha_{n}
+    \end{pmatrix}$ тогда по определению матрицы ЛО: 
+    $
+    \left.\begin{aligned}
+        &A(e_{1}) = \alpha_{1}e_{1} + 0e_{1} + \dots + 0e_{n} = \alpha_{1}e_{1} \\
+        &A(e_{2}) = 0e_{1} + \alpha_{2}e_{2} + \dots + 0e_{n} = \alpha_{2}e_{2} \\
+        &\phantom{A(e_{3})}\dots \\
+        &A(e_{n}) = 0e_{1} + 0e_{2} + \dots + \alpha_{n}e_{n} = \alpha_{n}e_{n}
+    \end{aligned}\right| \implies \alpha_{1},\dots,\alpha_{n} \in \sigma(A) $ и\\ $e_{1}\sim \alpha_{1}, \dots , e_{n} \sim \alpha_{n}$ - СВ.
+    \\ $\tcircle{$\impliedby$}$ Пусть $\mathcal{H} = \{ h_{1},\dots,h_{n}\}$ - базис из СВ. Тогда $
+   \left.\begin{aligned}
+        &A(h_{1}) = \lambda_{1}h_{1} \\
+        &A(h_{2}) = \lambda_{2}h_{2} \\
+        &\phantom{A(h_{3})}\dots \\
+        &A(h_{n}) = \lambda_{n}h_{n}
+    \end{aligned}\right| \implies M_{A}^{\mathcal{H}} = \begin{pmatrix}
+        \lambda_{1} & 0 & \dots & 0 \\
+        0 & \lambda_{2} & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & \lambda_{n}
+    \end{pmatrix}$ - диагональная. 
+    \\ Обозначим $\begin{pmatrix}
+        \lambda_{1} & 0 & \dots & 0 \\
+        0 & \lambda_{2} & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & \lambda_{n}
+    \end{pmatrix} =\Lambda$
+\end{proof}
+
+\begin{theorem}
+    Пусть $\lambda_{1}, \dots ,\lambda_{m}$ - попарно различные СЗ ЛО $A; \lambda_{1} \sim h_{1}, \dots , \lambda_{m} \sim h_{m}$. Тогда $\{h_{1}, \dots , h_{m}\}$ - ЛНЗ. 
+\end{theorem}
+\begin{proof}
+    Методом математической индукции.
+    \\Если $\fbox{$m=1$}$ то $\lambda_{1} \sim h_{1} \neq  \theta \implies h_{1}$ - ЛНЗ, т. е для $m=1$ утверждение верно. (База) 
+    \\Шаг: Пусть утверждение верно для $m=k$, т.е $\{h_{1},\dots,h_{k}\} $ - ЛНЗ, покажем, что тогда $\{h_{1},\dots,h_{k},h_{k+1}\}$ - ЛНЗ. Пусть $\underbrace{\alpha_{1}h_{1} + \dots + \alpha_{k}h_{k}+ \alpha_{k+1}h_{k+1}}_{\substack{\text{обращается в $\theta$}\\\text{только в трив. случае}}} = \theta\;(1)$
+    \\Тогда $A(\alpha_{1}h_{1} + \dots + \alpha_{k}h_{k}+ \alpha_{k+1}h_{k+1}) = A(\theta) = \theta;\quad \alpha_{1}A(h_{1}) + \dots + \alpha_{k}A(h_{k})+ \alpha_{k+1}A(h_{k+1}) = \theta$. 
+    \\$\alpha_{1}\lambda_{1}h_{1} + \dots + \alpha_{k}\lambda_{k}h_{k}+ \alpha_{k+1}\lambda_{k+1}h_{k+1} = \theta\;(2)$
+    \\Вычтем из $(2)$ $(1)\cdot \lambda_{k+1}$: $\alpha_{1}(\lambda_{1}-\lambda_{k+1})h_{1} + \dots + \alpha_{k}(\lambda_{k}-\lambda_{k+1})h_{k}\neq  0\;(3)$. 
+    \\Поскольку $\{h_{1}, \dots,h_{k} \}$ - ЛНЗ и $\lambda_{1},\dots,\lambda_{k}$ - попарно различны, то $(3)$ возможно $\Leftrightarrow \alpha_{1} = \dots = \alpha_{k+1} = 0 \Leftrightarrow \{h_{1},\dots,h_{k+1}\}$ - ЛНЗ. 
+\end{proof}
+\begin{corollary}[Из критерия диагонализуемости]
+    В комплексном ЛП $A$ диагонлизуем $\Leftrightarrow \forall \lambda \in \sigma(A) \implies$ АК($\lambda$) = ГК($\lambda$)
+\end{corollary}
+\begin{corollary}
+    В вещественном ЛП $A$ диагонлизуем $\Leftrightarrow$ все корни характеристического уравнения вещественны ($\forall \lambda : P_{n}(\lambda)= 0 \implies \Lambda \in \R$) и $\forall \lambda \in \sigma(A) \implies$ АК($\lambda$) = ГК($\lambda$).
+\end{corollary}
+
+Пример:
+    \noindent 1)ЛО поворота на плоскости; при $\varphi\neq \pi k$ не диагонализуем.
+    \\
+    \noindent2) $M_{A}^{\mathcal{E}} = \begin{pmatrix}
+        1 & 1 \\ 
+        0 & 1
+    \end{pmatrix} \qquad \begin{vmatrix}
+        1 - \lambda & 1 \\ 
+        0 & 1 - \lambda
+    \end{vmatrix} = 0 \implies \lambda_{1,2} = 1$
+\\$ (M_{A}^{\mathcal{E}} - \lambda E) = \begin{pmatrix}
+        0 & 1 \\
+        0 & 0
+        \end{pmatrix} \sim \begin{pmatrix}
+            0 & 1 \\
+        \end{pmatrix}\qquad 0\xi_{1} +1\xi_{2} = 0 \implies \begin{cases}
+            \xi_{1} = C, \xi_{1} \neq 0 \\ 
+            \xi_{2} = 0
+        \end{cases} \quad h= C\begin{pmatrix}
+            1 \\
+            0
+        \end{pmatrix}$ \quad $\begin{aligned}
+            &\text{АК(1)} = 2 \\ 
+            &\text{ГК(1)} = 1 
+        \end{aligned}$
+
+Замечание. Если $ \forall \lambda\in \sigma(A)\implies $ АК($\lambda$) = ГК($\lambda$). Оператор может не диагонализоваться в вещественном ЛП, но диагонализоваться в комплексном ЛП. (Если характеристическое уравнение имеет не только вещественные корни)
+
+
+
+

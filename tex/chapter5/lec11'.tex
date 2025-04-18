@@ -1,0 +1,103 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Биленейные формы}
+Пусть $\V$ - ЛП над $k$.
+\begin{definition}
+    Правило $B: \V \times \V \to \R$ (т.е $\forall x,y \in \V \overset{\text{B}}{\to} B(x,y)\in\R): \forall x,y,z \in \V , \forall \alpha,\beta \in \R$ выполнено: 
+    $\left.\begin{aligned}
+        &1^{\circ} B(\alpha x+ \beta y,z) = \alpha B(x,z) + \beta B(y,z) \\
+        &2^{\circ} B(x,\alpha y + \beta z) = \alpha B(x,y) + \beta B(x,z) 
+    \end{aligned}\right| \qquad$ называется биленейной формой (БФ)
+\end{definition}
+
+Пусть $\mathcal{E} = \{ e_{1},\dots,e_{n}\}$ - базис в $\V, x = \xi_{1} e_{1} + \dots + \xi_{n} e_{n} = [\mathcal{E}]\underset{\downarrow}{\xi}, y = \eta_{1} e_{1} + \dots + \eta_{n} e_{n} = [\mathcal{E}]\underset{\downarrow}{\eta}$. 
+\\$B(x,y) = B([\mathcal{E}]\underset{\downarrow}{\xi},[\mathcal{E}]\underset{\downarrow}{\eta}) =$ (см. файл) $ = \sum_{i   =1}^{n}\sum_{j=1}^{n} \xi_{i} \eta_{j} \underbrace{B(e_{i},e_{j})}_{\in \R}$. $B(e_{i},e_{j}) \overset{\text{об.}}{=} b_{ij} $  
+
+\begin{definition}
+    Матрицей БФ $B$ в базисе $\mathcal{E}$ называется $M_{B}^{\mathcal{E}} = \begin{pmatrix}
+        B(e_{1},e_{1}) & B(e_{1},e_{2}) & \dots & B(e_{1},e_{n}) \\
+        B(e_{2},e_{1}) & B(e_{2},e_{2}) & \dots & B(e_{2},e_{n}) \\
+        \vdots & \vdots & \ddots & \vdots \\
+        B(e_{n},e_{1}) & B(e_{n},e_{2}) & \dots & B(e_{n},e_{n})
+    \end{pmatrix} =\\= (b_{ij})^{n}_{n}$
+\end{definition}
+С помощью нее получаем $\fbox{$B(x,y) = \vec{\xi} M_{B}^{\mathcal{E}}\underset{\downarrow}{\eta}$}$
+\begin{definition}
+    Общим видом БФ называется вид $\sum_{i  =1}^{n} \sum_{j=1}^{n} b_{ij}\xi_{i}\eta_{j}$, что кратко записывается $ \vec{\xi} M_{B}^{\mathcal{E}}\underset{\downarrow}{\eta}$.   
+\end{definition}
+\begin{definition}
+    БФ $B_{1}$ и $B_{2}$ называются равными, если $\forall x,y \in \V \implies B_{1}(x,y)=B_{2}(x,y)$
+\end{definition}
+\begin{theorem}
+    Если БФ $B$ действуют в вещественном ЛП $\V: \dim{V}=n$, то $\exists$ ВОС $B \leftrightarrow M$, где $M \in \mathfrak{M}_{n\times n}$
+\end{theorem}
+\begin{proof}
+    $\tcircle{$\implies$}$ $B \overset{\mathcal{E}}{\to} \exists ! M = (b_{ij})^{n}_{n}. \\ 
+    \tcircle{$\impliedby$}$ $M \overset{\mathcal{E}}{\to} B(x,y) = \vec{\xi} M \underset{\downarrow}{\eta}$ (более подробно см. файл)
+\end{proof}
+\begin{definition}
+    БФ $B$ называется симметричной, если $\forall x,y \in \V \implies B(x,y) = B(y,x)$
+\end{definition}
+\begin{theorem}
+    БФ $B$ симметрична $\Leftrightarrow \left( \exists \mathcal{E}\implies M_{B}^{\mathcal{E}} - \text{ симметричная} \right)$
+\end{theorem}
+\begin{corollary}
+    Симметричная БФ $B$ в любом базисе имеет симметричную матрицу.
+\end{corollary}
+\begin{theorem}[Преобразование БФ при смене базиса]
+    Если $\mathcal{E}, \mathcal{E'}$ - базисы в $\V$ и $[\mathcal{E'}] = [\mathcal{E}] T_{\mathcal{E}\to\mathcal{E'}}$, то $M_{B}^{\mathcal{E'}}= T_{\mathcal{E}\to\mathcal{E'}}^{t} M_{B}^{\mathcal{E}} T_{\mathcal{E}\to\mathcal{E'}}$.
+\end{theorem}
+\begin{proof}
+    $B(x,y) = \vec{\xi} M_{B}^{\mathcal{E}} \underset{\downarrow}{\eta} = (\vec{\xi})^{t} M_{B}^{\mathcal{E}} \underset{\downarrow}{\eta} = \left( T_{\mathcal{E}\to \mathcal{E'} } \underset{\downarrow}{\xi'} \right)^{t} M_{B}^{\mathcal{E}} \left( T_{\mathcal{E}\to \mathcal{E'}} \underset{\downarrow}{\eta'} \right) = \left( (\underset{\downarrow}{\xi'})^{t} T_{\mathcal{E}\to \mathcal{E'}}^{t} \right) M_{B}^{\mathcal{E}} \left( T_{\mathcal{E}\to \mathcal{E'}} \underset{\downarrow}{\eta'} \right) = $ ассоц. $ = \vec{\xi'} \left( T_{\mathcal{E}\to \mathcal{E'}}^{t} M_{B}^{\mathcal{E}} T_{\mathcal{E}\to \mathcal{E'}} \right) \underset{\downarrow}{\eta'}$
+    \\С другой стороны $B(x,y) = \vec{\xi'} M_{B}^{\mathcal{E'}} \underset{\downarrow}{\eta'}$, т.е $\forall \vec{\xi'}, \underset{\downarrow}{\eta'} \implies  \vec{\xi'} M_{B}^{\mathcal{E'}} \underset{\downarrow}{\eta'} = \vec{\xi'} \left( T_{\mathcal{E}\to \mathcal{E'}}^{t} M_{B}^{\mathcal{E}} T_{\mathcal{E}\to \mathcal{E'}} \right) \underset{\downarrow}{\eta'}$. В силу произвольности $\vec{\xi'}, \underset{\downarrow}{\eta'}$ (т.к $x,y$ - произвольные) $\implies M_{B}^{\mathcal{E'}} = T_{\mathcal{E}\to \mathcal{E'}}^{t} M_{B}^{\mathcal{E}} T_{\mathcal{E}\to \mathcal{E'}}$.
+\end{proof}
+
+\section{Квадратичные формы в вещественном ЛП}
+Пусть $\V$ - ЛП над $\R$. 
+\begin{definition}
+    Правило $g : \V \to \R$ (т.е $\forall x \in \V \overset{\text{g}}{\to} \overset{\text{единств.}}{g(x)}\in\R$) называется квадратичной формой (КФ), если $\exists$ симметричная БФ $B: g(x) = B(x,x)$ (т.е симметричная БФ $B$ порождает КФ $g$). При этом симметричную БФ $B$ называют полярной к КФ $g$.
+\end{definition}
+\begin{theorem}
+    $\exists$ ВОС $g \leftrightarrow $ симметричная $B$
+\end{theorem}
+\begin{proof}
+    $\tcircle{$\impliedby$}$ $B \to g: \forall x \in \V \implies g(x)=B(x,x)$\\
+Замечание. $g_{1}$ и $g_{2}$ называются равными, если $\forall x \in \V \implies g_{1}(x) = g_{2}(x)$.
+\\$\tcircle{$\implies$}$ Пусть $B$ - симметричная БФ, тогда $B(x+y,x+y) = B(x,x) + B(y,x) + B(x,y) + B(y,y) = B(x,x) + 2B(x,y) + B(y,y)$. Тогда, если $B$ порождает $g$, то $g(x+y) = g(x) + 2B(x,y) + g(y) \implies B(x,y) = \frac{1}{2} \left( g(x+y) - g(x) - g(y) \right)$, т.е по любой КФ однозначно восстанавливается симметричная БФ, ее породившая. 
+
+
+\end{proof}
+
+Общий вид КФ: 
+\noindent Если $\mathcal{E}$ - базис в $\V,  x = [\mathcal{E}]\underset{\downarrow}{\xi}; g(x) = B(x,x) = \sum_{i=1}^{n} \sum_{j=1}^{n} \xi_{i}\xi_{j}\underbrace{B(e_{i},e_{j})}_{b_{ij}\in\R} =\bigg| b_{ij} = b_{ji} \bigg| = \\ = \sum_{i=1}^{n} b_{ii}(\xi_{i})^{2} + 2 \sum_{i    =1}^{n}\sum_{j=i+1}^{n} b_{ij} \xi_{i}\xi_{j}$
+\begin{definition}
+    $M_{g}^{\mathcal{E}}  \overset{\text{def}}{=} M_{B_{\text{пол}}}^{\mathcal{E}} = (b_{ij})^{n}_{n}$ - симметричная. Соответствующая $g(x) = \vec{\xi} M_{g}^{\mathcal{E}} \underset{\downarrow}{\xi}$.
+\end{definition}
+\begin{theorem}
+    $M_{g}^{\mathcal{E'}} = T_{\mathcal{E}\to\mathcal{E'}}^{t} M_{g}^{\mathcal{E}} T_{\mathcal{E}\to\mathcal{E'}}$.
+\end{theorem}
+\begin{proof}
+    Следует из связи КФ с полярной БФ (см. файл)
+\end{proof}
+
+\begin{definition}
+    Базис $\mathcal{E'}$, в котором КФ имеет диагональную матрицу, т.е $M_{g}^{\mathcal{E'}} = \begin{pmatrix}
+        \alpha_{1} & 0 & \dots & 0 \\
+        0 & \alpha_{2} & \dots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \dots & \alpha_{n}
+        \end{pmatrix} $ называется каноническим, в нем КФ имеет вид $g(x) = \alpha_{1}( \xi'_{1})^{2} + \dots + \alpha_{n}(\xi'_{n})^{2}$, который также называется каноническим. 
+\end{definition}
+\newpage
+\begin{theorem}[Лагранжа]
+    Любая КФ невырождающими преобразованиями координат приводится к каноническому виду, т.е $\forall g(x) = \sum_{i =1}^{n  } b_{ij} \xi_{i}^{2} + 2 \sum_{i=1}^{n} \sum_{j=i+1}^{n} b_{ij} \xi_{i}\xi_{j} \; \exists M = (m_{ij})^{n}_{n} : \det{M}\neq  0 $ и $\underset{\downarrow}{\xi'} = M\underset{\downarrow}{\xi}$ дает $g(x) = \alpha_{1}(\xi'_{1})^{2} + \dots + \alpha_{n}(\xi'_{n})^{2}$.
+\end{theorem}
+
+
+
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}
+\end{document}
