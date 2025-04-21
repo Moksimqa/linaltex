@@ -1,0 +1,114 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{12}{21.04}{}
+\begin{proof}
+    ММИ, см. файл + практические занятия.
+\end{proof}
+\begin{corollary}
+    Невырожденное преобразование координат задает переход в другой базис, т.к фактически  $\underset{\downarrow}{x} = M \underset{\downarrow}{\xi}$ означает, что $M = T_{\mathcal{E}\to\mathcal{F}}^{-1}$, где $\mathcal{F}$ - канонический базис. $[\mathcal{F}] = [\mathcal{E}] M^{-1}$. - формула перехода к каноническому базису.
+\end{corollary}
+\begin{corollary}
+    Для любой симметрической матрицы $B = (b_{ij})^{n}_{n} \; (B^{T} = B)$ существует невырожденная матрицаа $T = (t_{ij})^{n}_{n} \; (\det{T}\neq 0): T^{t}BT = \Lambda$ - диагональная матрица.
+\end{corollary}
+\begin{proof}
+    $B\leftrightarrow g = \vec{\xi}B \underset{\downarrow}{\xi} = \vec{\chi}\Lambda \underset{\downarrow}{\chi}$. $\Lambda =$ по законам преобразования матрицы КФ при смене базисе $= T^{t}BT$, где $B = M_{g}^{\mathcal{E}}, [\mathcal{F}] = [\mathcal{E}] T$, при этом $T= M^{-1}$, $\underset{\downarrow}{x}= M\underset{\downarrow}{\xi}$.
+\end{proof}
+\section{Закон инерции КФ}
+Подробно см. файл. Кратко: пусть в исходном базисе $\mathcal{E}=\{e_{1},\dots,e_{n}\}, x=[\mathcal{E}]\underset{\downarrow}{\xi}, g(x) = \sum_{i  =1}^{n}\sum_{j=1}^{n} b_{ij}\xi_{i}\xi_{j}$. Переходим невырожденными преобразованиями в канонический базис $\mathcal{F}=\{f_{1},\dots,f_{n}\}$. Тогда $\underset{\downarrow}{x}=[\mathcal{F}]\underset{\downarrow}{\alpha}, g(x) = \sum_{i   =1}^{n} \lambda_{i}\chi{i}^{2}$. 
+Рассмотри базис $\mathcal{H} = \{h_{1},\dots,h_{n}\}$. Будем считать, что $h_{i} = \begin{cases}
+    f_{i}, \text{ если } \lambda_{i} =0 \\ 
+    \frac{f_{i}}{\sqrt{|\lambda_{i}}}, \text{ если } \lambda_{i} \neq 0
+\end{cases}$  \\ Тогда $g(x) =\sum_{i   =1}^{n} \epsilon_{i}\tau_{i}^{2}\;(*)$, где $ \underset{\downarrow}{\chi} = [\mathcal{H}]\underset{\downarrow}{\tau} $ и $\forall i=\overline{1,n} \implies \epsilon_{i} \in \{-1;0;+1\}\; \left(\tau_{i} = \begin{cases}
+    \chi_{i}, \text{ если } \lambda_{i} = 0 \\ 
+    \sqrt{|\lambda_{i}|}\chi_{i}, \text{ если } \lambda_{i} \neq 0
+\end{cases}\right)$
+\\Представление (*) называется нормальным видом КФ, а базис $\mathcal{H}$, в котором КФ имеет нормальный вид - нормальным Гауссом. 
+
+\noindent Можно заключить, что любая КФ в вещественном ЛП невырожденным преобразованием координат приводится к нормальному виду.
+\begin{definition}
+    $p = N(\epsilon_{i}=1)$ - положительный индекс инерции, $q = N(\epsilon_{i}=-1)$ - отрицательный индекс инерции, $d = N(\epsilon_{i}=0)$ - дефект КФ.
+\end{definition}
+
+Ясно, что \fbox{$p+q+d= n = \dim{\V}$}
+
+Поскольку канонинческий, а значит, и нормальный базисы определены неоднозначно, то возникает вопрос о корректности определения $p,q,d$. 
+\begin{theorem}[Закон инерции квадратичных форм]
+    $p,q,d = inv$, т.е не зависят от выбора базиса. 
+\end{theorem}
+\begin{proof}
+    Без доказательства, для справок Сандаков, стр. 250. 
+\end{proof}
+\newpage
+\subsection{Классификация КФ}
+Знакоопределенные:
+\begin{definition}
+    $g$ называется положительно определенной, если $\forall x\in \V: x\neq \theta \implies g(x)>0$
+\end{definition}
+\begin{definition}
+    $g$ называется отрицательно определенной, если $\forall x\in \V: x\neq \theta \implies g(x)<0$
+\end{definition}
+Квазизнакоопределенные:
+\begin{definition}
+    $g$ называется квазиположительно определенной, если $\forall x\in \V: x\neq \theta \implies g(x)\geqslant 0$ и $\exists x \neq  \theta : g(x) = 0$
+\end{definition}
+\begin{definition}
+    $g$ называется квазиотрицательно определенной, если $\forall x\in \V: x\neq \theta \implies g(x)\leqslant 0$ и $\exists x \neq  \theta : g(x) = 0$
+\end{definition}
+
+\begin{definition}
+    $g$ называется знакопеременной, если $\exists x_{1},x_{2} \in \V : g(x_{1})\cdot g(x_{2})<0$
+\end{definition}
+\begin{theorem}
+    Пусть $g$ - КФ в вещественном ЛП $\V \; (\dim{\V}=n)$, \\тогда 
+    $
+    \begin{aligned}
+        &g - \text{ положительно определенная } \Leftrightarrow p=n; q,d=0 \; (1) \\ 
+        &g - \text{ отрицательно определенная} \Leftrightarrow q=n; p,d= 0 \; (2)\\ 
+        &g - \text{ квазиположительно определенная} \Leftrightarrow q=0;p,d>0 \;(3)\\ 
+        &g - \text{ квазиотрицательно определенная} \Leftrightarrow p=0; q,d>0 \;(4)\\ 
+        &g - \text{ знакопеременная} \Leftrightarrow p,q>0 \;(5)
+    \end{aligned}$
+\end{theorem}
+\begin{proof}
+    Рассмотрим $(1)$
+    \\$\tcircle{$\implies$}$ Пусть $g$ - положительно определенная. Тогда $\forall x \in \V, x \neq  \theta \implies g(x)>0$. Рассмотрим нормальный базис $\mathcal{H} = \{h_{1},\dots,h_{n}\}$. В нем $x = [\mathcal{H}]\underset{\downarrow}{\tau}$ и $g(x)=\sum_{i   =1}^{n} \epsilon_{i}\tau_{i}^{2}$.
+   \\ Тогда $g(h_{1})=\epsilon_{1}>0, g(h_{2}) = \epsilon_{2}>0, \dots ,g(h_{n}) = \epsilon_{n}>0 \implies p=n\;(q=d=0)$ 
+    \\$\tcircle{$\impliedby$}$ Пусть $p=n\;(q=d=0)\implies$ в нормальном базисе $\mathcal{H}$ получим  $\forall x \in \V \; g(x) = \tau_{1}^{2}+\dots+\tau_{n}^{2}$. Поскольку $x\neq \theta$, то $\tau_{1}^{2}+\dots+\tau_{n}^{2}>0\implies g(x)$ - положительно определенная. 
+    \\$(2)-(5)$ - самостоятельно.
+\end{proof}
+
+\begin{theorem}[Критерий Сильвестра (Критерий знакоопределенности КФ)]
+    Пусть $g$ действует в вещественном ЛП $\V$. 
+    \\Тогда 1. $g - \text{ положительно определенная } \Leftrightarrow \tcircle{$M_{1}$}>0, \dots , \tcircle{$M_{n}$}>0 (\text{все главные угловые миноры $M_{g}^{\mathcal{E}}$ положительны})$
+    $M_{g}^{\mathcal{E}}=\begin{pmatrix} 
+        b_{11} & b_{12} &\dots& b_{1n}\\ 
+        b_{21} & b_{22} & \dots & b_{2n}\\ 
+        \vdots & \vdots& \ddots & \vdots \\ 
+        b_{1n} & b_{2n} & \dots & b_{nn}
+     \end{pmatrix}$ \quad $\tcircle{$M_{1}$} =M_{1}^{1} = b_{11}> 0, \tcircle{$M_{2}$}=M_{12}^{12} = \begin{vmatrix}
+         b_{11} & b_{12} \\ 
+         b_{21}& b_{22} 
+     \end{vmatrix}> 0 , \dots, \tcircle{$M_{n}$}= M_{12\dots n}^{12\dots n} = \det{M_{g}^{\mathcal{E}}}>0$
+     \\2. $g$ - отрицательно определенная $\Leftrightarrow \tcircle{$M_{1}$}<0,\tcircle{$M_{2}$}>0, \dots$ (знаки главных угловых миноров чередуются, начиная с отрицательного)
+\end{theorem}
+\begin{proof}
+    Для произвольного базиса - без доказательства. В нормальном базисе $\mathcal{H}$ 
+    \\ $g$ - положительно определенная $\Leftrightarrow p= n \Leftrightarrow M_{g}^{\mathcal{H}}=\begin{pmatrix}
+        1 & 0 & \dots & 0 \\ 
+        0 & 1 & \dots & 0 \\ 
+        \vdots & \ddots & \vdots & \vdots \\ 
+        0& 0 & \dots &1
+    \end{pmatrix}=E,\\ \tcircle{$M_{1}$}=\tcircle{$M_{2}$}=\dots=\tcircle{$M_{n}$} = 1> 0 $
+    \\ $g$ - отрицательно определенная $\Leftrightarrow q=n \Leftrightarrow M_{g}^{\mathcal{H}} = \begin{pmatrix}
+        -1 & 0 & \dots & 0 \\ 
+        0 & 1 & \dots & 0 \\ 
+        \vdots & \ddots & \vdots & \vdots \\ 
+        0& 0 & \dots &-1
+    \end{pmatrix} = -E,\\ \tcircle{$M_{1}$} = \tcircle{$M_{3}$}\; ;\dots=-1 < 0; \tcircle{$M_{2}$}=\tcircle{$M_{4}$}\; ; \dots =1 > 0$ .
+\end{proof}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,73 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{12}{21.04}{}
+
+\section{Определение и общий вид ПФ в комплексном ЛП}
+Пусть $\V$ - ЛП над $\C$
+\begin{definition}
+    Закон (правило, функция) $B : \V \times \V \to \C$ (упорядоченная пара элементов $x,y\in\V$ ставит в соответствие комплексное число) называется полуторалинейной формой (ПФ), если $\forall x,y,z\in\V $ и $\forall \alpha \in \C \implies $
+    $
+    \begin{aligned}
+        &1^{\circ} B(\alpha x + \beta y, z)= \alpha B(x,z) + \beta B(y,z) \\ 
+        &2^{\circ} B(x,\alpha y + \beta z ) = \overline{\alpha} B(x,y) + \overline{\beta} B(x,z) \;(\overline{\alpha},\overline{\beta} - \text{ комплексно сопряженные числа к $\alpha,\beta$})
+    \end{aligned}$
+\end{definition}
+
+Пусть $\mathcal{E} = \{ e_{1},\dots,e_{n}\}$ - базис в $\V, x = [\mathcal{E}]\underset{\downarrow}{\xi}, y = [\mathcal{E}]\underset{\downarrow}{\eta}$. 
+Тогда $B(x,y) = \sum_{i =1}^{n  } \sum_{j=1}^{n} \xi_{i}\overline{\eta_{j}} \underbrace{B(e_{i},e_{j})}_{b_{ij}} =\\= \sum_{i  =1}^{n  } \sum_{j=1}^{n } b_{ij}\xi_{i}\overline{\eta_{j}} $ - общий вид ПФ 
+\section{Матрица ПФ. Преобразование матрицы ПФ при смене базиса}
+\begin{definition}
+    $M_{B}^{\mathcal{E}} = (b_{ij})^{n}_{n} = \begin{pmatrix}
+        B(e_{1},e_{1}) & \dots & B(e_{1},e)_{n} \\ 
+        \vdots & \ddots & \vdots \\ 
+        B(e_{n},e_{1}) & \dots & B(e_{n},e_{n})
+    \end{pmatrix}$ называется матрицей ПФ $B$ в базисе $\mathcal{E}$
+\end{definition}
+С помощью нее получаем, что $B(x,y) = \vec{\xi} M_{B}^{\mathcal{E}}\overline{\underset{\downarrow}{\eta}}$
+\begin{theorem}
+    Если $[\mathcal{E'}] = [\mathcal{E}] T_{\mathcal{E}\to\mathcal{E'}}, \mathcal{E'} = \{e_{1}',\dots,e_{n}'\}$ - другой базис в $\V$, то $M_{B}^{\mathcal{E'}} = T_{\mathcal{E}\to\mathcal{E'}}^{t}M_{B}^{\mathcal{E}}T_{\mathcal{E}\to\mathcal{E'}}$
+\end{theorem}
+\begin{proof}
+    См. файл.
+\end{proof}
+
+Существует ВОС между ПФ и квадратными комплекснозначными матрицами. 
+\begin{proof}
+    См. файл
+\end{proof}
+    
+\begin{definition}
+    $B_{1}=B_{2}$, если $\forall x,y \in \V\implies B_{1}(x,y)= B_{2}(x,y)$
+\end{definition}
+
+\begin{definition}
+    ПФ называется эрмитовыой, если $\forall x,y \in \V\implies B(x,y)=\overline{B(y,x)}$
+\end{definition}
+\begin{definition}
+    $M= (m_{ij})^{n}_{n}$ называется эрмитовой (эрмитово симметричной), если $M^{T}= \overline{M}$
+\end{definition}
+\vspace{0.2cm}
+Пример: $\begin{pmatrix}
+    1 & 1+i \\ 
+    1-i & 2
+\end{pmatrix}^{T} = \begin{pmatrix}
+    1 & 1-i \\ 
+    1+i & 2
+
+\end{pmatrix} = \overline{\begin{pmatrix}
+    1 & 1+i \\ 
+    1-i & 2
+\end{pmatrix}}$
+
+
+\begin{theorem}
+    ПФ $B$ - эрмитова $\Leftrightarrow $ в некотором базисе ее матрица является эрмитово симметричной.    
+\end{theorem}
+\begin{corollary}
+    У эрмитовой ПФ в любом базисе матрица является эрмитово симметричной.    
+\end{corollary}
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}

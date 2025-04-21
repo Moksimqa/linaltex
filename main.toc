@@ -1,0 +1,39 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{\numberline {1}Матрицы}{4}{}%
+\contentsline {section}{\numberline {1.1}ЛЗ и ЛНЗ строк(столбцов) матриц}{4}{}%
+\contentsline {section}{\numberline {1.2}Ранг матрицы.}{4}{}%
+\contentsline {section}{\numberline {1.3}Элементарные преобразования строк и столбцов матрицы.}{6}{}%
+\contentsline {section}{\numberline {1.4}Вычисление обратной матрицы методом элементарных преобразований.}{8}{}%
+\contentsline {chapter}{\numberline {2}Теория систем линейных алгебраических уравнений}{11}{}%
+\contentsline {section}{\numberline {2.1}Основные определения}{11}{}%
+\contentsline {section}{\numberline {2.2}Квадратные СЛАУ. Правило Крамера.}{12}{}%
+\contentsline {section}{\numberline {2.3}Метод Гаусса (Гаусса-Жордана) исследования СЛАУ}{13}{}%
+\contentsline {section}{\numberline {2.4}Теорема Кронекера-Капелли.}{15}{}%
+\contentsline {section}{\numberline {2.5}Однородные СЛАУ.}{16}{}%
+\contentsline {section}{\numberline {2.6}Фундаментальная система решений ОСЛАУ.}{17}{}%
+\contentsline {section}{\numberline {2.7}Общее решение неоднородной СЛАУ.}{19}{}%
+\contentsline {chapter}{\numberline {3}Линейные пространства}{21}{}%
+\contentsline {section}{\numberline {3.1}Определение и примеры ЛП}{21}{}%
+\contentsline {section}{\numberline {3.2}Линейная зависимость и линейная независимость системы векторов}{23}{}%
+\contentsline {section}{\numberline {3.3}Базис и размерность линейного пространства}{24}{}%
+\contentsline {section}{\numberline {3.4}Подпространства линейного пространства. Линейная оболочка системы векторов}{26}{}%
+\contentsline {section}{\numberline {3.5}Координаты вектора в базисе}{27}{}%
+\contentsline {section}{\numberline {3.6}Изоморфизм линейных пространств}{28}{}%
+\contentsline {section}{\numberline {3.7}Сумма и пересечение линейных пространств}{29}{}%
+\contentsline {section}{\numberline {3.8}Матрица перехода.}{31}{}%
+\contentsline {section}{\numberline {3.9}Линейные формы в ЛП. Сопряженное пространство, его базис и размерность. Преобразование коэффициентов линейной формы при смене базиса.}{32}{}%
+\contentsline {chapter}{\numberline {4}Линейные операторы в линейных пространствах}{35}{}%
+\contentsline {section}{\numberline {4.1}Определние линейного оператора (ЛО). Линейное пространство линейных операторов(ЛПЛО).}{35}{}%
+\contentsline {section}{\numberline {4.2}Матрица ЛО}{37}{}%
+\contentsline {section}{\numberline {4.3}Обратный оператор и его свойства}{40}{}%
+\contentsline {section}{\numberline {4.4}Образ и ядро ЛО}{41}{}%
+\contentsline {section}{\numberline {4.5}Собственные векторы и собственные значения ЛО}{42}{}%
+\contentsline {section}{\numberline {4.6}Свойства собственных векторов и собственных значений ЛО.}{44}{}%
+\contentsline {chapter}{\numberline {5}Биленейные и квадратичные формы в вещественном ЛП}{46}{}%
+\contentsline {section}{\numberline {5.1}Биленейные формы}{46}{}%
+\contentsline {section}{\numberline {5.2}Квадратичные формы в вещественном ЛП}{47}{}%
+\contentsline {section}{\numberline {5.3}Закон инерции КФ}{48}{}%
+\contentsline {subsection}{\numberline {5.3.1}Классификация КФ}{49}{}%
+\contentsline {chapter}{\numberline {6}Полуторалинейные формы в комплексных ЛП}{51}{}%
+\contentsline {section}{\numberline {6.1}Определение и общий вид ПФ в комплексном ЛП}{51}{}%
+\contentsline {section}{\numberline {6.2}Матрица ПФ. Преобразование матрицы ПФ при смене базиса}{51}{}%

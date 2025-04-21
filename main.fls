@@ -336,47 +336,79 @@ INPUT C:\Program Files\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\pdflscape\pdflscape-nometadata.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\graphics\lscape.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\graphics\lscape.sty
-INPUT .\tex\chapter1.tex
-INPUT tex\chapter1.tex
-INPUT .\tex\chapter1.tex
-INPUT tex\chapter1.tex
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm2074.tfm
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx2074.tfm
+INPUT .\tex\title.tex
+INPUT tex\title.tex
+INPUT .\tex\title.tex
+INPUT tex\title.tex
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1728.tfm
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1728.tfm
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx2488.tfm
-INPUT .\tex\chapter1\lec1.tex
-INPUT tex\chapter1\lec1.tex
-INPUT .\tex\chapter1\lec1.tex
-INPUT tex\chapter1\lec1.tex
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1200.tfm
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1200.tfm
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm0900.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmss.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmss.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmss.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmss.fd
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass0900.tfm
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1440.tfm
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1440.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1200.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\jknappen\ursfs.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\jknappen\ursfs.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\jknappen\ursfs.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\jknappen\ursfs.fd
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy6.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\stmaryrd\ustmry.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\stmaryrd\ustmry.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\stmaryrd\ustmry.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\stmaryrd\ustmry.fd
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary10.tfm
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary8.tfm
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary6.tfm
+OUTPUT main.pdf
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm2488.tfm
+INPUT .\main.toc
+INPUT .\main.toc
+INPUT main.toc
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1000.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\jknappen\ursfs.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\jknappen\ursfs.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\jknappen\ursfs.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\jknappen\ursfs.fd
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs7.tfm
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
@@ -389,19 +421,31 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib5.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\stmaryrd\ustmry.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\stmaryrd\ustmry.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\stmaryrd\ustmry.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\stmaryrd\ustmry.fd
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary10.tfm
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary7.tfm
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary5.tfm
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1000.tfm
+OUTPUT main.toc
+INPUT .\tex\chapter1.tex
+INPUT tex\chapter1.tex
+INPUT .\tex\chapter1.tex
+INPUT tex\chapter1.tex
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm2074.tfm
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx2074.tfm
+INPUT .\tex\chapter1\lec1.tex
+INPUT tex\chapter1\lec1.tex
+INPUT .\tex\chapter1\lec1.tex
+INPUT tex\chapter1\lec1.tex
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm0900.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmss.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmss.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmss.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmss.fd
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass0900.tfm
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1440.tfm
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1440.tfm
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm0700.tfm
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm0500.tfm
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lati1000.tfm
-OUTPUT main.pdf
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lati0700.tfm
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lati0500.tfm
 INPUT .\tex\chapter1\lec2.tex
@@ -479,6 +523,18 @@ INPUT .\tex\chapter5\lec11'.tex
 INPUT tex\chapter5\lec11'.tex
 INPUT .\tex\chapter5\lec11'.tex
 INPUT tex\chapter5\lec11'.tex
+INPUT .\tex\chapter5\lec12.tex
+INPUT tex\chapter5\lec12.tex
+INPUT .\tex\chapter5\lec12.tex
+INPUT tex\chapter5\lec12.tex
+INPUT .\tex\chapter6.tex
+INPUT tex\chapter6.tex
+INPUT .\tex\chapter6.tex
+INPUT tex\chapter6.tex
+INPUT .\tex\chapter6\lec12'.tex
+INPUT tex\chapter6\lec12'.tex
+INPUT .\tex\chapter6\lec12'.tex
+INPUT tex\chapter6\lec12'.tex
 INPUT main.aux
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm0500.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm0500.pk
@@ -488,20 +544,22 @@ INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\la
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm0700.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1000.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lati1000.pk
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1000.pk
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1000.pk
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1000.pk
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1000.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1440.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1440.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lass0900.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lass0900.pk
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2074.pk
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2074.pk
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1000.pk
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1000.pk
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1000.pk
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1000.pk
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk
+INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2488.pk
 INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2488.pk
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2074.pk
-INPUT C:\Users\moksimqa\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx2074.pk
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
