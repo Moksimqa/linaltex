@@ -37,3 +37,8 @@
 \contentsline {chapter}{\numberline {6}Полуторалинейные формы в комплексных ЛП}{51}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Определение и общий вид ПФ в комплексном ЛП}{51}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Матрица ПФ. Преобразование матрицы ПФ при смене базиса}{51}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Евклидовы и унитарные пространства}{53}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Определение и примеры унитарных и евклидовых пространств}{53}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Нормированное ЛП}{54}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Общий вид СП}{55}{section.7.3}%
+\contentsline {section}{\numberline {7.4}ОНБ В $\ensuremath {\mathbb {E}}(\ensuremath {\mathbb {U}})$}{56}{section.7.4}%

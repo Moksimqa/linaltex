@@ -1,0 +1,184 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{13}{28.04}{}
+
+\section{Определение и примеры унитарных и евклидовых пространств}
+\begin{definition}
+    $\V$ - ЛП над $\R$ называется евклидовым (вещественным евклидовым пространством - ВЕП), если в нем определена функция $(,): \V \times \V\to \R: \forall x,y ,z \in \V$ и $\forall \alpha,\beta \in \R$ выполнены следующие свойства:\\ 
+    $\begin{aligned}
+        &1^{\circ} (x,x)\geqslant 0, \text{ причем } (x,x) =0 \Leftrightarrow x=\theta\\ 
+        &2^{\circ} \text{ коммутативность: } (y,x) = (x,y)\\ 
+        &3^{\circ} \text{ линейность по первому аргументу: } (\alpha x + \beta y, z) = \alpha (x,z) + \beta (y,z)
+    \end{aligned}$\\ 
+    Сама функция $(,)$ называется скалярным произведением (СП), а свойства $1^{\circ}-3^{\circ}$ - аксиомами СП. 
+\end{definition}
+Замечание. Из $2^{\circ}$ и $3^{\circ}\implies$ линейность по втором аргументу, т.е $(x,\alpha y +\beta z ) = \alpha(x,y) + \beta(x,z)$
+
+Примеры:
+\noindent 1. ЛПВ(геом) $|\vec{x}| \cdot |\vec{y}|\neq  0 \quad (\vec{x},\vec{y}) \underset{\text{def}}{=} \begin{cases}
+    |\vec{x}||\vec{y}| \cos{( \vec{x}{,}^{\wedge}\vec{y})} \\ 
+    0, |\vec{x}||\vec{y}| = 0 
+\end{cases}$ \\ 
+\noindent 2. $\R^{n}$ (вещественные строки или столбцы длины или высоты $n$) \qquad $x=(\xi_{1}, \dots ,\xi_{n}), y = (\eta_{1}, \dots ,\eta_{n})$\\
+$(x,y)\overset{\text{def}}{=} \xi_{1}\eta_{1} + \xi_{2}\eta_{2} + \dots + \xi_{n}\eta_{n}$, $1^{\circ}-3^{\circ}$ - очевидно (самостоятельно)\\ 
+\noindent 3. $C[a,b]$ - вещественные функции, непрерывные на $[a,b]\qquad (x(t),y(t))= \int\limits_{a   }^{b    } x(t)y(t)dt$, $1^{\circ}- 3^{\circ}$ - очевидно (самостоятельно)\\
+
+\begin{definition}
+    $\V$ - ЛП над $\C$ называется евклидовым (комплексным евклидовым пространством - КЕП), если в нем определена функция $(,): \V \times \V\to \C: \forall x,y ,z \in \V$ и $\forall \alpha,\beta \in \C$ выполнены следующие свойства:\\ 
+    $\begin{aligned}
+        &1^{\circ} (x,x)\geqslant 0, \text{ причем } (x,x) =0 \Leftrightarrow x=\theta\\ 
+        &2^{\circ} \text{ коммутативность: } (y,x) = \overline{(x,y)}\\ 
+        &3^{\circ} \text{ линейность по первому аргументу: } (\alpha x + \beta y, z) = \overline{\alpha} (x,z) + \overline{\beta} (y,z)
+    \end{aligned}$\\ 
+    Сама функция $(,)$ называется скалярным произведением (СП), а свойства $1^{\circ}-3^{\circ}$ - аксиомами СП. 
+\end{definition}
+Замечание. Из $2^{\circ}$ и $3^{\circ}\implies$ линейность по втором аргументу, т.е $(x,\alpha y +\beta z ) = \overline{\alpha}(x,y) + \overline{\beta}(x,z)$
+\newpage
+Примеры: \\
+\noindent 1. $\C^{n}$ (комплексные строки или столбцы длины или высоты $n$) \qquad $x=(\xi_{1}, \dots ,\xi_{n}), y = (\eta_{1}, \dots ,\eta_{n})$\\
+$(x,y)\overset{\text{def}}{=} \xi_{1}\overline{\eta_{1}} + \xi_{2}\overline{\eta_{2}} + \dots + \xi_{n}\overline{\eta_{n}}$, $1^{\circ}-3^{\circ}$ - очевидно (самостоятельно)\\ 
+
+\noindent 2. $\C[a,b]$ - комплексно-значные функции вещественных переменных, непрерывные на $[a,b]\\ (x(t),y(t))= \int\limits_{a   }^{b    } x(t)\overline{y(t)}dt$, $1^{\circ}- 3^{\circ}$ - очевидно (самостоятельно)\\
+\\ $\begin{aligned}
+    &x(t) = e^{int} = \cos{nt} + i\sin{nt}, \quad \C[0,2\pi], m ,n \in \Z\\ 
+    &y(t) = e^{imt} = \cos{mt} + i\sin{mt}
+\end{aligned}\\ (x(t),y(t)) = \int\limits_{0}^{2\pi} e^{int}e^{-imt} dt = \begin{aligned}
+    &m=n \; \int\limits_{0}^{2\pi} dt = 2\pi \\ 
+    &m\neq  n \; \int\limits_{0}^{2pi} e^{i(n-m)t} dt = \frac{1}{i(n-m)}e^{i(nim)t}\bigg|_{0}^{2\pi} = 0
+\end{aligned}$\\ 
+Дальнейшее обозначение: $\begin{aligned}
+    &\mathbb{E} - \text{ВЕП ($\equiv$ евклидово)} \\
+    &\U - \text{КЕП ($\equiv$ унитарное)} 
+\end{aligned}$ 
+
+\section{Нормированное ЛП} 
+Пусть $\V$ - ЛП над $k$
+\begin{definition}
+    $\V$ называется нормированным ЛП (НЛП), если в нем определена фукнция $\|.\|: \V\to \R$, причем $\forall x ,y \in \V \; \forall \alpha \in k $ выполнены:$
+    \begin{aligned}
+        &1^{\circ} \|x\| >0 , \text{ причем } \|x\| =0 \Leftrightarrow x=\theta\\
+        &2^{\circ} \text{ Однородность: } \|\alpha x\| = |\alpha| \cdot \|x\|\\
+        &3^{\circ} \text{ Неравенство треугольника: } \|x+y\| \leqslant \|x\| + \|y\|
+    \end{aligned}$
+    \\ Сама функция $\|.\|$ называется нормой, а свойства $1^{\circ}-3^{\circ}$ - аксиомами нормы.
+\end{definition}
+В $\E$ и $\U$ нормой называют число $\|x\| = \sqrt{(x,x)}$, свойства $1^{\circ}-2^{\circ}$ - очевидно (самостоятельно)
+  
+Примеры: \\ 
+\noindent 1. ЛПВ (геом.)\; $\|\vec{x}\| = \sqrt{(\vec{x},\vec{x})}=|\vec{x}|$\\ 
+\noindent 2. $\R^{n}\; \| x\| = \sqrt{\xi_{1}^{2}+\dots+\xi_{n}^{2}} \qquad \C^{n} \; \|x\| = \sqrt{ |\xi_{1}|^{2}+\dots+|\xi_{n}|^{2}} \\ $
+\noindent 3. $C[a,b] \; \|x(t)\| = \sqrt{\int\limits_{a }^{b    } x^{2}(t)dt} \qquad \C [a,b] \; \|x(t)\| = \sqrt{\int\limits_{a    }^{b    } |x^{2}(t)|dt}$. В частности $\|e^{imt}\| = \sqrt{2\pi}$
+\begin{lemma}
+    Если $x\neq  \theta$, то $\left\|\frac{x}{\|x\|}\right\| = 1$
+\end{lemma}
+\begin{proof}
+    $\left\| \frac{x}{\|x\|}\right\| ^{2} \overset{2^{\circ}}{=} \frac{1}{\|x\|}\|x\| = 1 $
+\end{proof}
+\begin{theorem}[Неравенство Коши-Буняковского]
+    $\forall x,y \in \E ( \U) \implies |(x,y)| \leqslant \|x\| \cdot \|y\|$
+\end{theorem}
+\begin{proof}
+    Для $\E$ (для $\U$ в файле)
+    \\ Если $y=\theta$, то равенство выполнено. Пусть $y\neq \theta$. Рассмотрим $0\leqslant(x-\lambda y, x- \lambda y)= (x,x)-\\-\lambda (y,x)- \lambda(x,y) + \lambda^{2}(y,y) = \|x\|^{2}-2\lambda (x,y)+\lambda^{2} \underbrace{\|y\|^{2}}_{>0}$ - квадратный многочлен от $\lambda \implies\\\implies \frac{D}{4 } = (x,y)^{2}-\|x\|^{2}\|y\|^{2}\leqslant 0 \implies (x,y)^{2}\leqslant\|x\|^{2}\|y\|^{2}\implies |(x,y)| \leqslant \|x\|\|y\|$
+\end{proof}
+Замечание. $(x-\lambda y, x-\lambda y)= 0 \Leftrightarrow x-\lambda y = \theta$, т.е $\{x,y\}$ - ЛЗ, т.е равенство в неравенстве Коши-Буняковского достигается $\Leftrightarrow \{x,y\}$ - ЛЗ. 
+
+Замечание. В евклидовом пространстве можно ввести понятие угла между ненулевыми векторами $x{,}^{\wedge} y: x{,}^{\wedge} y \overset{\text{def}}{=} \arccos{\frac{(x,y)}{\|x\|\|y\|}} $
+
+Примеры. Реализация неравенства Коши-Буняковского в различных НЛП:
+
+\noindent 1. ЛПВ $|(\vec{x},\vec{y})\leqslant |\vec{x}||\vec{y}|$ \\ 
+\noindent 2. $\R^{n} \; (\xi_{1} \eta_{1} + \dots+ \xi_{n}\eta_{n})^{2}\leqslant (\xi_{1}^{2}+\dots+\xi_{n}^{2})(\eta_{1}^{2}+\dots+\eta_{n}^{2})$\\ 
+\noindent $\C^{n} \; |\xi_{1} \overline{\eta_{1}}+ \dots+ \xi_{n}\overline{\eta_{n}}|^{2}\leqslant (|\xi_{1}|^{2}+\dots+|\xi_{n}|^{2})(|\eta_{1}|^{2}+\dots+|\eta_{n}|^{2})$\\ 
+\noindent 3. $C[a,b]\; \left(\int\limits_{a }^{b    } x(t)y(t)dt\right)^{2}\leqslant \int\limits_{a }^{b    } x^{2}(t)dt \leqslant \int\limits_{a   }^{b    } y^{2}(t)dt$\\ 
+\noindent $\C[a,b]\; \left| \int\limits_{a  }^{b    } x(t)\overline{y(t)}dt\right|^{2}\leqslant \int\limits_{a  }^{b    } |x(t)|^{2}dt\int\limits_{a    }^{b    } |y(t)|^{2}dt$
+\\Докажем теперь $3^{\circ}$ (неравенство треугольника) 
+\begin{proof}
+    В $\E$ (для $\U$ см. файл) \\ 
+    $\|x+y\|^{2} = (x+y,x+y) = (x,x) +2(x,y)+(y,y)\leqslant \|x\|^{2}+2|(x,y)|+\|y\|^{2}\overset{\text{К-Б}}{\leqslant} \|x\|^{2}+2\|x\|\|y\|+\|y\|^{2}=\\=\underbrace{(\|x\|+\|y\|)^{2}}_{\geqslant 0}\implies \|x+y\| \leqslant \|x\| + \|y\| $
+\end{proof}
+
+\section{Общий вид СП}
+Пусть $\V = \E , \dim{V} = n, \mathcal{E}=\{e_{1},\dots,e_{n}\}$ - некоторый базис в $\V$, $\begin{aligned}
+&x=[\mathcal{E}]\underset{\downarrow}{\xi} = \sum_{i    =1}^{n  } \xi_{i}e_{i} \\ 
+&y = [\mathcal{E}]\underset{\downarrow}{\eta}=\sum_{j=1}^{n } \eta_{j}e_{j}
+\end{aligned}$\\ 
+$(x,y) = \left(\sum_{i=1}^{n} \xi_{i}e_{i}, \sum_{j=1}^{n   } \eta_{j}e_{j} \right) = \sum_{i   =1}^{n  } \xi_{i}(e_{i},\sum_{j=1}^{n   } \eta_{j}e_{j}) = \sum_{i  =1}^{n} \sum_{j=1}^{n   } \xi_{i}\eta_{j}\underbrace{(e_{i},e_{j})}_{\gamma_{ij}}$ \qquad $\gamma_{ij} = (e_{i},e_{j}) = (e_{j},e_{i}) = \gamma_{ji}$
+\begin{definition} 
+    $\text{Г}^{\mathcal{E}} = (\gamma_{ij})^{n}_{n}$ называется матрицей Грама базиса $\mathcal{E}$
+\end{definition}
+
+Общий вид СП: $(x,y) = \sum_{i  =1}^{n}\sum_{j=1}^{n} \xi_{i}\eta_{j}\gamma_{ij} = \vec{\xi}\text{Г}^{\mathcal{E}}\underset{\downarrow}{\eta}$ - симметрическая БФ. \\ 
+\noindent Какими свойствами должна обладать БФ $B(x,y)$, чтобы она порождала СП?\\ 
+Любая БФ, удовлетворяющая свойству $3^{\circ}$ (и линейности по второму аргументу) свойства $2^{\circ}$ выполнены $\Leftrightarrow $ БФ симметрическая. \\ 
+Свойство $1^{\circ}$ выполнено $\Leftrightarrow $ симметрическая БФ $B(x, y)$ порождает положительно определенную КФ $\Leftrightarrow$ матрица симметрической БФ имеет положительные главные угловые миноры. \\ 
+Итог: любая симметрическая БФ, порождающая положительно определенную КФ, порождает в вещественном ЛП скалярное произведение $\implies \text{Г}^{\mathcal{E}}$ симметрическая и ее главные угловые миноры $>0$.
+ 
+Пусть $\V = \U , \dim{V} = n, \mathcal{E}=\{e_{1},\dots,e_{n}\}$ - некоторый базис в $\V$, $\begin{aligned}
+    &x=[\mathcal{E}]\underset{\downarrow}{\xi} = \sum_{i    =1}^{n  } \xi_{i}e_{i} \\ 
+    &y = [\mathcal{E}]\underset{\downarrow}{\eta}=\sum_{j=1}^{n } \eta_{j}e_{j}
+    \end{aligned}$\\ 
+    $(x,y) = \left(\sum_{i=1}^{n} \xi_{i}e_{i}, \sum_{j=1}^{n   } \eta_{j}e_{j} \right) = \sum_{i   =1}^{n  } \xi_{i}(e_{i},\sum_{j=1}^{n   } \eta_{j}e_{j}) = \sum_{i  =1}^{n} \sum_{j=1}^{n   } \xi_{i}\overline{\eta_{j}}\underbrace{(e_{i},e_{j})}_{\gamma_{ij}}$ \qquad $\gamma_{ij} = (e_{i},e_{j}) = \overline{(e_{j},e_{i})} = \overline{\gamma_{ji}}$
+
+    Общий вид СП в $\U$: $(x,y) = \sum_{i  =1}^{n}\sum_{j=1}^{n} \xi_{i}\overline{\eta_{j}}\gamma_{ij} = \vec{\xi}\text{Г}^{\mathcal{E}}\underset{\downarrow}{\overline{\eta}}$ - эрмитова ПФ. \\ 
+    \noindent Какими свойствами должна обладать ПФ $B(x,y)$, чтобы она порождала СП в комплексном ЛП?\\ 
+    Любая ПФ, удовлетворяющая свойству $3^{\circ}$ (и линейности по второму аргументу) свойства $2^{\circ}$ выполнены $\Leftrightarrow $ ПФ эрмитова (эрм. симм.) \; $M=\begin{pmatrix}
+        1 & 1+i \\ 
+        1-i & 3 
+    \end{pmatrix}$ - эрмитово симм. матрица $(M^{T}=\overline{M}\Leftrightarrow M^{*}=M)$\\ 
+    Свойство $1^{\circ}$ выполнено $\Leftrightarrow $ эрмитова ПФ $B(x, y)$ порождает положительно определенную КФ $\Leftrightarrow$ матрица эрмитово ПФ имеет положительные главные угловые миноры. \\ 
+    Итог: любая эрмитово ПФ, порождающая положительно определенную КФ, порождает в комплексном ЛП скалярное произведение $\implies \text{Г}^{\mathcal{E}}$ эрмитова и ее главные угловые миноры $>0$.
+     
+
+    \section{ОНБ В $\E(\U)$}
+Пусть $\V= \E $ (или $\U$)
+\begin{definition}
+    $x,y\in \V$ называются ортогональными, если $(x,y)= 0$. Обозначение: $x\perp y$
+\end{definition}
+\begin{definition}
+    Базис $\mathcal{E} = \{e_{1},\dots,e_{n}\}$ называется ортогональным (ОБ), если $\forall i,j=\overline{1,n}: i\neq j\implies\\\implies (e_{i},e_{j})=0$
+    
+\end{definition}
+\begin{definition}
+    Базис $\mathcal{E}$ называется ортонормированным (ОНБ), если $\forall i,j =\overline{1,n}\implies (e_{i},e_{j})=\delta_{ij}$ 
+\end{definition}
+\begin{definition}
+    Система векторов $\{a_{1},\dots,a_{m}\}$ называется ортогональной (ОС), если $\forall i,j=\overline{1,m}: \\i\neq j \implies (a_{i},a_{j})=0$ 
+
+\end{definition}
+\begin{definition}
+    Система векторов $\{a_{1},\dots,a_{m}\}$ называется ортонормированной (ОНС), если $\forall i,j=\overline{1,m}\implies (a_{i},a_{j})=\delta_{ij}$ 
+
+\end{definition}
+
+
+Замечание. ОС = ОБ, если она является базисом. ОНС = ОНБ, если она является базисом. 
+
+Замечание. $\text{Г}_{\text{ОБ}}= \Lambda = \begin{pmatrix}
+    \lambda_{1}& 0 &\dots&0 \\ 
+    0& \lambda_{2} & \dots & 0 \\ 
+    \vdots & \vdots & \ddots & \vdots \\ 
+    0 & 0 & \dots & \lambda_{n}
+\end{pmatrix}$ \qquad $\forall i=\overline{1,n}\implies \lambda_{i}>0$ \\ 
+$\text{Г}_{\text{ОНБ}} = \begin{pmatrix}
+    1& 0 &\dots&0 \\ 
+    0& 1 & \dots & 0 \\ 
+    \vdots & \vdots & \ddots & \vdots \\ 
+    0 & 0 & \dots & 1
+\end{pmatrix}=E\implies $ вид СП в ОБ: 
+$\begin{aligned}
+ &\tcircle{$\E$} \;(x,y) = \sum_{i =1}^{n  } \lambda_{i} \xi_{i}\eta_{i} \\
+ &\tcircle{$\U$} \;(x,y) = \sum_{i =1}^{n} \lambda_{i}\xi_{i}\overline{\eta_{i}}  
+\end{aligned}$
+\noindent Вид СП в ОНБ:
+$\begin{aligned}
+ &\tcircle{$\E$}\; (x,y) = \sum_{i =1}^{n  } \xi_{i}\eta_{i} \\
+ &\tcircle{$\U$} \;(x,y) = \sum_{i =1}^{n} \xi_{i}\overline{\eta_{i}}  
+\end{aligned}$
+
+
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}
