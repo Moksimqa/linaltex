@@ -1,58 +1,77 @@
-% Some basic packages
-
-
+% ----------------------------------------------------
+%    Основные настройки: кодировка, язык и шрифты
+% ----------------------------------------------------
 \usepackage[utf8]{inputenc}
-
 \usepackage[T2A]{fontenc}
 \usepackage{textcomp}
 \usepackage[russian]{babel}
+
+% ----------------------------------------------------
+%    Пакеты для форматирования ссылок и гиперссылок
+% ----------------------------------------------------
 \usepackage{url}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{tikz}
-%\usepackage{pgfplots}
-\usepackage{booktabs}
-\usepackage{enumitem}
-\usepackage{epigraph}
-\usepackage{subfiles}
-\usepackage{titling}
-\usepackage{fancybox}
-\usepackage{indentfirst}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
-\usepackage{multirow}
-\pdfminorversion=7
-
-% Don't indent paragraphs, leave some space between them
-\usepackage{parskip}
-
-% Hide page number when page is empty
-\usepackage{emptypage}
-\usepackage{subcaption}
-\usepackage{multicol}
-\usepackage{xcolor}
-
-% Other font I sometimes use.
-% \usepackage{cmbright}
-
-% Math stuff
-\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
-% Fancy script capitals
-\usepackage{mathrsfs}
-\usepackage{cancel}
-% Bold math
-\usepackage{bm}
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    urlcolor=cyan,
-    pdftitle={Линейная алгебра},
-    pdfauthor={Ваше имя},
-    bookmarksopen=true,
-    unicode=true
+    colorlinks=true,    % Цветные ссылки
+    linkcolor=blue,     % Цвет внутренних ссылок
+    urlcolor=cyan,      % Цвет внешних ссылок
+    pdftitle={Линейная алгебра},    % Назваание PDF
+    pdfauthor={Белуосов М.},        % Автор документа
+    bookmarksopen=true,             % Открытие оглавления
+    unicode=true                    % Кодировка для юникода
 }
-% Some shortcuts
-\newcommand\N{\ensuremath{\mathbb{N}}}
+
+
+% ----------------------------------------------------
+%    Работа с графикой и рисунками
+% ----------------------------------------------------
+\usepackage{graphicx}   % Вставка изображений
+\usepackage{float}      % Позиционирование изображений
+\usepackage{tikz}       % Векторная графика
+%\usepackage{pgfplots}  % Построение графиков
+
+% ----------------------------------------------------
+%    Таблицы и списки
+% ----------------------------------------------------
+\usepackage{booktabs}    % Красивые таблицы
+\usepackage{enumitem}    % Расширенные списки
+\usepackage{multirow}    % Многострочные ячейки в таблицах
+
+% ----------------------------------------------------
+%    Дополнительные пакеты
+% ----------------------------------------------------
+\usepackage{epigraph}    % Эпиграфы
+\usepackage{subfiles}    % Подключение отдельных файлов
+\usepackage{titling}     % Настройка заголовков
+\usepackage{fancybox}    % Рамки
+\usepackage{indentfirst} % Красная строка
+
+% ----------------------------------------------------
+%    Геометрия и макет страницы
+% ----------------------------------------------------
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
+\pdfminorversion=7
+\usepackage{parskip} % Интервал между абзацами
+\usepackage{emptypage} % Пустые страницы без номера
+\usepackage{subcaption} % Подписи к рисункам
+\usepackage{multicol} % Много колонок
+\usepackage{xcolor} % Цвета
+
+% ----------------------------------------------------
+%    Математические пакеты
+% ----------------------------------------------------
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{mathrsfs}   % Скриптовые шрифты
+\usepackage{cancel}     % Зачеркивание
+\usepackage{bm}         % Жирные символы 
+\usepackage{systeme}    % Системы уравнений
+\everymath{\displaystyle} % Всегда использовать \displaystyle в формулах
+
+
+% ----------------------------------------------------
+%    Собственные обозначения и команды
+% ----------------------------------------------------
+\newcommand\N{\ensuremath{\mathbb{N}}} 
 \newcommand\R{\ensuremath{\mathbb{R}}}
 \newcommand\Z{\ensuremath{\mathbb{Z}}}
 \renewcommand\O{\ensuremath{\emptyset}}
@@ -64,9 +83,9 @@
 \newcommand\E{\ensuremath{\mathbb{E}}}
 \newcommand*\tcircle[1]{%
   \tikz[baseline=(C.base)]\node[draw,circle,inner sep=0.5pt](C) {#1};\!
-}
+} % Кружок вокруг символа
 
-%for matrix
+% Для форматирования матриц (черта между столбцами)
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
   \hskip -\arraycolsep
@@ -74,54 +93,49 @@
   \array{#1}}
 \makeatother
 
-\everymath{\displaystyle}
-%for span
-\newcommand{\defect}{\operatorname{def}}
-\DeclareMathOperator{\spann}{span}
-\renewcommand{\Im}{\operatorname{Im}}
-\newcommand\spanset[1]{\ensuremath\spann(#1)}
+% ----------------------------------------------------
+%    Математические операторы и команды
+% ----------------------------------------------------
+\newcommand{\defect}{\operatorname{def}} % Дефект
+\DeclareMathOperator{\spann}{span}  % Оболочка
+\renewcommand{\Im}{\operatorname{Im}}   % Образ
+\newcommand\spanset[1]{\ensuremath\spann(#1)} 
 
-% Easily typeset systems of equations (French package)
-\usepackage{systeme}
+\let\svlim\lim\def\lim{\svlim\limits} 
 
-% Put x \to \infty below \lim
-\let\svlim\lim\def\lim{\svlim\limits}
-
-%Make implies and impliedby shorter
+% Упрощение написания математических символов
 \let\implies\Rightarrow
 \let\impliedby\Leftarrow
 \let\iff\Leftrightarrow
 \let\epsilon\varepsilon
 
-% Add \contra symbol to denote contradiction
+% Знак противоречия
 \usepackage{stmaryrd} % for \lightning
 \newcommand\contra{\scalebox{1.5}{$\lightning$}}
 
 % \let\phi\varphi
 
-% Command for short corrections
+% Команда \correct для исправления ошибок в примерах
 % Usage: 1+1=\correct{3}{2}
 
 \definecolor{correct}{HTML}{009900}
 \newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
 \newcommand\green[1]{{\color{correct}{#1}}}
 
-% horizontal rule
+% Горизонтальная линия
 \newcommand\hr{
     \noindent\rule[0.5ex]{\linewidth}{0.5pt}
 }
 
-% hide parts
+% Пробелы в формуле
 \newcommand\hide[1]{}
 
-% si unitx
-\usepackage{siunitx}
-\sisetup{locale = FR}
-
-% Environments
-\makeatother
+% ----------------------------------------------------
+%    Окружения для теорем, определений и т.д.
+% ----------------------------------------------------
+\makeatother % 
 % For box around Definition, Theorem, \ldots
-\usepackage{mdframed}
+\usepackage{mdframed} 
 \mdfsetup{skipabove=1em,skipbelow=0em}
 \theoremstyle{plain}
 \newtheorem{theorem}{Теорема}[chapter]
@@ -144,7 +158,7 @@
 \newtheorem*{exerciseAnswer}{Ответ на упражнение}
 
 
-
+% Упрощённые обозначения
 \let \thm \theorem
 \let \lem \lemma
 \let \defn \definition
@@ -179,9 +193,7 @@
 \DeclareMathOperator{\Arth}{Arth}
 \DeclareMathOperator{\Arcth}{Arcth}
 \DeclareMathOperator{\res}{res}
-
-% arctan -> arctg
-\renewcommand{\arctan}{\arctg}
+\renewcommand{\arctan}{\arctg} % arctan -> arctg
 
 % End example and intermezzo environments with a small diamond (just like proof
 % environments end with a small square)
@@ -190,8 +202,7 @@
 \AtEndEnvironment{intermezzo}{\null\hfill$\diamond$}%
 % \AtEndEnvironment{opmerking}{\null\hfill$\diamond$}%
 
-% Fix some spacing
-% http://tex.stackexchange.com/questions/22119/how-can-i-change-the-spacing-before-theorems-with-amsthm
+% Фикс пробелов
 \makeatletter
 \def\thm@space@setup{%
   \thm@preskip=\parskip \thm@postskip=0pt
@@ -219,17 +230,17 @@
 }
 
 
-% \lecture starts a new lecture (les in dutch)
+% \lecture начинает новую лекцию
 %
-% Usage:
-% \lecture{1}{di 12 feb 2019 16:00}{Inleiding}
+% Использование:
+% \lecture{1}{вт 12 фев 2019 16:00}{Введение}
 %
-% This adds a section heading with the number / title of the lecture and a
-% margin paragraph with the date.
+% Эта команда добавляет заголовок раздела с номером/названием лекции и 
+% примечание на полях с датой.
 
-% I use \dateparts here to hide the year (2019). This way, I can easily parse
-% the date of each lecture unambiguously while still having a human-friendly
-% short format printed to the pdf.
+% Я использую \dateparts здесь, чтобы скрыть год. Таким образом, я могу 
+% легко обрабатывать дату каждой лекции однозначно, при этом сохраняя 
+% удобный для чтения короткий формат, отображаемый в PDF.
 
 \usepackage{xifthen}
 \def\testdateparts#1{\dateparts#1\relax}
@@ -249,17 +260,15 @@
 }
 
 
-
-% These are the fancy headers
+% ----------------------------------------------------
+%    Колонтитулы
+% ----------------------------------------------------
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-% LE: left even
-% RO: right odd
-% CE, CO: center even, center odd
-% My name for when I print my lecture notes to use for an open book exam.
-% \fancyhead[LE,RO]{Gilles Castel}
-
+% LE: левая четная
+% RO: правая нечетная
+% CE, CO: центр четная, центр нечетная
 \fancyhead[RO,LE]{\@lecture} % Right odd,  Left even
 \fancyhead[RE,LO]{}          % Right even, Left odd
 
@@ -269,47 +278,12 @@
 
 \makeatother
 
+\usepackage{todonotes} % Заметки
+\usepackage{tcolorbox} % Цветные рамки
 
+\tcbuselibrary{breakable} % Для многострочных рамок
 
-
-% Todonotes and inline notes in fancy boxes
-\usepackage{todonotes}
-\usepackage{tcolorbox}
-
-% Make boxes breakable
-\tcbuselibrary{breakable}
-
-% Verbetering is correction in Dutch
-% Usage: 
-% \begin{verbetering}
-%     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-%     tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-%     vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-%     no sea takimata sanctus est Lorem ipsum dolor sit amet.
-% \end{verbetering}
-\newenvironment{verbetering}{\begin{tcolorbox}[
-    arc=0mm,
-    colback=white,
-    colframe=green!60!black,
-    title=Opmerking,
-    fonttitle=\sffamily,
-    breakable
-]}{\end{tcolorbox}}
-
-% Noot is note in Dutch. Same as 'verbetering' but color of box is different
-\newenvironment{noot}[1]{\begin{tcolorbox}[
-    arc=0mm,
-    colback=white,
-    colframe=white!60!black,
-    title=#1,
-    fonttitle=\sffamily,
-    breakable
-]}{\end{tcolorbox}}
-
-
-
-
-% Figure support as explained in my blog post.
+% Поддержка рисунков
 \usepackage{import}
 \usepackage{xifthen}
 \usepackage{pdfpages}
@@ -320,7 +294,6 @@
 }
 
 % Fix some stuff
-% %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
 
 
