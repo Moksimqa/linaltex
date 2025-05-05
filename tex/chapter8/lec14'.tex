@@ -1,0 +1,43 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{14}{5.05}{}
+\section{Сопряженный оператор}
+Пусть $A \in L(\U,\U)$ или $A \in L(\E,\E)$
+\begin{definition}
+    Оператор $A^{*}$ называется сопряженным к $A$, если $\forall x,y \in \U \; (\E) \implies (A(x),y) = (x,A^{*}(y))$.
+\end{definition}
+\begin{theorem}
+    $\forall A \in L(\U,\U)$ или $A \in L(\E,\E) \implies \exists ! A^{*}$, причем он тоже линейный. 
+\end{theorem}
+\begin{proof}
+    $\tcircle{$\U$}$\; $\forall x,y \in \U $ рассмотрим $B(x,y) = (A(x),y)$. В силу линейности $A$, линейности СП по первому аргументу и полулинейности по второму, получаем, что $B$ - ПФ, действующая в $\U$. $\\\implies \exists ! \tilde{A} \in L(\U,\U): B(x,y) = (x,\tilde{A}(y))$. Тогда $\forall x,y \in \U \implies (A(x),y) = (x,\tilde{A}(y))$, т.е $A^{ *} = \tilde{A}$.\\
+\end{proof}
+Свойства сопряженного оператора в $\U$: 
+
+\noindent 1. $I^{*} = I$ \\ 
+2. $\forall A,B \in L(\U,\U) \implies (A+B)^{*}= A^{*}+B^{*}$ \\
+3. $\forall A, B \in L(\U,\U) \; \forall \alpha \in \C \implies (\alpha A)^{*} = \overline{\alpha}A^{*}$ \; (в $\E (\alpha A)^{*} = \alpha A^{*}$) \\
+4. $\forall A,B \in L(\U,\U) \implies (A\circ B)^{*} = B^{*} \circ A^{*}$ \\
+5. $\forall A \in L(\U,\U) \implies (A^{*})^{*} = A$ 
+
+\begin{definition}
+Пусть $U_{1}$ - ЛПП of $\U $. $U_{1}$ называется инвариантным относительно $A$, если $\forall x \in U_{1} \implies\\\implies A(x) \in U_{1}$.    
+\end{definition}
+\noindent 6. $\forall A \in L(\U,\U)$, если $U_{1}$ инвариантно относительно $A$, то $U_{1}^{\perp}$ инвариантно относительно $A^{*}$. \\ 
+7. $\forall A \in L(\U,\U)$, если $\exists A^{-1}$, то $(A^{-1})^{*}= (A^{*})^{-1}$. \\
+8. $\forall A \in L(\U,\U)$, в ОНБ $\mathcal{E} \implies M_{A^{*}}^{\mathcal{E}} = \left(M_{A}^{\mathcal{E}}\right)^{*} = \left(\overline{M_{A}^{\mathcal{E}}}\right)^{t} = \overline{\left(M_{A}^{\mathcal{E}}\right)^{t}}$ \; (в $\E:$ $M_{A^{*}}^{\mathcal{E}} = \left(M_{A}^{\mathcal{E}}\right)^{t}$) 
+\begin{proof}
+    $1^{\circ} - 7^{\circ}$ см. файл. 
+    \\$8^{\circ}$\; Пусть $M_{A}^{\mathcal{E}} = (a_{ij})^{n}_{n}, M_{A^{*}}^{\mathcal{E}} = (b_{ij})^{n}_{n}$. Тогда $A(e_{j}) = \sum_{k=1}^{n } a_{kj}e_{k}; \; A^{*}(e_{i})= \sum_{ k=1}^{n   } b_{ki}e_{k}$. Получим, что $(A(e_{j}),e_{i}) = \left(\sum_{k=1}^{n    } a_{kj}e_{k},e_{i}\right) = \sum_{k=1}^{n } a_{kj}\underbrace{(e_{k},e_{i})}_{\delta_{ki}} = a_{ij}$.\\ Также $A((e_{j}),e_{i}) = (e_{j},A^{*}(e_{i})) = \left(e_{j},\sum_{k=1}^{n } b_{ki}e_{k}\right) = \sum_{k=1}^{n } \overline{b_{ki}} \underbrace{(e_{j},e_{k})}_{\delta_{jk} } = \overline{b_{jiw}}$, т.е $\forall i,j=\overline{1,n} \implies a_{ij} = \overline{b_{ji}} \implies\\\implies b_{ij} = \overline{a_{ji}}$, т.е $M_{A^{*}}^{\mathcal{E}} = \left(\overline{M_{A}^{\mathcal{E}}}\right)^{t} = \left(M_{A}^{\mathcal{E}}\right)^{*}$.\\
+\end{proof}
+
+
+
+
+
+
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}

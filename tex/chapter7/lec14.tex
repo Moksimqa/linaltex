@@ -1,0 +1,113 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\newpage
+\lecture{14}{5.05}{}
+\begin{theorem}
+    В любом $\U$ или $\E$ $\exists $ ОНБ. Из произвольного базиса $\mathcal{E}=\{e_{1},\dots,e_{n}\}$ он получается так называемым методом ортогонализации по Шмидту: $g_{1}=e_{1}, f_{1}= \frac{g_{1}}{\|g_{1}\|},\\ g_{2}=e_{2} - (e_{2},f_{1})f_{1}, f_{2} = \frac{g_{2}}{\|g_{2}\|},\dots,g_{n} = e_{n} - (e_{n},f_{1})f_{1}-\dots-(e_{n},f_{n-1})f_{n-1}, f_{n} = \frac{g_{n}}{\|g_{n}\|}$. Тогда $\mathcal{F}=\{f_{1},\dots,f_{n}\}$ - ОНБ в $\U\;(\E)$
+\end{theorem}
+\begin{proof}
+    Путем построения ОНБ ММИ. 
+    \\База: $f_{1} = \frac{g_{1}}{\|g_{1}\|} = \frac{e_{1}}{\|e_{1}\|}$ - ОНБ в $\spann{(e_{1})}$. 
+    \\Шаг: предположим, что построен $\{f_{1},\dots,f_{k}\} $ - ОНБ в $\spann{(e_{1},\dots,e_{k})}$.
+    \\$g_{k+1} = e_{k+1} + \alpha_{k+1 1}f_{1} + \dots + \alpha_{k+1 k}f_{k}$. Нам требуется, чтобы $g_{k+1} \perp f_{1},\dots,f_{k} \implies (g_{k+1},f_{1})= \dots =\\= (g_{k+1},f_{k})=0 \Leftrightarrow \alpha_{k+1 m} = - \frac{(e_{k+1},f_{m})}{(f_{m},f_{m})}  = -(e_{k+1},f_{m})\; (m=\overline{1,k})$ 
+    \\$g_{k+1} = e_{k+1} - (e_{k+1},f_{1})f_{1} - \dots - (e_{k+1},f_{k})f_{k}$. $f_{k+1} = \frac{g_{k+1}}{\|g_{k+1}\|}$, т.е $\{ f_{1},\dots,f_{k+1}\}$ - ОНБ в $\spann{(e_{1},\dots,e_{k},e_{k+1})}$. Ни на одном шаге мы не можем получить $\theta$, т.к если $g_{k+1}= \theta \implies e_{k+1} \in \spann(f_{1},\dots,f_{k}) = \spann(e_{1},\dots,e_{k})$, что невозможно т.к $\{e_{1},\dots,e_{k},e_{k+1}\}$ - ЛНЗ. 
+\end{proof}
+\section{Ортогональные дополнения линейных подпространств в $\U\;(\E)$}
+Пусть $U_{1},U_{2}$ - ЛПП of $\U \; (\E)$
+\begin{definition}
+    Говорят, что $U_{1}$ ортогонально $U_{2}$, если $\forall x \in U_{1}$ и $ \forall y \in U_{2} \implies x\perp y$ (т.е $(x,y)=0$). Обозначение: $U_{1} \perp U_{2}$.
+\end{definition}
+\begin{theorem}
+    Если $U_{1} \perp U_{2}$, то $U_{2} \perp U_{1}$.
+\end{theorem}
+\begin{proof}
+    Самостоятельно. 
+\end{proof}
+\begin{lemma}
+    Если $\forall x \in \U \; (\E) \implies (x,y)  = 0$, то $y=\theta$.
+\end{lemma}
+\begin{proof}
+    Раз это верно $\forall x \implies $ верно для $x=y \implies (y,y) = 0 \implies y=0$.
+\end{proof}
+\begin{theorem}
+    Если $U_{1} \perp U_{2}$, то $U_{1} \cap U_{2} = \{\theta\}$.
+\end{theorem}
+\begin{proof}
+    $x\in U_{1}, x\in U_{2} \overset{def}{\implies} (x,x) = 0 \implies x=\theta$ 
+\end{proof}
+\begin{definition}
+    $U_{1}^{\perp}$ называется ортогональным дополнением $U_{1}$ до $\U$ (до $\E$), если $U_{1}^{\perp} = \{x \in \U \; (\E) : \\\forall y \in U_{1} \implies x\perp y, \;(x,y) = 0\}$
+\end{definition}
+\begin{theorem}
+    Пусть $\mathcal{E} =\{e_{1},\dots,e_{n}\}$ - базис в $U_{1}$. Тогда $x\in U_{1} \Leftrightarrow (\forall i=\overline{1,k}\implies x\perp e_{i})$
+\end{theorem}
+\begin{proof}
+    $\tcircle{$\implies$}$ $x\in U_{1}^{\perp} \implies \left(\forall x \in U_{1} \implies x\perp y \right) \implies (\forall i=\overline{1,k} \implies x \perp e_{i})$\\ 
+    $\tcircle{$\impliedby$}$ $(\forall i=\overline{1,k} \implies x \perp e_{i}) \implies ( \forall y \in U_{1} \implies (x,y) = (x, \eta_{1}e_{1} + \dots + \eta_{k}e_{k}) = \overline{\eta_{1}}(x,e_{1}) + \dots + \overline{\eta_{k}}(x,e_{k}) =\\= \overline{\eta_{1}}\cdot 0 +\dots + \overline{\eta_{k}}\cdot 0 = 0 \implies x\perp y) \implies x \in U_{1}^{\perp}$
+\end{proof}
+Замечание. Если $U_{1}, U_{2}$ - ЛПП of $\U \; (\E)$, то они являются ЛП со скалярным произведением, определенным так же, как и в исходном $\U \; (\E)$, т.е являются унитарным (или евклидовым) пространствами, и в них, таким образом, $\exists$ ОНБ. 
+\begin{theorem}
+    Всякое $\U\;(\E)$ разлагается в прямую сумму любого своего ЛПП и его ортогонального дополнения. $\U = U_{1} \oplus U_{1}^{\perp}$, ( $\E = U_{1} \oplus U_{1}^{\perp}$). 
+\end{theorem}
+\begin{proof}
+    $\tcircle{$\U$}$\; $U_{1}$ - ЛПП of $\U$. Требуется доказать, что $\forall x \in \U \implies \exists ! y \in U_{1}\; \exists ! z \in U_{1}^{\perp} : x= y+z$\\ 
+    \begin{definition}
+        При этом $y$ называется ортогональной проекцией $x$ на $U_{1}$, а $z$ - ортогональной составляющей
+    \end{definition}
+    Поскольку $U_{1} $ - унитарное $\implies$ в нем есть ОНБ $\mathcal{E} = \{e_{1},\dots,e_{k}\}$.
+    \\ Рассмотрим $z = x - (x,e_{1})e_{1} - \dots - (x,e_{k})e_{k} = x - \sum_{i   =1}^{k}     (x,e_{i})e_{i}$. Тогда $\forall j = \overline{1,k}\implies (z,e_{j}) = \\=(x,e_{j}) - \left(\sum_{i    =1}^{k}     (x,e_{i})e_{i},e_{j}\right) = (x,e_{j}) - \sum_{i=1}^{k} (x,e_{i})\underbrace{(e_{i},e_{j})}_{\delta_{ij}} = (x,e_{j}) - (x,e_{j}) = 0 $, т.е $\forall j =\overline{1,k}\implies z \perp e_{j} \implies \\\implies z \in U_{1}^{\perp}$.\\ 
+    Рассмотрим $y = \sum_{i =1}^{k} ( x,e_{i})e_{i} \in \spann (e_{1},\dots,e_{k}) = U_{1}$. То есть получим, что $z = x-y $ , т.е $x=y+z, \\y\in U_{1}, z \in U_{1}^{\perp}$. 
+    \\Докажем единственность. Предположим, что $x= y_{1}+z_{1} = y_{2}+z_{2} \implies \underbrace{y_{1}-y_{2}}_{\in U_{1}} =\underbrace{ z_{2}-z_{1}}_{\substack{\in U_{1}^{\perp} \\ \text{докажем ниже}}}\implies $ поскольку $U_{1}\perp U_{1}^{\perp}$, то $\begin{cases}
+        y_{1}-y_{2} = \theta \\ 
+        z_{2}-z_{1} = \theta
+    \end{cases}\Leftrightarrow \begin{cases}
+        y_{1} = y_{2} \\ 
+        z_{1} = z_{2}
+    \end{cases}$
+    \\ Докажем сейчас, что верна
+    \begin{theorem}
+        $U_{1}^{\perp}$ - ЛПП of $\U$ ($\E$)
+    \end{theorem}
+\begin{proof}
+    $\forall x \in U_{1} \; \forall y,z \in U_{1}^{\perp} \; \forall \alpha,\beta \in \C\;(\R) \implies (x,\alpha y + \beta z) = \overline{\alpha} ( x,y) + \overline{\beta} (x,z) = \overline{\alpha} \cdot 0 + \overline{\beta} \cdot 0 = 0 \implies \alpha y + \beta z \in U_{1}^{\perp}$.
+\end{proof}
+
+\end{proof}
+\section{ЛФ, ПФ, БФ в $\U \; (\E)$}
+\begin{definition}
+    $f$ - ЛФ в $\U \;(\E)$, если $f: \U \to \C \; (\E \to \R) : f(\alpha x + \beta y ) = \alpha f(x) + \beta f(y), \forall x,y \in \U\;(\E) \; \forall \alpha,\beta \in \C \;(\R)$
+\end{definition}
+\begin{theorem}
+Для $\forall$ ЛФ $f$, действующих в $\U \; (\E) \; \exists ! h \in \U\;(\E) : \forall x \in \U \; (\E) \implies f(x)=(x,h)$    
+\end{theorem}
+Замечание. $h$ не зависит от $x$, определяется только формой $f$.
+\begin{proof}
+    
+    $\tcircle{$\U$}$\;  Пусть $\mathcal{E}$ - ОНБ в $\U\implies \forall x \in \U \implies x = \xi_{1}e_{1} +\dots + \xi_{n}e_{n} \implies f(x)  = f(\xi_{1}e_{1} +\dots + \xi_{n}e_{n}) \overset{\text{ЛФ}}{=} \\ = \xi_{1}f(e_{1}) + \dots + \xi_{n}f(e_{n}) = (\xi_{1}e_{1} +\dots.+ \xi_{n}e_{n}, \overline{f(e_{1})}e_{1} + \dots +\overline{f(e_{n})}e_{n}  = (x, h)$, где $ h = \overline{f(e_{1})}e_{1} + \dots +\overline{f(e_{n})}e_{n}$.\\
+    (в $\E$ \; $h = f(e_{1})e_{1} + \dots + f(e_{n})e_{n}$).\\
+    Докажем единственность. Пусть $\exists h_{1}, h_{2} \in \U \; (\E) : \forall x \in \U \implies (x,h_{1} ) = (x,h_{2})$. Тогда $(x,h_{1}- h_{2}) = 0 \implies h_{1}-h_{2} = \theta \implies h_{1}=h_{2}$
+\end{proof}
+\begin{definition}
+    $B$ - ПФ в $\U \; (\E)$, если $B: \U \times \U \to \C: B$ полностью линейна по первому аргументу и наполовину линейна по второму аргументу (т.е $B(x,\alpha y + \beta z) = \overline{\alpha} B(x,y) + \overline{\beta} B(x,z))$. 
+\end{definition}
+\begin{theorem}[О представлении ПФ в $\U$]
+    Для $\forall$ ПФ $B$, действующей в $\U$ $\exists ! A \in L(\U,\U): \forall x,y \in \U \implies \\\implies B(x,y) = \left(x,A(y)\right)$. ($A$ определяется сразу для всех $x,y$ единственным образом и зависит только от $B$) 
+\end{theorem}
+\begin{proof}
+    Рассмотрим $B(x,y)$ и зафиксируем $y$. Тогда $B(x,y) = f(x) $ - ЛФ в $\U \implies \exists ! h_{y}\in \U  =\\= \left(\forall x \in \U \implies f_{y}(x)= (x,h) \right)$, т.е $B(x,y) = (x,h_{y})$. Тогда введем оператор $A: \forall y \in \U \overset{A}{\to} h_{y}$. Покажем, что этот оператор линейный: $\forall x,y,z \in \U \; \forall \alpha,\beta \in \C $ рассмотрим $B(x,\alpha y + \beta z) = (x, A(\alpha y + \beta z)) = \overline{\alpha} B(x,y) + \overline{\beta} B(x,z) = \overline{\alpha} (x,A(y)) + \overline{\beta} (x,A(z)) = (x,\overline{(\overline{\alpha})}A(y)))  + (x, \overline{(\overline{\beta})}A(z)) = (x,\alpha A(y)) + (x,\beta A(z)) = (x,\alpha A(y) + \beta A(z))$. В силу произвольности $x: A(\alpha y + \beta z) = \alpha A(y) + \beta A(z)\implies A $ - ЛО. 
+    \\Докажем единственность. Пусть $\forall x,y \in U \implies B(x,y) = (x,A_{1}(y)) =  (x,A_{2}(y)) \implies\\\implies (\underset{\text{произв.}}{x},A_{1}(y) - A_{2}(y)) = 0 \implies A_{1}(y) - A_{2}(y) = \theta \implies A_{1}(y) = A_{2}(y)\implies A_{1} = A_{2}$.
+\end{proof}
+
+\begin{definition}
+    $B$ - БФ в $\E$, если $B: \E \times \E \to \R: B$ линейна по обоим аргументам.
+\end{definition}
+\begin{theorem}[О представлении БФ в $\E$]
+    Для $\forall$ БФ $B$, действующей в $\E$ $\exists ! A \in L(\E,\E): \forall x,y \in \E \implies B(x,y) = (x,A(y))$. 
+    
+\end{theorem}
+\begin{proof}
+    Аналогично ПФ в $\U$, но без комплексного сопряжения.
+\end{proof}
+
+
+

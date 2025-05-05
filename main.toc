@@ -42,3 +42,7 @@
 \contentsline {section}{\numberline {7.2}Нормированное ЛП}{54}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Общий вид СП}{55}{section.7.3}%
 \contentsline {section}{\numberline {7.4}ОНБ В $\ensuremath {\mathbb {E}}(\ensuremath {\mathbb {U}})$}{56}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Ортогональные дополнения линейных подпространств в $\ensuremath {\mathbb {U}}\tmspace +\thickmuskip {.2777em}(\ensuremath {\mathbb {E}})$}{57}{section.7.5}%
+\contentsline {section}{\numberline {7.6}ЛФ, ПФ, БФ в $\ensuremath {\mathbb {U}}\tmspace +\thickmuskip {.2777em} (\ensuremath {\mathbb {E}})$}{58}{section.7.6}%
+\contentsline {chapter}{\numberline {8}Линейные операторы в $\ensuremath {\mathbb {U}}$\tmspace +\thickmuskip {.2777em} (в $\ensuremath {\mathbb {E}}$)}{60}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Сопряженный оператор}{60}{section.8.1}%
