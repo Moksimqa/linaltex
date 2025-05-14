@@ -1,0 +1,163 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\lecture{15}{12.05}{}
+\section{Нормальные операторы}
+\begin{definition}
+    $A \in L(\U,\U)$ или $ L(\E,\E)$ называется нормальным, если $A \circ A^{*} = A^{*} \circ A$.
+\end{definition}
+\begin{definition}
+    Вещественная квадратная матрица $M$ называется нормальной, если $M \cdot M^{t} = M^{t} \cdot M$. Комплексная квадратная матрица $M$ называется нормальной, если $M \cdot M^{*} = M^{*} \cdot M$ 
+\end{definition}
+Свойства нормальных операторов (НО):
+\\(Везде $A$ - НО в $\U$ или $\E$)
+
+$1^{\circ}.$$\forall x,y \in \U \;(\E)\implies (A(x),A(y)) = (A^{*}(x), A^{*}(y))$\\
+\begin{proof}
+    $(A(x),A(y)) = (x, A^{*}(A(y))) = (x,(A^{*} \circ A)(y)) \overset{(1)}{=} (x,(A \circ A^{*})(y)) = (x,A(A^{*}(y))) =\\= (A^{*}(x),A^{*}(y))$. 
+\end{proof}
+\begin{corollary}
+    $\forall x \in \U \;(\E) \implies  \|A(x)\| = \|A^{*}(x)\|$.
+\end{corollary}
+\begin{proof}
+    Полагаем $y = x \implies (A(x),A(x)) = (A^{*}(x), A^{*}(x)) \Leftrightarrow \|A(x)\|^{2} = \|A^{*}(x)\|^{2} \implies \|A(x)\| =\\= \|A^{*}(x)\|$.
+\end{proof}
+$2^{\circ}$.$\forall \lambda \in \C (\R - \text{ соотв.}) \implies (A-\lambda I)$ тоже НО. 
+\begin{proof}
+    Докажем в $\U$. В $\E$ аналогично.
+    $(A-\lambda I) \circ (A-\lambda I)^{*} \overset{\substack{\text{св-ва}\\\text{сопряженного}\\\text{оператора}}}{=} (A-\lambda I) \circ (A^{*}-\overline{\lambda} I) \overset{\substack{\text{свойства}\\\text{композиции}}}{=}\\= A \circ A^{*} - \lambda  I \circ A^{*} - \overline{\lambda} A \circ I + \lambda \overline{\lambda} I \circ I = A \circ A^{*} - \lambda A^{*} - \overline{\lambda} A + \lambda \overline{\lambda} I = A^{*} \circ A - \overline{\lambda} A - \lambda A^{*} + \lambda \overline{\lambda} I = (A^{*}-\overline{\lambda} I) \circ (A-\lambda I) =\\= (A-\lambda I)^{*} \circ (A-\lambda I)$.
+\end{proof}
+$3^{\circ}.$$\tcircle{$\U$}$ \; Если $h $ - СВ НО $A$ и $h\sim \lambda$, то этот же $h$ - СВ $A^{*}$ и $h \sim \overline{\lambda}$. 
+\\$\tcircle{$\E$}$ \; $A$ и $A^{*}$ имеют одни и те же СВ, отвечающие соответствующим равным СЗ
+$\begin{aligned}
+    & h \sim \lambda , \; A(h) = \lambda h, \text{ то}\\ 
+    & h \sim \lambda, A^{*}(h) = \lambda h 
+\end{aligned}$
+\begin{proof}
+    $\tcircle{$\U$}$ \; Пусть $h \neq  \theta : A(h) = \lambda h$, тогда $ A(h) - \lambda h = \theta \Leftrightarrow (A- \lambda I)(h) = \theta \Leftrightarrow \| (A-\lambda I)h \| =\\= 0 \Leftrightarrow \|(A-\lambda I)^{*} h \| = 0 \Leftrightarrow \| (A^{*} - \overline{\lambda} I)h\| = 0 \Leftrightarrow (A^{*} - \overline{\lambda} I)(h) = \theta \Leftrightarrow A^{*}(h) = \overline{\lambda} h$.
+\end{proof} 
+$4^{\circ}$. Пусть $h$ - СВ НО $A$, тогда $L = \spann{(h)}$ и $L^{\perp}$ оба инвариантны относительно $A$ и $A^{*}$.
+\begin{proof}
+    $\tcircle{$\U$}$ \; $x \in L \implies \exists \alpha \in \C: x = \alpha h \implies A(x) = A( \alpha h ) = \alpha \lambda h =\beta h \implies A(x) \in L \implies L$ инвариантен относительно $A$, поскольку это верно для любого $x$. При этом по свойствам сопряженного оператора $A^{*}$ инвариантен относительно $L^{\perp}$. 
+    \\Тот же $h$ является СВ $A^{*}\implies \forall x \in L \implies A^{*}(x) = A^{*}(\alpha h) = \alpha\overline{\lambda} h = \gamma h \in L \implies L$ инвариантен относительно $A^{*} \implies L^{\perp}$ инвариантен относительно $(A^{*})^{*} = A$.
+\end{proof}
+
+$5^{\circ}$. $A$ - НО $\Leftrightarrow$ (в некотором ОНБ $\mathcal{E} \to M_{A}^{\mathcal{E}}$ - нормальная матрица)
+\begin{proof}
+    Докажем в $\U$. $A$ - НО $\Leftrightarrow A \circ A^{*} = A^{*} \circ A \overset{\text{изоморфизм}}{\Leftrightarrow} M_{A\circ A^{*}}^{\mathcal{E}} = M_{A^{*}\circ A}^{\mathcal{E}} \circ A  \overset{\substack{\text{св-ва}\\{матриц ЛО}}}{\Leftrightarrow} M_{A}^{\mathcal{E}} \cdot M_{A^{*}}^{\mathcal{E}} =\\= M_{A^{*}}^{\mathcal{E}} \cdot M_{A}\mathcal{E} \overset{\mathcal{E} - \text{ ОНБ}}{\Leftrightarrow}  M_{A}^{\mathcal{E}}\cdot (M_{A}^{\mathcal{E}})^{*} = (M_{A}^{\mathcal{E}})^{*} \cdot M_{A}^{\mathcal{E}} \Leftrightarrow M_{A}^{\mathcal{E}}$ - нормальная матрица.
+\end{proof}
+
+$6^{\circ}$. Если $h_{1} \sim \lambda_{1}, h_{2} \sim \lambda_{2}$ и $\lambda_{1} \neq  \lambda_{2}\implies h_{1} \perp h_{2}$
+\begin{proof}
+    Пусть $h_{1}\sim \lambda_{1}, h_{2} \sim \lambda_{2}$ - СВ НО $A$. Рассмотрим $\lambda_{1} \cdot (h_{1},h_{2}) = (\lambda_{1} h_{1},h_{2}) = (A(h_{1}),h_{2}) =\\= (h_{1},A^{*}(h_{2}))  \overset{3^{\circ}}{=} (h_{1},\overline{\lambda_{2}} h_{2}) = \overline{\overline{\lambda_{2}}} (h_{1},h_{2}) = \lambda_{2} (h_{1},h_{2}) \implies \underbrace{(\lambda_{1} - \lambda_{2})}_{\neq 0}(h_{1},h_{2}) =0 \implies (h_{1},h_{2}) = 0 \implies h_{1} \perp h_{2}$.
+\end{proof}
+
+\section{Самосопряженные операторы}
+\begin{definition}
+    $A \in L(\U,\U)$, $L(\E,\E)$ называется самосопряженным (ССО), если $A^{*} = A$. 
+\end{definition}
+\begin{definition}
+    Квадратная комплексная матрица $M$ называется эрмитовой, если $M^{*} = \overline{M}$. ($\Leftrightarrow M= M^{*}$)
+
+\end{definition}
+\begin{definition}
+    Вещественная квадратная матрица $M$ называется симметричной, если $M^{t} = M$. 
+\end{definition}
+Свойства самосопряженного оператора (ССО):
+
+$1^{\circ}$. Если $A$ - ССО, то $A$ - НО и обладает всеми свойствами НО.
+\begin{proof}
+    $A \circ A^{*} = A \circ A = A^{*} \circ A \implies A$ - НО.
+\end{proof}
+$2^{\circ}$. В $\tcircle{$\U$}$ \; все СЗ ССО вещественны. В $\tcircle{$\E$}$\; все корни характеристического уравнения ССО вещественны.
+\begin{proof}
+    $\tcircle{$\U$}\; $ Пусть $h \sim \lambda$ - СВ ССО $A$. $\lambda (h,h) = (\lambda h, h) = (A(h),h) = (h,A^{*}(h)) = (h, A(h)) =\\= (h,\lambda h) = \overline{\lambda} (h,h) \implies (\lambda - \overline{\lambda})\underbrace{(h,h)}_{\neq 0} = 0 \implies \lambda = \overline{\lambda} \Leftrightarrow \lambda \in \R$.
+\end{proof}
+
+
+$3^{\circ}$. $\tcircle{$\U$}$\; $A$ - ССО $\Leftrightarrow$ (В некотором ОНБ $\mathcal{E} \implies M_{A}^{\mathcal{E}}$ - эрмитова) \\ 
+$\tcircle{$\E$}$\; $A$ - ССО $\Leftrightarrow$ (В некотором ОНБ $\mathcal{E} \implies M_{A}^{\mathcal{E}}$ - симметрическая)
+\begin{proof}
+    $A = A^{*} \Leftrightarrow M_{A}^{\mathcal{E}} = M_{A^{*}}^{\mathcal{E}}\overset{\text{ОНБ}}{\Leftrightarrow } M_{A}^{\mathcal{E}} = (M_{A}^{\mathcal{E}})^{*} \Leftrightarrow (M_{A}^{\mathcal{E}})^{*} = \overline{M_{A}^{\mathcal{E}}} $
+\end{proof}
+\begin{corollary}
+    $\tcircle{$\U$}$ в любом ОНБ $\mathcal{E} \implies M_{A}^{\mathcal{E}}$ - эрмитова. \\ 
+$\tcircle{$\E$}$ в любом ОНБ $\mathcal{E} \implies M_{A}^{\mathcal{E}}$ - симметрическая.
+\end{corollary}
+\section{Унитарные операторы в $\U$. Ортогональные операторы в $\E$}
+\begin{definition}
+    $A \in L(\U,\U)$ называется унитарным (УО), если $A\circ A^{*} = A^{*} \circ A =  I$. 
+\end{definition}
+\begin{definition}
+$A \in L(\E,\E)$ называется ортогональным (ОО), если $A\circ A^{*} = A^{*} \circ A = I$.    
+\end{definition}
+\begin{definition}
+    Комплексная квадратная матрица $M$ называется унитарной, если $M \cdot M^{*} = M^{*} \cdot M = E$. 
+\end{definition}
+\begin{definition}
+    Вещественная квадратная матрица $M$ называется ортогональной, если $M \cdot M^{t} = M^{t} \cdot M =\\= E$.
+\end{definition}
+Свойства унитарных операторов и ортогональных операторов:
+
+$1^{\circ}$. УО, ОО являются НО и обладают всеми свойствами НО.
+\begin{proof}
+    $A \circ A^{*} = A^{*} \circ A = I \implies A$ - НО.
+\end{proof}
+
+$2^{\circ}$. Если $A$ - УО (ОО), то $A$ - обратим.
+\begin{proof}
+    $A \circ A^{*} = A^{*} \circ A = I \Leftrightarrow A^{*} = A^{-1} \implies A$ - обратим.
+\end{proof}
+
+$3^{\circ}$. УО и ОО сохраняют скалярное произведение, т.е $\forall x,y \in \U \; (\E) \implies (A(x),A(y)) = (x,y)$.
+\begin{proof}
+    $\tcircle{$\U$}$\; $\forall x,y \in \U \implies (A(x),A(y)) = (x,A^{*}(A(y))) = (x,(A^{*} \circ A)(y)) = (x,I(y)) = (x,y)$.
+\end{proof}
+\begin{corollary}
+    $\forall x,y \in \U \; (\E) \implies \|A(x)\| = \|x\|$.
+\end{corollary}
+\begin{proof}
+    Самостоятельно. 
+\end{proof}
+Замечание. В $\tcircle{$\E$}$\; можно ввести понятие угла между ненулевыми векторами: $\forall x,y \in \E : x,y \neq \\\neq  \theta , (x{,}^{\wedge} y)\overset{def}{=} \arccos{\frac{(x,y)}{\|x\|\cdot \|y\|}}$. (Это выражение всегда имеет смысл в силу неравенства Коши-Буняковского) 
+\\В $\tcircle{$\E$}$ свойство $3^{\circ}$, кроме всего прочего, означает, что при действии ортогонального оператора сохраняется угол между векторам, т.е $(A(x){,}^{\wedge} A(y)) = (x{,}^{\wedge} y)$, если $x,y \neq \theta$
+
+$4^{\circ}$. УО, ОО переводят ОНБ в ОНБ, т.е если $\mathcal{E} =\{e_{1},\dots,e_{n}\} $ - ОНБ в $\U$ ($\E$), то $A(\mathcal{E}) = \{A(e_{1}),\dots,A(e_{n})\}$ - ОНБ.
+\begin{proof}
+    $\forall i,j = \overline{1,n}\implies (A(e_{i}),A(e_{j})) = (e_{i},e_{j}) = \delta_{ij}$
+\end{proof}
+
+$5^{\circ}$. В $\U$ СЗ УО по модулю равны единице, т.е $\forall \lambda \in \sigma(A) \implies \lambda = e^{i\varphi},\varphi \in \R \; (\lambda = \cos{\varphi}+i\sin{\varphi})$. В $\E$ СЗ ОО по модулю равные единице, т.е $\forall \lambda \in \sigma(A) \implies \lambda = \pm 1$.
+\begin{proof}
+    В $\tcircle{$\U$}$ \; Пусть $h \sim \lambda$ - СВ УО $A$, тогда $(\lambda h,\lambda h) = \lambda \overline{\lambda} (h,h) = |\lambda |^{2} (h,h)$, также $(\lambda h, \lambda h) =\\= (A(h),A(h)) = (h,h) \implies (|\lambda|^{2}-1) \underbrace{(h,h)}_{\neq 0} = 0\Leftrightarrow |\lambda|^{2} = 1 \Leftrightarrow |\lambda| = 1 \Leftrightarrow \lambda = e^{i\varphi}$. 
+
+\end{proof}
+
+$6^{\circ}$. В $\U$ $A$ - УО $\Leftrightarrow$ (В некотором ОНБ $\mathcal{E} \implies M_{A}^{\mathcal{E}}$ - унитарная) 
+\begin{corollary}
+    $M_{A-\text{ УО}}^{\mathcal{E} -\text{ОНБ}}$ - унитарная в $\forall $ ОНБ. 
+\end{corollary}
+В $\E$ $A$ - ОО $\Leftrightarrow$ (В некотором ОНБ $\mathcal{E} \implies M_{A}^{\mathcal{E}}$ - ортогональна) 
+\begin{corollary}
+    В любом ОНБ $\mathcal{E} \implies M_{A-\text{ ОО}}^{\mathcal{E}}$ - ортогональна.
+\end{corollary}    
+\begin{proof}
+    $\tcircle{$\U$}\; $ $A$ - УО $\Leftrightarrow A \circ A^{*} = A^{*} \circ A = I \overset{\text{изоморфизм}}{\Leftrightarrow} M_{A\circ A^{*}}^{\mathcal{E}} = M_{A^{*}\circ A}^{\mathcal{E}} = M_{I} = E \overset{\mathcal{E}- \text{ ОНБ}}{\Leftrightarrow}\\\Leftrightarrow M_{A}\mathcal{E} \circ (M_{A}^{\mathcal{E}})^{*} = (M_{A}^{\mathcal{E}})^{*} \circ M_{A}^{\mathcal{E}} = E \overset{\text{def}}{\Leftrightarrow} (M_{A}^{\mathcal{E}}) $ - унитарная.
+\end{proof} 
+\section{Свойства унитарных, ортогональных матриц}
+Пусть комплексная $M$ - унитарная (вещественная $M$ - ортогональная). Тогда 
+
+$1^{\circ}$. $M$ - обратима.
+\begin{proof}
+$\tcircle{У}$ \; $M \cdot M^{*} =  M^{*} \cdot M = E  \Leftrightarrow M^{-1} = M^{*}$. \\
+
+$\tcircle{О}$ \; $M \cdot M^{t} =  M^{t} \cdot M = E  \Leftrightarrow M^{-1} = M^{t}$.
+\end{proof}
+$2^{\circ}$. $|\det{M}|=1$. 
+\begin{proof}
+$\tcircle{У} \; \det{(M\cdot M^{*})} = \det{(M)} \cdot \det{(M^{*})} = \det{(M)} \cdot \det{\left(\overline{M}\right)^{t}} = \det{(M)} \cdot \det{\overline{M}} = \det{(M)} \cdot \\\cdot \overline{\det{(M)}} = |\det{(M)}|^{2} \implies |\det{(M)}|^{2} = 1 \Leftrightarrow |\det{(M)}| = 1$. Фактически $\det{M} = e^{i\varphi}, \varphi \in \R$. Для $\tcircle{О}$ \; ... $\det{M}=1$
+\end{proof}
+
+\vspace{1cm}
+\begin{flushright}
+    \textit{tg: @moksimqa}
+\end{flushright}

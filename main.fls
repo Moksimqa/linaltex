@@ -643,6 +643,10 @@ INPUT .\tex\chapter8\lec14'.tex
 INPUT tex\chapter8\lec14'.tex
 INPUT .\tex\chapter8\lec14'.tex
 INPUT tex\chapter8\lec14'.tex
+INPUT .\tex\chapter8\lec15.tex
+INPUT tex\chapter8\lec15.tex
+INPUT .\tex\chapter8\lec15.tex
+INPUT tex\chapter8\lec15.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out

@@ -46,3 +46,7 @@
 \contentsline {section}{\numberline {7.6}ЛФ, ПФ, БФ в $\ensuremath {\mathbb {U}}\tmspace +\thickmuskip {.2777em} (\ensuremath {\mathbb {E}})$}{58}{section.7.6}%
 \contentsline {chapter}{\numberline {8}Линейные операторы в $\ensuremath {\mathbb {U}}$\tmspace +\thickmuskip {.2777em} (в $\ensuremath {\mathbb {E}}$)}{60}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Сопряженный оператор}{60}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Нормальные операторы}{61}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Самосопряженные операторы}{62}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Унитарные операторы в $\ensuremath {\mathbb {U}}$. Ортогональные операторы в $\ensuremath {\mathbb {E}}$}{62}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Свойства унитарных, ортогональных матриц}{64}{section.8.5}%

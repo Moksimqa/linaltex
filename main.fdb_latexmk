@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1746460951.10231 "c:/Users/moksimqa/Documents/Projects/latexlinal/main.tex" "main.pdf" "main" 1746460954.41452 0
+["pdflatex"] 1747233844.18623 "c:/Users/moksimqa/Documents/Projects/latexlinal/main.tex" "main.pdf" "main" 1747233847.15433 0
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1233951848 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1233951848 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -290,11 +290,11 @@
   "C:/Users/moksimqa/AppData/Local/MiKTeX/fonts/tfm/public/stmaryrd/stmary8.tfm" 1728739057 848 6125cdd3627e68d3db8013b98e587508 ""
   "C:/Users/moksimqa/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1744833823 24215240 5eefc35855770a4b8cf5cda3753bef7b ""
   "C:/Users/moksimqa/AppData/Roaming/MiKTeX/tex/generic/gettitlestring/gettitlestring.sty" 1576433666 8371 9d55b8bd010bc717624922fb3477d92e ""
-  "c:/Users/moksimqa/Documents/Projects/latexlinal/main.tex" 1746460950 627 c10a8aebcb44d1eee05ac51c759c5f9b ""
-  "main.aux" 1746460954 9213 b59d89bbb15547c6e119bd451359acd5 "pdflatex"
-  "main.out" 1746460954 15971 69626a47029f3d32ec4e004328ec1822 "pdflatex"
-  "main.tex" 1746460950 627 c10a8aebcb44d1eee05ac51c759c5f9b ""
-  "main.toc" 1746460954 6352 4777eb5e0e57f201bc47d108f1949cd5 "pdflatex"
+  "c:/Users/moksimqa/Documents/Projects/latexlinal/main.tex" 1747233843 627 c10a8aebcb44d1eee05ac51c759c5f9b ""
+  "main.aux" 1747233846 9935 2f37a92a6ddc7d02009b6920ffbc9ec5 "pdflatex"
+  "main.out" 1747233846 17271 0bdf64716175c9984f9f8a238b29f4ba "pdflatex"
+  "main.tex" 1747233843 627 c10a8aebcb44d1eee05ac51c759c5f9b ""
+  "main.toc" 1747233846 6906 34e1df711a980eabaf871a2e038df6c4 "pdflatex"
   "preamble.tex" 1746263429 10830 a67b65800e8acbdd19db374fb00de87e ""
   "tex/chapter1.tex" 1746263164 161 14163352a5e4faea6c94e4b2906b3ae5 ""
   "tex/chapter1/lec1.tex" 1746262202 13157 5d23ac2ad32bee56eebe073b13bec365 ""
@@ -321,8 +321,9 @@
   "tex/chapter7.tex" 1746429430 210 eb77aabfddfd773ec0d33f0c6b04dad9 ""
   "tex/chapter7/lec13.tex" 1745936276 15465 89d45efeba359b1cba1971538858f658 ""
   "tex/chapter7/lec14.tex" 1746434349 10524 ab77691a264cce06d4bf0c32077c7004 ""
-  "tex/chapter8.tex" 1746434349 171 909e4b82a8d002274506b177601d5654 ""
+  "tex/chapter8.tex" 1747034867 201 d0fe92a8783b4d8566409941eb513573 ""
   "tex/chapter8/lec14'.tex" 1746460950 3330 ea4005b840341cf68fce11c980d9d133 ""
+  "tex/chapter8/lec15.tex" 1747233843 13446 18c0f1dd4dcc1bec5164b4b746ac6c7c ""
   "tex/title.tex" 1746262071 435 3eaf2f627b1d73b6f5262c48032b9fea ""
   (generated)
   "main.aux"
