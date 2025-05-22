@@ -2,14 +2,14 @@
 \begin{document}
 \lecture{3}{24.02}{}
 \section{Основные определения}
-\noindent Пусть A = $(a_{ij})_{m}^{n},\; a_{ij}\in\mathbb{R}(\mathbb{C})\quad \underset{\downarrow}{b}=\begin{pmatrix} \vec{b}_{1}\\ \vdots\\ \vec{b}_{m} \end{pmatrix}- \text{ заданы },\quad \underset{\downarrow}{x}=\begin{pmatrix} \vec{x}_{1}\\ \vdots\\ \vec{x}_{n} \end{pmatrix} -\text{ столбец неизвестных.}$\\ 
+\noindent Пусть A = $(a_{ij})_{m}^{n},\; a_{ij}\in\mathbb{R}(\mathbb{C})\quad \underset{\downarrow}{b}=\begin{pmatrix} \vec{b}_{1}\\ \vdots\\ \vec{b}_{m} \end{pmatrix}- \text{ заданы },\quad \underset{\downarrow}{x}=\begin{pmatrix} {x}_{1}\\ \vdots\\ {x}_{n} \end{pmatrix} -\text{ столбец неизвестных.}$\\ 
 Рассмотрим $A \underset{\downarrow}{x}=\underset{\downarrow}{b}\;\;(1).$ Или в координатной форме $\begin{cases}
     a_{11}x_{1}+a_{12}x_{2}+\dots+a_{1n}x_{n}=b_{1}\\
     \phantom{a_{11}x_{1}+a_{12}x_{2}+} \dots\\
     a_{m1}x_{1}+a_{m2}x_{2}+\dots+a_{mn}x_{n}=b_{m}
 \end{cases}(\tilde{1})\\ (1),(\tilde{1}) - $ СЛАУ. (1) - векторная форма записи. ($\tilde{1}$) - координатная форма записи. 
 \begin{definition}
-    Частным решением СЛАУ (1) называют $\underset{\downarrow}{\alpha}=\begin{pmatrix} \vec{\alpha}_{1}\\ \vdots\\ \vec{\alpha}_{n} \end{pmatrix}\; A  \underset{\downarrow}{\alpha}=\underset{\downarrow}{b}$ - верное векторное равенство (или это упорядоченный набор чисел ($\alpha_{1},\dots,\alpha_{n}$): при подстановке в $(\tilde{1})$ вместо набора ($x_{1},\dots,x_{n}$) получается верное равенство)
+    Частным решением СЛАУ (1) называют $\underset{\downarrow}{\alpha}=\begin{pmatrix} {\alpha}_{1}\\ \vdots\\ {\alpha}_{n} \end{pmatrix}\; A  \underset{\downarrow}{\alpha}=\underset{\downarrow}{b}$ - верное векторное равенство (или это упорядоченный набор чисел ($\alpha_{1},\dots,\alpha_{n}$): при подстановке в $(\tilde{1})$ вместо набора ($x_{1},\dots,x_{n}$) получается верное равенство)
 \end{definition}
 \begin{definition}
     Совокупность всех частных решений называется общим решением СЛАУ.
@@ -24,7 +24,7 @@ $A' = (a_{ij})_{m'}^{n'}, \; \underset{\downarrow}{b'}=\begin{pmatrix} \vec{b'}_
 \end{definition} 
 \noindent Замечание. $m'$ не обязательно совпадает с $m$
 \section{Квадратные СЛАУ. Правило Крамера.}
-Пусть $\fbox{m=n}$, т.е $A=(a_{ij})_{n}^{n}$ - квадратная матрица. $\underset{\downarrow}{b}=\begin{pmatrix} \vec{b}_{1}\\ \vdots\\ \vec{b}_{n} \end{pmatrix}\quad \underset{\downarrow}{x}=\begin{pmatrix} \vec{x}_{1}\\ \vdots\\ \vec{x}_{n} \end{pmatrix}$
+Пусть $\fbox{m=n}$, т.е $A=(a_{ij})_{n}^{n}$ - квадратная матрица. $\underset{\downarrow}{b}=\begin{pmatrix} \vec{b}_{1}\\ \vdots\\ \vec{b}_{n} \end{pmatrix}\quad \underset{\downarrow}{x}=\begin{pmatrix} {x}_{1}\\ \vdots\\ {x}_{n} \end{pmatrix}$
 
 \begin{theorem}[Теорема Крамера]
     Если $\Delta = detA \neq  0 $, то СЛАУ $A \underset{\downarrow}{x} = \underset{\downarrow}{ b}\;(1)$ имеет единственное решение, причем его можно найти по правилу Крамера: $\fbox{$x_{k}=\frac{\Delta_{k}}{\Delta}$}$, $k=\overline{1,n}$, где $\Delta_{k}=detA_{k}, A_{k}$ получена из $A=\begin{pmatrix}
@@ -90,7 +90,7 @@ $A' = (a_{ij})_{m'}^{n'}, \; \underset{\downarrow}{b'}=\begin{pmatrix} \vec{b'}_
 
 
 \begin{theorem}
-    Элементарные операция СЛАУ приводят к эквивалентой ей СЛАУ.
+    Элементарные операции приводят СЛАУ к эквивалентой ей СЛАУ.
 \end{theorem}
 \begin{proof}
     Самостоятельно.
