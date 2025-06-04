@@ -2,7 +2,7 @@
 \begin{document}
 \lecture{3}{24.02}{}
 \section{Основные определения}
-\noindent Пусть A = $(a_{ij})_{m}^{n},\; a_{ij}\in\mathbb{R}(\mathbb{C})\quad \underset{\downarrow}{b}=\begin{pmatrix} \vec{b}_{1}\\ \vdots\\ \vec{b}_{m} \end{pmatrix}- \text{ заданы },\quad \underset{\downarrow}{x}=\begin{pmatrix} {x}_{1}\\ \vdots\\ {x}_{n} \end{pmatrix} -\text{ столбец неизвестных.}$\\ 
+\noindent Пусть A = $(a_{ij})_{m}^{n},\; a_{ij}\in\mathbb{R}(\mathbb{C})\quad \underset{\downarrow}{b}=\begin{pmatrix} {b}_{1}\\ \vdots\\ {b}_{m} \end{pmatrix}- \text{ заданы },\quad \underset{\downarrow}{x}=\begin{pmatrix} {x}_{1}\\ \vdots\\ {x}_{n} \end{pmatrix} -\text{ столбец неизвестных.}$\\ 
 Рассмотрим $A \underset{\downarrow}{x}=\underset{\downarrow}{b}\;\;(1).$ Или в координатной форме $\begin{cases}
     a_{11}x_{1}+a_{12}x_{2}+\dots+a_{1n}x_{n}=b_{1}\\
     \phantom{a_{11}x_{1}+a_{12}x_{2}+} \dots\\
@@ -18,13 +18,13 @@
     СЛАУ называется \underline{совместной}, если она имеет хотя бы одно решение. В противном случае СЛАУ \underline{несовместена} (решений нет).
 \end{definition}
 
-$A' = (a_{ij})_{m'}^{n'}, \; \underset{\downarrow}{b'}=\begin{pmatrix} \vec{b'}_{1}\\ \vdots\\ \vec{b'}_{m} \end{pmatrix}$
+$A' = (a_{ij})_{m'}^{n'}, \; \underset{\downarrow}{b'}=\begin{pmatrix} {b'}_{1}\\ \vdots\\ {b'}_{m} \end{pmatrix}$
 \begin{definition}
     СЛАУ $A \underset{\downarrow}{x}=\underset{\downarrow}{b}$ и $A'\underset{\downarrow}{x}=\underset{\downarrow}{b'}$ называются равносильными (эквивалентыми), если $\fbox{n'=n}$ и общие решения совпадают. При этом ($n'=n$) несовместные СЛАУ также эквиваленты.
 \end{definition} 
 \noindent Замечание. $m'$ не обязательно совпадает с $m$
 \section{Квадратные СЛАУ. Правило Крамера.}
-Пусть $\fbox{m=n}$, т.е $A=(a_{ij})_{n}^{n}$ - квадратная матрица. $\underset{\downarrow}{b}=\begin{pmatrix} \vec{b}_{1}\\ \vdots\\ \vec{b}_{n} \end{pmatrix}\quad \underset{\downarrow}{x}=\begin{pmatrix} {x}_{1}\\ \vdots\\ {x}_{n} \end{pmatrix}$
+Пусть $\fbox{m=n}$, т.е $A=(a_{ij})_{n}^{n}$ - квадратная матрица. $\underset{\downarrow}{b}=\begin{pmatrix} {b}_{1}\\ \vdots\\ {b}_{n} \end{pmatrix}\quad \underset{\downarrow}{x}=\begin{pmatrix} {x}_{1}\\ \vdots\\ {x}_{n} \end{pmatrix}$
 
 \begin{theorem}[Теорема Крамера]
     Если $\Delta = detA \neq  0 $, то СЛАУ $A \underset{\downarrow}{x} = \underset{\downarrow}{ b}\;(1)$ имеет единственное решение, причем его можно найти по правилу Крамера: $\fbox{$x_{k}=\frac{\Delta_{k}}{\Delta}$}$, $k=\overline{1,n}$, где $\Delta_{k}=detA_{k}, A_{k}$ получена из $A=\begin{pmatrix}
@@ -38,7 +38,7 @@ $A' = (a_{ij})_{m'}^{n'}, \; \underset{\downarrow}{b'}=\begin{pmatrix} \vec{b'}_
         A_{11} &\dots& A_{n_{1}} \\
         \vdots & \ddots & \vdots \\
         A_{1n} &\dots& A_{nn}
-    \end{pmatrix} \begin{pmatrix} \vec{b}_{1}\\ \vdots\\ \vec{b}_{n} \end{pmatrix}=\frac{1}{\Delta}\begin{pmatrix}
+    \end{pmatrix} \begin{pmatrix} {b}_{1}\\ \vdots\\ {b}_{n} \end{pmatrix}=\frac{1}{\Delta}\begin{pmatrix}
         \sum_{k=1}^{n}A_{k1}b_{k}\\ 
         \vdots \\ 
         \sum_{k=1}^{n} A_{kn}b_{k}  
